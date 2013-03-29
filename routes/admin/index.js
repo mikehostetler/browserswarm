@@ -42,7 +42,7 @@ exports.invites = function(req, res)
       invite.consumed = humane.humaneDate(invite.consumed_timestamp);      
     });
 
-    res.render('admin/invites', {invite_code: make_invite_code(), invite_codes:results});
+    res.render('admin/invites.html', {invite_code: make_invite_code(), invite_codes:results});
   });
 };
 
@@ -63,7 +63,7 @@ exports.users = function(req,res)
       users.push(user);
     });
 
-   res.render('admin/users',{users:users});
+   res.render('admin/users.html',{users:users});
  }); 
 }
 
@@ -119,7 +119,7 @@ exports.projects = function(req,res)
       });
     });
 
-   res.render('admin/projects',{projects:projects});
+   res.render('admin/projects.html',{projects:projects});
  }); 
 }
 
@@ -201,11 +201,12 @@ exports.job = function(req, res)
         var has_prod_deploy_target = false;
         var admin_view = true;
 
-        res.render('job',
+        res.render('job.html',
           {
             admin_view: admin_view,
             jobs: results,
             results_detail: results_detail,
+            job_id:results[0].id.substr(0,8),
             triggered_by_commit: triggered_by_commit,
             org:org,
             repo:repo,

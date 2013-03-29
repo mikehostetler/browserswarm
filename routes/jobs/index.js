@@ -79,7 +79,7 @@ exports.latest_build = function(req, res)
 
       results[0].output = filter(results[0].stdmerged);
 
-      res.render('latest_build',
+      res.render('latest_build.html',
         {
           admin_view: false,
           jobs: results,
@@ -179,11 +179,12 @@ exports.job = function(req, res)
 
         results_detail.output = filter(results_detail.stdmerged);
 
-        res.render('job',
+        res.render('job.html',
           {
             admin_view: false,
             jobs: results,
             results_detail: results_detail,
+            job_id:results[0].id.substr(0,8),
             triggered_by_commit: triggered_by_commit,
             org:org,
             repo:repo,
