@@ -38,10 +38,10 @@ exports.index = function(req, res){
       if (req.user != undefined) {
         req.user.get_repo_config_list(function(err, repo_list) {
           if (err) throw err;
-          res.render('index',{total_configured_projects:repo_list.length});
+          res.render('index.html',{total_configured_projects:repo_list.length});
         });
       } else {
-        res.render('index');
+        res.render('index.html');
       }
     }
 
@@ -88,9 +88,9 @@ exports.kickoff = function(req, res, github) {
     // Check whether someone else has already configured this repository
     User.findOne({'github_config.url':trepo.url.toLowerCase()}, function(err, user) {
       if (!user) {
-        res.render('kickoff', {repo: trepo })
+        res.render('kickoff.html', {repo: JSON.stringify(trepo)})
       } else {
-        res.render('kickoff-conflict', {repo: trepo});
+        res.render('kickoff-conflict.html', {repo: JSON.stringify(trepo)});
       }
     });
 
@@ -103,9 +103,8 @@ exports.kickoff = function(req, res, github) {
 /*
  * GET /account - account settings page
  */
-exports.account = function(req, res)
-{
-  res.render('account');
+exports.account = function(req, res){
+  res.render('account.html');
 };
 
 /*
@@ -182,11 +181,11 @@ exports.config = function(req, res)
               return res.end("Error handling request");
             }
             r.panels = panels;
-            return res.render('project_config', r);
+            return res.render('project_config.html', r);
           }
         );
       } else {
-        return res.render('project_config', r);
+        return res.render('project_config.html', r);
       }
     }
   );
