@@ -3,4 +3,5 @@
       "Brand" : "Bendigo"
     , "title" : "Project Bendigo: Testing front-end js"
     }
+ , "webapp" : "webapp.js"
 }
