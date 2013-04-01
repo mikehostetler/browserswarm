@@ -1,5 +1,6 @@
 {
   "templates" :{
-    "Brand" : "Bendigo"
+      "Brand" : "Bendigo"
+    , "title" : "Project Bendigo: Testing front-end js"
     }
 }
