@@ -1,7 +1,7 @@
 {
   "templates" :{
       "Brand" : "Bendigo"
-    , "title" : "Project Bendigo: Testing front-end js"
+    , "title" : "./title.html"
     }
  , "webapp" : "webapp.js"
 }
