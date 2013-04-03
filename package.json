@@ -11,7 +11,7 @@
     "url": "git://github.com/appendto/strider.git"
   },
   "dependencies" : {
-    "strider" : "latest"
+    "strider" : "git@github.com:Strider-CD/strider.git"
   },
   "author": ""
 }
