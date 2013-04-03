@@ -1,7 +1,7 @@
 www:
   type: custom
   buildscript: dotcloud-builder/builder
-  node_version: v0.8.x
+  node_version: v0.10.x
   process: env PORT=$PORT_WWW npm start
   ports:
     www: http
