@@ -1,6 +1,5 @@
 module.exports = function(ctx, cb){
 
-  console.log(ctx);
   ctx.route.get('/bendigo-dash-frame.html', function(req, res, next){ 
     var Job = res.locals.models.Job;
 
@@ -13,7 +12,6 @@ module.exports = function(ctx, cb){
       .lean(true)
       .populate("_owner")
       .exec(function(err,results){
-        console.log(results);
         var out = "<h1>Recent Jobs</h1>"
         results.forEach(function(r){
           out += "<div><h2 style='background-color:"
@@ -27,8 +25,8 @@ module.exports = function(ctx, cb){
   });
   
 
-  ctx.registerBlock("LoggedOutFillContent", function(context){
-    return "<iframe src='/bendigo-dash-frame.html' style='width:100%; border:none;'>Loading...</iframe>"
+  ctx.registerBlock("LoggedOutFillContent", function(context, fn){
+    fn(null, "<iframe src='/bendigo-dash-frame.html' style='width:100%; border:none;'>Loading...</iframe>");
   })
 
   cb(null);
