@@ -51,5 +51,6 @@ module.exports = function(ctx, cb){
 
   
 
+  console.log("bendigo webapp extension loaded");
   cb(null);
 }
