@@ -1,1 +1,10 @@
-{}
+{
+  "name": "bendigo-plugin",
+  "description": "ERROR: No README.md file found!",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": ""
+}
