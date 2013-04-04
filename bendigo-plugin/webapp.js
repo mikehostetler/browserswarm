@@ -1,6 +1,7 @@
 module.exports = function(ctx, cb){
 
   ctx.route.get('/bendigo-dash-frame.html', function(req, res, next){ 
+/*
     var Job = res.locals.models.Job;
 
     Job.find()
@@ -18,15 +19,33 @@ module.exports = function(ctx, cb){
           out += "" +  ((r.test_exitcode == 0) ? '#0f0' : '#f00') + ";'>" 
           out += r.repo_url + "</h2></div>"
         })
-
+*/
         // Proof of concept hackery
-        res.send(out); 
-      })
+        var libs = [
+          {name: "jQuery"}
+        , {name: "jQuery UI"}
+        , {name: "jQuery Mobile"}
+        , {name: "Dojo Toolkit"}
+        , {name: "Dojo Toolkit"}
+        , {name: "Mootools"}
+        , {name: "Prototype.js"}
+          // --
+        ]
+
+
+          , browsers = ["IE 8", "IE 7", "Firefox 19", "Firefox 20 beta", "Chrome 25", "Chrome 26 beta", "Safari 5.1", "Opera 12.4"]
+       for(var i=0; i<libs.length; i++){
+         libs[i].results = [];
+          for (var j=0; j<browsers.length; j++){
+           libs[i].results[j] = (Math.random() > 0.2) ? 'pass' : 'fail';
+          }
+       }
+
+        res.render(__dirname + "/dashboard.html", {libraries: libs, browsers: browsers}); 
   });
-  
 
   ctx.registerBlock("LoggedOutFillContent", function(context, fn){
-    fn(null, "<iframe src='/bendigo-dash-frame.html' style='width:100%; border:none;'>Loading...</iframe>");
+    fn(null, "<iframe src='/bendigo-dash-frame.html' style='width:100%; height:auto; border:none;'>Loading...</iframe>");
   })
 
   cb(null);
