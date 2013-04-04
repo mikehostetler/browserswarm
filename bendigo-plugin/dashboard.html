@@ -32,6 +32,10 @@
         color:#fff;
       }
       .blue{padding-top:2em; padding-bottom:2em; text-align:center; margin-bottom:1em;}
+
+
+      ul{ width:300px; margin:0 auto; margin-top:3em;}
+      
     </style>
 
 <div class='blue'>
@@ -56,6 +60,11 @@
 
     </table>
 
+    <ul>
+      {% for job in jobs %}
+        <li class='{{ job.res }}'>{{ job.repo_url }}</li>
+      {% endfor %}
+    </ul
 
 
     <a href = "/login">Are you a library owner? Login...</a>

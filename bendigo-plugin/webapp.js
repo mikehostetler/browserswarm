@@ -7,8 +7,8 @@ module.exports = function(ctx, cb){
   })
 
   ctx.registerBlock("LoggedOutFillContent", function(context, fn){
-/*
-    var Job = res.locals.models.Job;
+
+    var Job = context.models.Job;
 
     Job.find()
       .sort({'finished_timestamp': -1})
@@ -19,13 +19,10 @@ module.exports = function(ctx, cb){
       .lean(true)
       .populate("_owner")
       .exec(function(err,results){
-        var out = "<h1>Recent Jobs</h1>"
         results.forEach(function(r){
-          out += "<div><h2 style='background-color:"
-          out += "" +  ((r.test_exitcode == 0) ? '#0f0' : '#f00') + ";'>" 
-          out += r.repo_url + "</h2></div>"
+          r.res = (r.test_exitcode == 0) ? "pass" : "fail";
         })
-*/
+
         // Proof of concept hackery
         var libs = [
           {name: "jQuery"}
@@ -39,14 +36,16 @@ module.exports = function(ctx, cb){
         ]
 
 
-          , browsers = ["IE 8", "IE 7", "Firefox 19", "Firefox 20 beta", "Chrome 25", "Chrome 26 beta", "Safari 5.1", "Opera 12.4"]
-       for(var i=0; i<libs.length; i++){
-         libs[i].results = [];
-          for (var j=0; j<browsers.length; j++){
-           libs[i].results[j] = (Math.random() > 0.2) ? 'pass' : 'fail';
-          }
-       }
-    fn(null, swig.compileFile(__dirname + '/dashboard.html').render({libraries: libs, browsers: browsers}));
+         var  browsers = ["IE 8", "IE 7", "Firefox 19", "Firefox 20 beta", "Chrome 25", "Chrome 26 beta", "Safari 5.1", "Opera 12.4"]
+
+         for(var i=0; i<libs.length; i++){
+           libs[i].results = [];
+            for (var j=0; j<browsers.length; j++){
+             libs[i].results[j] = (Math.random() > 0.2) ? 'pass' : 'fail';
+            }
+         }
+      fn(null, swig.compileFile(__dirname + '/dashboard.html').render({jobs: results, libraries: libs, browsers: browsers}));
+    })
   })
 
 
