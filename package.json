@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "strider": "https://github.com/Strider-CD/strider/archive/master.tar.gz",
-    "strider-browserstack": "https://github.com/Strider-CD/strider-browserstack/archive/master.tar.gz"
+    "strider-browserstack": "https://github.com/Strider-CD/strider-browserstack/archive/master.tar.gz",
+    "swig": "~0.13.5"
   },
   "author": ""
 }

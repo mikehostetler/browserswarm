@@ -1,0 +1,26 @@
+
+.navbar-inner{
+  background:#000 !important;
+  padding: 1.8em 0 1.4em 0;
+  border-bottom:20px solid #3d3d3d;
+  box-shadow:none;
+}
+
+.navbar-fixed-top{
+  position:relative;
+}
+
+body{
+  padding-top:0;
+  font-family: "wf_SegoeUI","Segoe UI","Segoe","Segoe WP", "Myriad Pro", "Tahoma","Verdana","Arial","sans-serif";
+}
+
+
+footer{
+  background-color:#3d3d3d;
+  border:0;
+  color:#fff;
+}
+footer a{
+  color:#fff;
+}
