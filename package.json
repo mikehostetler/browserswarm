@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "test -d node_modules/strider/node_modules/bendigo-plugin || (SROOT=$(pwd); ln -sf $SROOT/bendigo-plugin ./node_modules/strider/node_modules ; cd ./node_modules/strider/node_modules/bendigo-plugin ; npm i  ; cd $SROOT; exec ./node_modules/strider/bin/strider) && exec ./node_modules/strider/bin/strider"
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
