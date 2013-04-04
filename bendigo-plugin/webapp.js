@@ -1,6 +1,12 @@
+var swig = require('swig')
+
 module.exports = function(ctx, cb){
 
-  ctx.route.get('/bendigo-dash-frame.html', function(req, res, next){ 
+  ctx.registerBlock("Nav", function(context, cb){
+    cb(null, "&nbsp;");
+  })
+
+  ctx.registerBlock("LoggedOutFillContent", function(context, fn){
 /*
     var Job = res.locals.models.Job;
 
@@ -40,13 +46,11 @@ module.exports = function(ctx, cb){
            libs[i].results[j] = (Math.random() > 0.2) ? 'pass' : 'fail';
           }
        }
-
-        res.render(__dirname + "/dashboard.html", {libraries: libs, browsers: browsers}); 
-  });
-
-  ctx.registerBlock("LoggedOutFillContent", function(context, fn){
-    fn(null, "<iframe src='/bendigo-dash-frame.html' style='width:100%; height:auto; border:none;'>Loading...</iframe>");
+    fn(null, swig.compileFile(__dirname + '/dashboard.html').render({libraries: libs, browsers: browsers}));
   })
+
+
+  
 
   cb(null);
 }
