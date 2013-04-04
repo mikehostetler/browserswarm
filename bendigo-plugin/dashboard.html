@@ -1,0 +1,44 @@
+<!doctype html>
+  <head>
+    <style>
+
+      body{font-family: "wf_SegoeUI","Segoe UI","Segoe","Segoe WP","Tahoma","Verdana","Arial","sans-serif";}
+
+      table{
+        border:none;
+
+      }
+      td, th{
+        width:60px;
+        height:60px;
+      }
+
+      th.browser{
+        -webkit-transform: rotate(-90deg); 
+        -moz-transform: rotate(-90deg);
+      }
+      .pass {background-color:#0f0;}
+      .fail {background-color:#f00;}
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Library</th>
+        {% for browser in browsers %}
+        <th class='browser'><span>{{ browser }}</span></th>
+        {% endfor %}
+      </tr>
+      {% for library in libraries %}
+      <tr>
+        <th>{{ library.name }}</th>
+         {% for res in library.results %}
+         <td class="{{ res }}">&nbsp;</td>
+         {% endfor %}
+      </tr>
+      {% endfor %}
+
+    </table>
+  </body>
+</html>
+
