@@ -2,6 +2,9 @@
   "templates" :{
       "Brand" : "Bendigo"
     , "title" : "./title.html"
+    , "ExtraStyles" : "<link rel='stylesheet' href = '/ext/bendigo-plugin/style.css' />"
+    , "FooterText" : "Project Bendigo, Powered by Strider CD."
     }
+
  , "webapp" : "webapp.js"
 }
