@@ -11,8 +11,9 @@
     "type": "git",
     "url": "git://github.com/appendto/strider.git"
   },
-  "dependencies" : {
-    "strider" : "https://github.com/Strider-CD/strider/archive/master.tar.gz"
+  "dependencies": {
+    "strider": "https://github.com/Strider-CD/strider/archive/master.tar.gz",
+    "strider-browserstack": "https://github.com/Strider-CD/strider-browserstack/archive/master.tar.gz"
   },
   "author": ""
 }
