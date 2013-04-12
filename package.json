@@ -1,6 +1,6 @@
 {
   "name": "bendigo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ERROR: No README.md file found!",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
   "dependencies": {
     "strider": "https://github.com/Strider-CD/strider/archive/master.tar.gz",
     "strider-browserstack": "https://github.com/Strider-CD/strider-browserstack/archive/master.tar.gz",
+    "strider-qunit": "https://github.com/Strider-CD/strider-qunit/archive/master.tar.gz",
     "swig": "~0.13.5"
   },
   "author": ""
