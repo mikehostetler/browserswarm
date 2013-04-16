@@ -3,7 +3,7 @@
 packages_dir=node_modules
 node_root=/opt/node
 
-NODE_VERSION=v0.8.23
+NODE_VERSION=v0.10.4
 
 [ "$SERVICE_NODE_VERSION" ] && 
 [ "$SERVICE_NODE_VERSION" != "$(node --version)" ] &&
