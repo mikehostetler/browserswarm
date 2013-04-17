@@ -18,10 +18,6 @@ if [ \! -x $node_root/php-cgi ]; then
           --disable-static \
           --with-pic \
           --with-zlib \
-          --with-curl \
-          --with-curlwrappers \
-          --enable-ftp \
-          --enable-zip \
           --with-openssl \
           --enable-mbstring  \
           --enable-inline-optimization \
@@ -30,8 +26,6 @@ if [ \! -x $node_root/php-cgi ]; then
           && make -j4 && make install
   cp $node_root/php/bin/php-cgi $node_root
 fi
-
-exit 0
 
 if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
     rm -rf $node_root/*
