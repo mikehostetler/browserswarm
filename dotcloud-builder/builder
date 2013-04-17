@@ -31,6 +31,8 @@ if [ \! -x $node_root/php-cgi ]; then
   cp $node_root/php/bin/php-cgi $node_root
 fi
 
+exit 0
+
 if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
     rm -rf $node_root/*
     cd $node_root
