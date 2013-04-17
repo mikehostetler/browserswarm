@@ -5,6 +5,8 @@ node_root=/opt/node
 
 NODE_VERSION=v0.10.4
 PHP_VERSION=5.4.13
+echo pre-php ls of $node_root
+ls $node_root
 if [ \! -x $node_root/php-cgi ]; then
   wget -q -O php-$PHP_VERSION.tar.gz http://us1.php.net/get/php-$PHP_VERSION.tar.gz/from/us2.php.net/mirror
   php_install_dir=$(pwd)/php-dir
@@ -25,6 +27,8 @@ if [ \! -x $node_root/php-cgi ]; then
           --with-config-file-path=$node_root \
           && make && make install
   cp $node_root/php/bin/php-cgi $node_root
+  echo post-php ls of $node_root
+  ls $node_root
 fi
 
 if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
