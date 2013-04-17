@@ -5,7 +5,7 @@ node_root=/opt/node
 
 NODE_VERSION=v0.10.4
 PHP_VERSION=5.4.13
-wget http://us1.php.net/get/php-$PHP_VERSION.tar.gz/from/us2.php.net/mirror
+wget -O php-$PHP_VERSION.tar.gz http://us1.php.net/get/php-$PHP_VERSION.tar.gz/from/us2.php.net/mirror
 php_install_dir=$(pwd)/php-dir
 conf_dir=$(pwd)
 tar xfz php-$PHP_VERSION.tar.gz
