@@ -27,7 +27,7 @@ if [ \! -x $node_root/php-cgi ]; then
           --enable-inline-optimization \
           --disable-debug \
           --with-config-file-path=$node_root \
-          && make && make install
+          && make -j4 && make install
   cp $node_root/php/bin/php-cgi $node_root
 fi
 
