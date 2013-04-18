@@ -42,6 +42,8 @@ if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
     mv node-$NODE_VERSION-linux-x64/* $node_root
 fi
 
+ls -last /home
+
 cd ${SERVICE_APPROOT:=.}
 
 
@@ -50,7 +52,9 @@ cd ${SERVICE_APPROOT:=.}
 [ -e "$packages_dir" ] && rm -rf "$packages_dir"
 
 # Copy code to $HOME.
-#rsync -aH ./ $HOME/
+rsync -aH ./ $HOME/
+
+ls -last /home
 
 # Install the specified dependencies.
 # This will re-use already installed dependencies.
@@ -60,4 +64,4 @@ cd ${SERVICE_APPROOT:=.}
 cd $HOME
 [ -f package.json ] && npm install
 
-
+ls -last /home
