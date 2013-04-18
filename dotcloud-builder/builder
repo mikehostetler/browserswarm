@@ -4,35 +4,6 @@ packages_dir=node_modules
 node_root=/opt/node
 
 NODE_VERSION=v0.10.4
-PHP_VERSION=5.4.13
-echo pre-php ls of $node_root
-ls $node_root
-if [ \! -x $node_root/php-cgi ]; then
-  wget -q -O php-$PHP_VERSION.tar.gz http://us1.php.net/get/php-$PHP_VERSION.tar.gz/from/us2.php.net/mirror
-  php_install_dir=$(pwd)/php-dir
-  conf_dir=$(pwd)
-  tar xfz php-$PHP_VERSION.tar.gz
-  cd php-$PHP_VERSION
-  ./configure --prefix=$node_root/php \
-          --with-regex=php \
-          --enable-cgi \
-          --disable-rpath \
-          --disable-static \
-          --with-pic \
-          --with-zlib \
-          --with-openssl \
-          --enable-mbstring  \
-          --enable-inline-optimization \
-          --disable-debug \
-          --with-config-file-path=$node_root \
-          && make && make install
-  cp $node_root/php/bin/php-cgi $node_root
-  echo post-php ls of $node_root
-  ls $node_root
-  cd ..
-  echo "PHP built, exiting cleanly. Please restart build."
-  exit 0
-fi
 
 if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
     rm -rf $node_root/*
@@ -41,8 +12,6 @@ if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
     curl -L http://nodejs.org/dist/$NODE_VERSION/node-$NODE_VERSION-linux-x64.tar.gz | tar -zxf-
     mv node-$NODE_VERSION-linux-x64/* $node_root
 fi
-
-ls -last /home
 
 cd ${SERVICE_APPROOT:=.}
 
@@ -54,8 +23,6 @@ cd ${SERVICE_APPROOT:=.}
 # Copy code to $HOME.
 rsync -aH ./ $HOME/
 
-ls -last /home
-
 # Install the specified dependencies.
 # This will re-use already installed dependencies.
 # To force the use of the latest version of a package:
@@ -63,5 +30,3 @@ ls -last /home
 # - or push with the "--clean" flag to discard the incremental build.
 cd $HOME
 [ -f package.json ] && npm install
-
-ls -last /home
