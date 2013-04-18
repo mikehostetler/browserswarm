@@ -50,7 +50,7 @@ cd ${SERVICE_APPROOT:=.}
 [ -e "$packages_dir" ] && rm -rf "$packages_dir"
 
 # Copy code to $HOME.
-rsync -aH ./ $HOME/
+#rsync -aH ./ $HOME/
 
 # Install the specified dependencies.
 # This will re-use already installed dependencies.
