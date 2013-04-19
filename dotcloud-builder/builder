@@ -1,5 +1,6 @@
 #!/bin/bash
 
+env
 packages_dir=node_modules
 node_root=/opt/node
 
