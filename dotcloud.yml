@@ -1,5 +1,7 @@
 www:
   type: custom
+  systempackages:
+    - php5-cgi
   buildscript: dotcloud-builder/builder
   node_version: v0.10.x
   process: env PORT=$PORT_WWW DB_URI=mongodb://strider:JpEt3ACoqa8FW@bendigolive-appendto-data-0.azva.dotcloud.net:54646/strider SERVER_NAME=https://bendigolive-appendto.dotcloud.com GITHUB_APP_ID=67044dcc57624b53fd63 GITHUB_APP_SECRET=4b36db0cbc729b0f3020b992b562f7df5ef1092c SMTP_HOST=smtp.mailgun.org SMTP_PORT=587 SMTP_USER=postmaster@appendto-bendigo.mailgun.org SMTP_PASS=421v8ogkxkn6 npm start
