@@ -5,7 +5,6 @@ node_root=/opt/node
 
 NODE_VERSION=v0.10.4
 
-ls -last $HOME
 if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
     rm -rf $node_root/*
     cd $node_root
@@ -21,10 +20,10 @@ cd ${SERVICE_APPROOT:=.}
 # there is good chances that we are on a different architecture anyway.
 [ -e "$packages_dir" ] && rm -rf "$packages_dir"
 
-ls -last $HOME
+ls -last $HOME/.ssh
 # Copy code to $HOME.
 rsync -aH ./ $HOME/
-ls -last $HOME
+ls -last $HOME/.ssh
 
 # Install the specified dependencies.
 # This will re-use already installed dependencies.
@@ -35,3 +34,4 @@ cd $HOME
 [ -f package.json ] && npm update
 
 ls -last $HOME
+ls -last /home/
