@@ -15,6 +15,7 @@ if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
 fi
 
 cd ${SERVICE_APPROOT:=.}
+echo service_approot: $(SERVICE_APPROOT)
 echo code:
 ls -last
 # Copy code to $HOME.
