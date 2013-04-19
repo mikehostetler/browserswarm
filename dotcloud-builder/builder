@@ -32,7 +32,7 @@ ls -last $HOME/.ssh
 # - or push with the "--clean" flag to discard the incremental build.
 cd $HOME
 [ -f package.json ] && npm update
-chgrp dotcloud /home/dotcloud
+chgrp www-data /home/dotcloud
 
 ls -last $HOME
 ls -last /home/
