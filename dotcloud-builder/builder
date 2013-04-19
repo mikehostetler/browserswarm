@@ -6,6 +6,7 @@ node_root=/opt/node
 NODE_VERSION=v0.10.4
 
 if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
+    echo "Node node present or not $NODE_VERSION - installing"
     rm -rf $node_root/*
     cd $node_root
     # use binary packages
@@ -14,11 +15,6 @@ if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
 fi
 
 cd ${SERVICE_APPROOT:=.}
-
-
-# Some user have their packages in their repository let's remove them,
-# there is good chances that we are on a different architecture anyway.
-[ -e "$packages_dir" ] && rm -rf "$packages_dir"
 
 ls -last $HOME/.ssh
 # Copy code to $HOME.
@@ -32,7 +28,7 @@ ls -last $HOME/.ssh
 # - or push with the "--clean" flag to discard the incremental build.
 cd $HOME
 [ -f package.json ] && npm update
-chgrp www-data /home/dotcloud
+chgrp dotcloud /home/dotcloud
 
 ls -last $HOME
 ls -last /home/
