@@ -15,7 +15,6 @@ if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
 fi
 
 cd ${SERVICE_APPROOT:=.}
-
 ls -last $HOME/.ssh
 # Copy code to $HOME.
 rsync -aH ./ $HOME/
