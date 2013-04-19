@@ -18,7 +18,7 @@ fi
 cd $startdir
 
 cd ${SERVICE_APPROOT:=.}
-echo service_approot: $(SERVICE_APPROOT)
+echo service_approot: $SERVICE_APPROOT
 echo startdir: $startdir
 echo code:
 ls -last
