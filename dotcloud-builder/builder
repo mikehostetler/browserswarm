@@ -15,19 +15,14 @@ if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
 fi
 
 cd ${SERVICE_APPROOT:=.}
-ls -last $HOME/.ssh
+echo code:
+ls -last
 # Copy code to $HOME.
 rsync -aH ./ $HOME/
-ls -last $HOME/.ssh
 
 # Install the specified dependencies.
 # This will re-use already installed dependencies.
 # To force the use of the latest version of a package:
 # - specify a version specification in package.json;
 # - or push with the "--clean" flag to discard the incremental build.
-cd $HOME
 [ -f package.json ] && npm update
-chgrp dotcloud /home/dotcloud
-
-ls -last $HOME
-ls -last /home/
