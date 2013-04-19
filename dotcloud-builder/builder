@@ -9,7 +9,7 @@ NODE_VERSION=v0.10.4
 startdir=$(pwd)
 
 if [ $(node --version) != $(echo $NODE_VERSION | sed -e s/v//g) ]; then
-    echo "Node node present or not $NODE_VERSION - installing"
+    echo "Node present or not $NODE_VERSION - installing"
     rm -rf $node_root/*
     cd $node_root
     # use binary packages
@@ -20,6 +20,7 @@ fi
 
 # Copy code to $HOME.
 rsync -aH ./ $HOME/
+cd $HOME
 
 # Install the specified dependencies.
 # This will re-use already installed dependencies.
