@@ -1,10 +1,9 @@
 #!/bin/bash
 
-env
 packages_dir=node_modules
 node_root=/opt/node
 
-NODE_VERSION=v0.10.4
+NODE_VERSION=v0.10.5
 
 startdir=$(pwd)
 
@@ -27,4 +26,4 @@ cd $HOME
 # To force the use of the latest version of a package:
 # - specify a version specification in package.json;
 # - or push with the "--clean" flag to discard the incremental build.
-[ -f package.json ] && npm install
+[ -f package.json ] && npm install -d -d
