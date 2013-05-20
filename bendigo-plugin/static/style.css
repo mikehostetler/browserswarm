@@ -315,7 +315,7 @@ a {
     padding: 7px 30px 7px 10px;
     border: 1px solid #dbdbdb;
     border-radius: 6px;
-    background-image: url(../img/ui/login-door.svg);
+    background-image: url(/ext/bendigo-plugin/login-door.svg);
     background-position: 95% center;
     background-repeat: no-repeat; }
   /* line 38, ../sass/includes/global/siteheader.scss */
@@ -333,13 +333,13 @@ a {
 /* line 3, ../sass/includes/global/intro.scss */
 .page-intro {
   background-color: #0f7ccc;
-  background-image: url(../img/ui/honeycomb-pattern.svg);
+  background-image: url(/ext/bendigo-plugin/honeycomb-pattern.svg);
   background: url("../img/ui/honeycomb-pattern.svg"), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjAlIiByPSIxMjAwIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTJhNGUwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMGY3Y2NjIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
-  background: url("../img/ui/honeycomb-pattern.svg"), -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 1200, color-stop(0%, #12a4e0), color-stop(100%, #0f7ccc));
-  background: url("../img/ui/honeycomb-pattern.svg"), -webkit-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
-  background: url("../img/ui/honeycomb-pattern.svg"), -moz-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
-  background: url("../img/ui/honeycomb-pattern.svg"), -o-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
-  background: url("../img/ui/honeycomb-pattern.svg"), radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  background: url("/ext/bendigo-plugin/honeycomb-pattern.svg"), -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 1200, color-stop(0%, #12a4e0), color-stop(100%, #0f7ccc));
+  background: url("/ext/bendigo-plugin/honeycomb-pattern.svg"), -webkit-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  background: url("/ext/bendigo-plugin/honeycomb-pattern.svg"), -moz-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  background: url("/ext/bendigo-plugin/honeycomb-pattern.svg"), -o-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  background: url("/ext/bendigo-plugin/honeycomb-pattern.svg"), radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
   color: #fff;
   text-align: center;
   -webkit-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.4);
@@ -372,7 +372,7 @@ a {
   padding: 100px 0;
   color: #fff;
   background-color: #44413d;
-  background-image: url(../img/hands-bg.jpg);
+  background-image: url(/ext/bendigo-plugin/hands-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   overflow: hidden;
@@ -622,7 +622,7 @@ a {
   padding: 100px 0;
   color: #fff;
   background-color: #0f7ecd;
-  background-image: url(../img/honeycomb-bg.jpg);
+  background-image: url(/ext/bendigo-plugin/honeycomb-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -837,3 +837,25 @@ a {
     margin: 0;
     display: block; } }
 /* @end Media Queries */
+
+
+
+
+
+/* FORCE STRIDER OVERRIDE */
+.wrap{
+  min-height:inherit !important;
+}
+
+.strider-fillpage{
+  display:none;
+ }
+
+ .page-intro h1 {
+   color: #fff;
+ }
+
+ p {
+   font-family:inherit !important;
+   line-height:inherit !important;
+ }
