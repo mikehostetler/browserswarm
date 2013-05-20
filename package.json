@@ -1,6 +1,7 @@
 {
   "name": "bendigo",
   "version": "0.0.22",
+  "private":true,
   "description": "ERROR: No README.md file found!",
   "main": "index.js",
   "scripts": {
