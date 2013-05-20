@@ -1,70 +1,105 @@
-    <style>
+	<div class="page-intro">
 
-      table{
-        border:none;
+		<div class="wrap">
 
-        border-collapse: separate;
-        border-spacing: 2px;
+			<h1 class="page-heading">Automate cross-browser testing of JavaScript frameworks.</h1>
 
-      }
-      td, th{
-        width:60px;
-        height:60px;
-      }
+			<p class="description">Use this site to check the status of popular frameworks, or if you are a <a href="#framework-author-info">framework author</a>, find out how to signup to use BrowserSwarm for your project.</p>
 
-      th.browser{
-        -webkit-transform: rotate(-90deg); 
-        -moz-transform: rotate(-90deg);
-      }
-      .pass {background-color:#0f0;}
-      .fail {background-color:#f00;}
-      table.matrix{
-        margin:0 auto;
-      }
+		</div>
 
-      .navbar{margin-bottom:0;}
-      .body-content{margin-top:0;}
-      .content.container{width:100% !important; margin:0;}
-      .content .span12{width:100%; margin-left:0 !important;}
-      
-      .blue, .blue h1{
-        background-color:#00baf0;
-        color:#fff;
-      }
-      .blue{padding-top:2em; padding-bottom:2em; text-align:center; margin-bottom:1em;}
+	</div>
 
+<main id="framework-matrix" class="framework-matrix">
 
-      ul{ width:300px; margin:0 auto; margin-top:3em;}
-      
-    </style>
+		<div class="wrap">
 
-<div class='blue'>
-    <h1>Testing Libraries across Browsers</h1>
-</div>
+			<header class="section-header">
+				<h2 class="section-title">View Test Results By Framework</h2>
+				<p class="description">Choose a framework below to view it’s cross-browser test suite results.</p>
+			</header>
 
-    <table class='matrix'>
-      <tr>
-        <th>Library</th>
-        {% for browser in browsers %}
-        <th class='browser'><span>{{ browser }}</span></th>
-        {% endfor %}
-      </tr>
-      {% for library in libraries %}
-      <tr>
-        <th>{{ library.name }}</th>
-         {% for res in library.results %}
-         <td class="{{ res }}">&nbsp;</td>
-         {% endfor %}
-      </tr>
-      {% endfor %}
+			<ul id="frameworkslist" class="framework-list group"></ul>
 
-    </table>
+			<footer>
+				<p>Looking for a different framework? Don’t worry! More frameworks are on the way. You can <a href="mailto:frameworkrequest@browserswarm.com">contact us</a> to request a framework, or have yours included.</p>
+			</footer>
 
-    <ul>
-      {% for job in jobs %}
-        <li class='{{ job.res }}'>{{ job.repo_url }}</li>
-      {% endfor %}
-    </ul>
+		</div>
 
+	</main>
 
-    <a href = "/login">Are you a library owner? Login...</a>
+	<div id="about-browserswarm" class="about-browserswarm">
+		<div class="wrap">
+
+			<article class="about-general group">
+
+				<h2 class="article-title">About BrowserSwarm</h2>
+
+				<div class="content">
+
+					<p>Here is what BrowserSwarm is all about - what we intend it to be, how we intned it to help you as a developer....Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+					<p>Here is what BrowserSwarm is all about - what we intend it to be, how we intned it to help you as a developer....Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+				</div>
+
+				<figure>
+					<img class="bsicon" src="./img/bsiconmark-white.svg" alt="BrowserStack icon mark" />
+				</figure>
+
+			</article>
+
+			<article class="about-credits group">
+
+				<h3 class="article-title">Who Is Behind BrowserSwarm?</h3>
+
+				<div class="content">
+
+					<p>Probably some copy here about appendTo and Internet Explorer’s partnership to make this happen..., sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+					<p>Probably some copy here about appendTo and Internet Explorer’s partnership to make this happen..., sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+				</div>
+
+				<figure>
+					<img class="ielogo" src="./img/ielogo-white.svg" alt="Internet Explorer logo" />
+					<img class="a2logo" src="./img/appendtologo-white.svg" alt="appendTo logo" />
+				</figure>
+
+			</article>
+
+		</div>
+	</div>
+
+	<div id="email-signup" class="email-signup">
+		<div class="wrap">
+
+			<header class="section-header">
+				<h3 class="section-title">Signup for Updates</h3>
+				<p class="description">What’s the best way to keep up to date with our progress? Signup for Email notifications. We’ll let you know when we add new frameworks, new features, or other major news. And we promise not to spam you or sell your info to someone else.</p>
+			</header>
+
+			<!-- Begin MailChimp Signup Form -->
+			<div id="mc_embed_signup" class="mc_embed_signup">
+				<form action="http://appendto.us1.list-manage1.com/subscribe/post?u=675e4f7ef901d5b8f5f909c2f&amp;id=29227a58a7" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					<label for="mce-EMAIL" class="hidden-accessible">Enter Your Email Address</label>
+					<input type="email" value="" name="EMAIL" class="email-input" id="mce-EMAIL" placeholder="email address" required>
+					<input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="submit-button">
+				</form>
+			</div><!--End mc_embed_signup-->
+
+		</div>
+	</div><!--/.email-signup-->
+
+	<div id="framework-author-info" class="framework-author-info">
+		<div class="wrap">
+
+			<header class="section-header">
+				<h3 class="section-heading">Are You A Framework Author?</h3>
+				<p class="description">Are you a framework author interested in testing your library or framework with BrowserSwarm? <br/>Email us at <a href="mailto:frameworkauthor@browserswarm.com">frameworkauthor@browserswarm.com</a> to find out more.</p>
+			</header>
+
+		</div>
+	</div>
+
