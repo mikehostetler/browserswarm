@@ -1,9 +1,9 @@
 {
   "templates" :{
-      "Brand" : "Bendigo"
-    , "title" : "./title.html"
+      "title" : "BrowserSwarm"
+    , "TopNav" : "./nav.html"
     , "ExtraStyles" : "<link rel='stylesheet' href = '/ext/bendigo-plugin/style.css' />"
-    , "FooterText" : "Project Bendigo, Powered by Strider CD."
+    , "FooterText" : "./footer.html"
     }
 
  , "webapp" : "webapp.js"
