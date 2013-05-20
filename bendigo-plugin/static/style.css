@@ -847,9 +847,6 @@ footer {
   min-height:inherit !important;
 }
 
-.strider-fillpage{
-  display:none;
- }
 
  .page-intro h1,
 .about-browserswarm h3,
@@ -878,4 +875,20 @@ footer {
   background-color: transparent;
   margin-top: 0px;
   padding: 50px 0;
+}
+
+.strider-fillpage {
+  width:100%;
+  margin:0;
+ }
+.strider-fillpage .body-content{
+  margin-top:0;
+}
+
+.strider-fillpage .row:first-child{
+  margin:0 !important;
+}
+.strider-fillpage .span12:first-child{
+  width:100%;
+  margin:0;
 }

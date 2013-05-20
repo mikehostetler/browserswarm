@@ -6,7 +6,7 @@ module.exports = function(ctx, cb){
     cb(null, "&nbsp;");
   })
 
-  ctx.registerBlock("FillPage", function(context, fn){
+  ctx.registerBlock("LoggedOutFillContent", function(context, fn){
     fn(null, swig.compileFile(__dirname + '/dashboard.html').render({}));
  })
 
