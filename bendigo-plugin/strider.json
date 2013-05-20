@@ -4,6 +4,7 @@
     , "TopNav" : "./nav.html"
     , "ExtraStyles" : "<link rel='stylesheet' href = '/ext/bendigo-plugin/style.css' />"
     , "FooterText" : "./footer.html"
+    , "AfterHead" : "./after-head.html"
     }
 
  , "webapp" : "webapp.js"

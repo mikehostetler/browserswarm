@@ -13,3 +13,104 @@
 			<p>Site content licensing info can go here and any other important information or notice about the project like appendTo and Internet Explorer.</p>
 
 		</div>
+
+
+
+<!-- Load jQuery: using Google CDN -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script src="/ext/bendigo-plugin/handlebars.min.js"></script>
+<script src="/ext/bendigo-plugin/site.js"></script>
+
+<!-- Handlebars tempaltes -->
+<script type="text/html" id="frameworkTemplate">
+{{#each frameworks}}
+    <li class="framework-item">
+        <a href="#">
+    		<h3 class="framework-name">{{this.name}}</h3>
+    		{{#if this.src}}<div class="framework-logo" style="background-image: url({{this.src}});"></div>{{/if}}
+    		<p class="btn view-framework">View Test Results</p>
+    	</a>
+    </li>
+{{/each}}
+</script>
+
+<script>
+var frameworks = [{
+    src : "/ext/bendigo-plugin/framework-logo/jquery.png",
+    name : "jQuery"
+}, {
+    src : "/ext/bendigo-plugin/framework-logo/jqueryui.png",
+    name : "jQuery UI"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/jquerymobile.png",
+	name : "jQuery Mobile"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/dojo.jpg",
+	name : "Dojo Toolkit"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/mootools.png",
+	name : "Mootools"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/prototype.png",
+	name : "Prototype"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/modernizr.png",
+	name : "Modernizr"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/underscorejs.png",
+	name : "Underscore JS"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/backbonejs.png",
+	name : "Backbone JS"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/knockout.png",
+	name : "Knockout"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/ember.png",
+	name : "Ember"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/angular.png",
+	name : "Angular JS"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/enyo.png",
+	name : "Enyo"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/jqtouch.png",
+	name : "jQTouch"
+},{
+	name : "jQuery Validate"
+},{
+	name : "jQuery Cycle"
+},{
+	name : "jQuery Form"
+},{
+	name : "jQuery Easing"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/zeptojs.png",
+	name : "Zepto JS"
+},{
+	name : "zui.js"
+},{
+	name : "qooxdoo.js"
+},{
+	name : "stapes.js"
+},{
+	name : "Twitter Bootstrap"
+},{
+	src : "/ext/bendigo-plugin/framework-logo/extjs.jpg",
+	name : "ExtJS"
+},{
+	name : "Sencha Touch"
+},{
+	name : "Scriptaculous"
+}];
+
+var content = $("#frameworkTemplate").html();
+
+var template = Handlebars.compile(content);
+
+$("#frameworkslist").html( template({
+    frameworks: frameworks
+}));
+</script>

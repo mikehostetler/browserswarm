@@ -7,7 +7,7 @@ module.exports = function(ctx, cb){
   })
 
   ctx.registerBlock("FillPage", function(context, fn){
-    fn(null, swig.compileFile(__dirname + '/dashboard.html').render({jobs: results, libraries: libs, browsers: browsers}));
+    fn(null, swig.compileFile(__dirname + '/dashboard.html').render({}));
  })
 
 
