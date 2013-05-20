@@ -482,22 +482,22 @@ a {
 /* @end Framework Author Info */
 /* @group Site Footer Styles -------------------- */
 /* line 3, ../sass/includes/global/sitefooter.scss */
-.site-footer {
+footer {
   padding: 50px 0;
   text-align: center;
   -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2); }
   /* line 8, ../sass/includes/global/sitefooter.scss */
-  .no-boxshadow .site-footer {
+  .no-boxshadow footer {
     border-top: 1px solid #cbcbcb; }
   /* line 12, ../sass/includes/global/sitefooter.scss */
-  .site-footer .footer-site-nav > a {
+  footer .footer-site-nav > a {
     font-size: 0.875em;
     font-weight: bold;
     margin: 0 20px; }
   /* line 19, ../sass/includes/global/sitefooter.scss */
-  .site-footer p {
+  footer p {
     font-size: 0.9375em; }
 
 /* @end Site Footer Styles */
@@ -608,11 +608,11 @@ a {
       background-repeat: no-repeat;
       background-position: center center; }
   /* line 68, ../sass/includes/homepage/framework-matrix.scss */
-  .framework-matrix footer {
+  .framework-matrix .footer {
     color: #737373;
     text-align: center; }
     /* line 70, ../sass/includes/homepage/framework-matrix.scss */
-    .framework-matrix footer a {
+    .framework-matrix .footer a {
       text-decoration: underline; }
 
 /* @end Framework Matrix */
@@ -701,7 +701,7 @@ a {
     margin-top: 4px; }
 
   /* line 44, ../sass/includes/mediaqueries.scss */
-  .site-footer .footer-site-nav > a {
+  footer .footer-site-nav > a {
     margin: 0 10px; } }
 @media screen and (max-width: 795px) {
   /* line 60, ../sass/includes/mediaqueries.scss */
@@ -851,11 +851,31 @@ a {
   display:none;
  }
 
- .page-intro h1 {
-   color: #fff;
- }
+ .page-intro h1,
+.about-browserswarm h3,
+.email-signup h3,
+.about-browserswarm h2{
+  color:#fff;
+}
+
+
 
  p {
    font-family:inherit !important;
    line-height:inherit !important;
+   font-size:100%;
+   margin:0;
  }
+
+input, input:active {
+  margin:inherit;
+  height:inherit;
+  color:#2c2c2c;
+}
+
+footer {
+  border-top: none;
+  background-color: transparent;
+  margin-top: 0px;
+  padding: 50px 0;
+}
