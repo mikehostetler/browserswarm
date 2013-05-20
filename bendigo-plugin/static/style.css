@@ -1,26 +1,839 @@
+/* Normalise */
 
-.navbar-inner{
-  background:#000 !important;
-  padding: 1.8em 0 1.4em 0;
-  border-bottom:20px solid #3d3d3d;
-  box-shadow:none;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {display: block; }
+audio,
+canvas,
+video { display: inline-block; }
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden] {
+  display: none; }
+
+/* Base */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0; }
+
+a:focus {
+  outline: thin dotted; }
+a:active,
+a:hover {
+  outline: 0; }
+h1 {
+  font-size: 2em; }
+abbr[title] {
+  border-bottom: 1px dotted; }
+b,
+strong {
+  font-weight: bold; }
+dfn {
+  font-style: italic; }
+mark {
+  background: #ff0;
+  color: #000; }
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 0; }
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+legend {
+  border: 0;
+  padding: 0;
 }
 
-.navbar-fixed-top{
-  position:relative;
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
 }
+button,
+input {
+  line-height: normal; }
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
 
-body{
-  padding-top:0;
-  font-family: "wf_SegoeUI","Segoe UI","Segoe","Segoe WP", "Myriad Pro", "Tahoma","Verdana","Arial","sans-serif";
-}
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 306, ../sass/includes/normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
 
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+/* line 316, ../sass/includes/normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
 
-footer{
-  background-color:#3d3d3d;
-  border:0;
-  color:#fff;
-}
-footer a{
-  color:#fff;
-}
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 327, ../sass/includes/normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 340, ../sass/includes/normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 349, ../sass/includes/normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+/* line 359, ../sass/includes/normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 372, ../sass/includes/normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* @group Base Styles -------------------- */
+/* line 3, ../sass/includes/base.scss */
+body {
+  font-family: "Open Sans", "Segoe UI", sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  background-color: #ebebeb;
+  padding-top: 66px; }
+
+/* Utilities */
+/* line 12, ../sass/includes/base.scss */
+.wrap {
+  max-width: 1284px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 26px; }
+
+/* see: http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+/* line 19, ../sass/includes/base.scss */
+.hidden-accessible {
+  position: absolute !important;
+  opacity: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+/* clearfix (now called group, via http://css-tricks.com/snippets/css/clear-fix/) */
+/* line 29, ../sass/includes/base.scss */
+.group:before,
+.group:after {
+  content: "";
+  display: table; }
+
+/* line 30, ../sass/includes/base.scss */
+.group:after {
+  clear: both; }
+
+/* line 31, ../sass/includes/base.scss */
+.group {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */ }
+
+/* apply a natural box layout model to all elements; see: http://paulirish.com/2012/box-sizing-border-box-ftw/; */
+/* ...also, dont' be concerned about the everything selector here, as it's not being used as a compound selector, so it's performance impact is very nominal */
+/* line 35, ../sass/includes/base.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 39, ../sass/includes/base.scss */
+a {
+  color: #0d79c8;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease; }
+  /* line 44, ../sass/includes/base.scss */
+  a:hover {
+    text-decoration: underline; }
+
+/* @end Base Styles */
+/* @group Layout Styles -------------------- */
+/* line 3, ../sass/includes/layout.scss */
+.section-header {
+  text-align: center; }
+  /* line 5, ../sass/includes/layout.scss */
+  .section-header .section-title {
+    font-size: 2em;
+    letter-spacing: -1px;
+    margin: 0 0 10px;
+    line-height: 1; }
+  /* line 7, ../sass/includes/layout.scss */
+  .section-header .description {
+    margin: 0; }
+
+/* @end Layout */
+/* @group Site Header styles -------------------- */
+/* line 3, ../sass/includes/global/siteheader.scss */
+.site-header {
+  background-color: #fff;
+  height: 66px;
+  width: 100%;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  font-size: 0.8125em;
+  border-bottom: 1px solid #dbdbdb; }
+  /* line 12, ../sass/includes/global/siteheader.scss */
+  .site-header a {
+    display: inline-block; }
+  /* line 14, ../sass/includes/global/siteheader.scss */
+  .site-header .branding {
+    display: block;
+    float: left;
+    -webkit-transition: opacity ease;
+    -webkit-transition-delay: 0.3s;
+    -moz-transition: opacity ease 0.3s;
+    -o-transition: opacity ease 0.3s;
+    transition: opacity ease 0.3s; }
+    /* line 18, ../sass/includes/global/siteheader.scss */
+    .site-header .branding:hover {
+      opacity: .75; }
+  /* line 22, ../sass/includes/global/siteheader.scss */
+  .site-header .site-nav {
+    display: block;
+    float: right; }
+    /* line 24, ../sass/includes/global/siteheader.scss */
+    .site-header .site-nav > a {
+      margin: 0 40px 0 0;
+      line-height: 36px; }
+  /* line 28, ../sass/includes/global/siteheader.scss */
+  .site-header .site-login {
+    float: right;
+    background-color: #ebebeb;
+    padding: 7px 30px 7px 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    background-image: url(../img/ui/login-door.svg);
+    background-position: 95% center;
+    background-repeat: no-repeat; }
+  /* line 38, ../sass/includes/global/siteheader.scss */
+  .site-header .navtrigger {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    z-index: 9999; }
+    /* line 40, ../sass/includes/global/siteheader.scss */
+    .site-header .navtrigger .hambergericon {
+      display: none; }
+
+/* @end site header */
+/* @group Intro Styles -------------------- */
+/* line 3, ../sass/includes/global/intro.scss */
+.page-intro {
+  background-color: #0f7ccc;
+  background-image: url(../img/ui/honeycomb-pattern.svg);
+  background: url("../img/ui/honeycomb-pattern.svg"), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjAlIiByPSIxMjAwIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTJhNGUwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMGY3Y2NjIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background: url("../img/ui/honeycomb-pattern.svg"), -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 1200, color-stop(0%, #12a4e0), color-stop(100%, #0f7ccc));
+  background: url("../img/ui/honeycomb-pattern.svg"), -webkit-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  background: url("../img/ui/honeycomb-pattern.svg"), -moz-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  background: url("../img/ui/honeycomb-pattern.svg"), -o-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  background: url("../img/ui/honeycomb-pattern.svg"), radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  color: #fff;
+  text-align: center;
+  -webkit-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.4);
+  padding: 40px 0; }
+  /* line 14, ../sass/includes/global/intro.scss */
+  .page-intro .page-heading {
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
+    font-size: 2.625em;
+    letter-spacing: -2px;
+    margin: 15px 0 25px;
+    line-height: 1; }
+  /* line 20, ../sass/includes/global/intro.scss */
+  .page-intro .description {
+    font-size: 0.9375em;
+    max-width: 656px;
+    margin: 0 auto;
+    margin-top: 20px; }
+    /* line 22, ../sass/includes/global/intro.scss */
+    .page-intro .description a {
+      color: inherit;
+      text-decoration: underline;
+      font-weight: bold; }
+
+/* @end Intro styles */
+/* @group Email Signup Styles -------------------- */
+/* line 3, ../sass/includes/global/email-signup.scss */
+.email-signup {
+  padding: 100px 0;
+  color: #fff;
+  background-color: #44413d;
+  background-image: url(../img/hands-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  /*@include background-size(cover!important);*/
+  /*^ causing performance issues apparently when used with "background-attachment:fixed;" http://stackoverflow.com/questions/7033979/my-fixed-background-made-scrolling-the-site-very-slow-what-can-i-do-to-improve*/
+  -webkit-box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.3); }
+  /* line 15, ../sass/includes/global/email-signup.scss */
+  .email-signup .section-title {
+    font-size: 2.375em;
+    letter-spacing: -2px;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    line-height: 1;
+    margin-bottom: 20px; }
+  /* line 22, ../sass/includes/global/email-signup.scss */
+  .email-signup .section-header {
+    max-width: 950px;
+    margin: 0 auto; }
+
+/* line 26, ../sass/includes/global/email-signup.scss */
+.mc_embed_signup {
+  margin: 40px auto 0;
+  max-width: 500px;
+  position: relative; }
+  /* line 28, ../sass/includes/global/email-signup.scss */
+  .mc_embed_signup .email-input {
+    width: 74%;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    line-height: 75px;
+    padding: 0 30px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    border: none;
+    font-size: 1.375em;
+    font-style: italic; }
+    /* line 39, ../sass/includes/global/email-signup.scss */
+    .mc_embed_signup .email-input:hover, .mc_embed_signup .email-input:focus {
+      color: #2c2c2c;
+      outline: none; }
+  /* line 43, ../sass/includes/global/email-signup.scss */
+  .mc_embed_signup .submit-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 75px;
+    border: 1px solid #c2c2c2;
+    padding: 0 30px;
+    background-color: #bfbebe;
+    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4);
+    -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4);
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q1ZDRkNCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2FhYTlhOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d5d4d4), color-stop(100%, #aaa9a9));
+    background-image: -webkit-linear-gradient(#d5d4d4, #aaa9a9);
+    background-image: -moz-linear-gradient(#d5d4d4, #aaa9a9);
+    background-image: -o-linear-gradient(#d5d4d4, #aaa9a9);
+    background-image: linear-gradient(#d5d4d4, #aaa9a9);
+    -moz-border-radius-topright: 6px;
+    -webkit-border-top-right-radius: 6px;
+    border-top-right-radius: 6px;
+    -moz-border-radius-bottomright: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.375em;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); }
+    /* line 60, ../sass/includes/global/email-signup.scss */
+    .mc_embed_signup .submit-button:hover, .mc_embed_signup .submit-button:active {
+      background-color: #9c9c9c;
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FhYTlhOSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q1ZDRkNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+      background-size: 100%;
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #aaa9a9), color-stop(100%, #d5d4d4));
+      background-image: -webkit-linear-gradient(#aaa9a9, #d5d4d4);
+      background-image: -moz-linear-gradient(#aaa9a9, #d5d4d4);
+      background-image: -o-linear-gradient(#aaa9a9, #d5d4d4);
+      background-image: linear-gradient(#aaa9a9, #d5d4d4); }
+
+/* @end Email Signup Styles */
+/* @group Framework Author Info -------------------- */
+/* line 3, ../sass/includes/global/framework-authors-info.scss */
+.framework-author-info {
+  padding: 100px 0;
+  background-color: #fff; }
+  /* line 5, ../sass/includes/global/framework-authors-info.scss */
+  .framework-author-info .section-heading {
+    color: #0d79c8;
+    font-size: 2em;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin: 0 0 40px; }
+  /* line 12, ../sass/includes/global/framework-authors-info.scss */
+  .framework-author-info .section-header {
+    max-width: 812px;
+    margin: 0 auto; }
+  /* line 16, ../sass/includes/global/framework-authors-info.scss */
+  .framework-author-info .description > a {
+    text-decoration: underline; }
+
+/* @end Framework Author Info */
+/* @group Site Footer Styles -------------------- */
+/* line 3, ../sass/includes/global/sitefooter.scss */
+.site-footer {
+  padding: 50px 0;
+  text-align: center;
+  -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2); }
+  /* line 8, ../sass/includes/global/sitefooter.scss */
+  .no-boxshadow .site-footer {
+    border-top: 1px solid #cbcbcb; }
+  /* line 12, ../sass/includes/global/sitefooter.scss */
+  .site-footer .footer-site-nav > a {
+    font-size: 0.875em;
+    font-weight: bold;
+    margin: 0 20px; }
+  /* line 19, ../sass/includes/global/sitefooter.scss */
+  .site-footer p {
+    font-size: 0.9375em; }
+
+/* @end Site Footer Styles */
+/* @group Framework Matrix styles -------------------- */
+/* line 3, ../sass/includes/homepage/framework-matrix.scss */
+.framework-matrix {
+  padding: 100px 0; }
+  /* line 5, ../sass/includes/homepage/framework-matrix.scss */
+  .framework-matrix .section-header {
+    color: #737373; }
+  /* line 6, ../sass/includes/homepage/framework-matrix.scss */
+  .framework-matrix .section-title {
+    color: #2e2e2e; }
+  /* line 8, ../sass/includes/homepage/framework-matrix.scss */
+  .framework-matrix .framework-list {
+    margin: 25px 0 0;
+    padding: 0;
+    list-style: none;
+    text-align: center; }
+  /* line 10, ../sass/includes/homepage/framework-matrix.scss */
+  .framework-matrix .framework-item {
+    margin: 10px 8px;
+    background-color: #f2f2f2;
+    display: inline-block;
+    min-height: 160px;
+    width: 184px;
+    text-align: center;
+    padding: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-transition: -webkit-transform 0.2s ease;
+    -moz-transition: -moz-transform 0.2s ease;
+    -o-transition: -o-transform 0.2s ease;
+    transition: transform 0.2s ease; }
+    /* line 22, ../sass/includes/homepage/framework-matrix.scss */
+    .framework-matrix .framework-item:hover {
+      -webkit-transform: translateY(-3px);
+      -moz-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+      -o-transform: translateY(-3px);
+      transform: translateY(-3px); }
+    /* line 24, ../sass/includes/homepage/framework-matrix.scss */
+    .framework-matrix .framework-item > a {
+      display: block;
+      position: relative;
+      -webkit-transition: opacity 0.3s ease;
+      -moz-transition: opacity 0.3s ease;
+      -o-transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease; }
+      /* line 29, ../sass/includes/homepage/framework-matrix.scss */
+      .framework-matrix .framework-item > a:hover {
+        text-decoration: none;
+        opacity: .6;
+        -webkit-transition: opacity 0.3s ease;
+        -moz-transition: opacity 0.3s ease;
+        -o-transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease; }
+    /* line 36, ../sass/includes/homepage/framework-matrix.scss */
+    .framework-matrix .framework-item .framework-name {
+      background-color: #fff;
+      width: 100%;
+      height: 110px;
+      margin: 0;
+      padding: 0;
+      line-height: 110px;
+      color: #5d5d5d;
+      letter-spacing: -1px; }
+    /* line 44, ../sass/includes/homepage/framework-matrix.scss */
+    .framework-matrix .framework-item .view-framework {
+      margin: 6px 0 0;
+      width: 100%;
+      border: 1px solid #0b5f9c;
+      background-color: #0f7ecd;
+      color: #fff;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 30px;
+      text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.6);
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+      -o-border-radius: 2px;
+      border-radius: 2px;
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzExOGRkMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBkNmNjNSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+      background-size: 100%;
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #118dd3), color-stop(100%, #0d6cc5));
+      background-image: -webkit-linear-gradient(#118dd3, #0d6cc5);
+      background-image: -moz-linear-gradient(#118dd3, #0d6cc5);
+      background-image: -o-linear-gradient(#118dd3, #0d6cc5);
+      background-image: linear-gradient(#118dd3, #0d6cc5);
+      -webkit-box-shadow: inset 0px 0px 1px 1px rgba(20, 159, 218, 0.7);
+      -moz-box-shadow: inset 0px 0px 1px 1px rgba(20, 159, 218, 0.7);
+      box-shadow: inset 0px 0px 1px 1px rgba(20, 159, 218, 0.7); }
+    /* line 56, ../sass/includes/homepage/framework-matrix.scss */
+    .framework-matrix .framework-item .framework-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: center center; }
+  /* line 68, ../sass/includes/homepage/framework-matrix.scss */
+  .framework-matrix footer {
+    color: #737373;
+    text-align: center; }
+    /* line 70, ../sass/includes/homepage/framework-matrix.scss */
+    .framework-matrix footer a {
+      text-decoration: underline; }
+
+/* @end Framework Matrix */
+/* @group About BrowserSwarm -------------------- */
+/* line 3, ../sass/includes/homepage/about-content.scss */
+.about-browserswarm {
+  padding: 100px 0;
+  color: #fff;
+  background-color: #0f7ecd;
+  background-image: url(../img/honeycomb-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  overflow: hidden;
+  /*@include background-size(cover!important);*/
+  /*^ causing performance issues apparently when used with "background-attachment:fixed;" http://stackoverflow.com/questions/7033979/my-fixed-background-made-scrolling-the-site-very-slow-what-can-i-do-to-improve*/
+  -webkit-box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.3);
+  /*.ielogo,
+  .a2logo,
+  .bsicon { @include filter(drop-shadow(0 1px 3px rgba(0,0,0,.4))) }*/
+  /*Removed filter because it was causing rasterization (blur) on iOS*/ }
+  /* line 16, ../sass/includes/homepage/about-content.scss */
+  .about-browserswarm .article-title {
+    letter-spacing: -2px;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    line-height: 1; }
+  /* line 18, ../sass/includes/homepage/about-content.scss */
+  .about-browserswarm .content {
+    font-size: 0.9375em;
+    line-height: 1.2em;
+    width: 65.95745%;
+    float: left; }
+    /* line 24, ../sass/includes/homepage/about-content.scss */
+    .about-browserswarm .content > p {
+      margin: 20px 0 0; }
+      /* line 26, ../sass/includes/homepage/about-content.scss */
+      .about-browserswarm .content > p:first-child {
+        margin-top: 0; }
+  /* line 32, ../sass/includes/homepage/about-content.scss */
+  .about-browserswarm figure {
+    width: 31.91489%;
+    float: right; }
+    /* line 34, ../sass/includes/homepage/about-content.scss */
+    .about-browserswarm figure img {
+      display: block;
+      margin: 0 auto; }
+  /* line 38, ../sass/includes/homepage/about-content.scss */
+  .about-browserswarm .about-general {
+    margin-bottom: 60px; }
+    /* line 40, ../sass/includes/homepage/about-content.scss */
+    .about-browserswarm .about-general .article-title {
+      font-size: 2.625em;
+      margin: 0 0 40px; }
+  /* line 44, ../sass/includes/homepage/about-content.scss */
+  .about-browserswarm .about-credits {
+    clear: both; }
+    /* line 46, ../sass/includes/homepage/about-content.scss */
+    .about-browserswarm .about-credits .article-title {
+      font-size: 2em; }
+  /* line 50, ../sass/includes/homepage/about-content.scss */
+  .about-browserswarm .ielogo {
+    margin-top: -10px; }
+  /* line 52, ../sass/includes/homepage/about-content.scss */
+  .about-browserswarm .a2logo {
+    margin-top: 40px; }
+
+/* @end About BrowserStack */
+/* @group Media Queries -------------------- */
+@media screen and (max-width: 1028px) {
+  /* line 7, ../sass/includes/mediaqueries.scss */
+  .site-header .drop {
+    display: none; }
+  /* line 8, ../sass/includes/mediaqueries.scss */
+  .site-header .site-login {
+    background-position: 86% center; } }
+@media screen and (max-width: 915px) {
+  /* line 22, ../sass/includes/mediaqueries.scss */
+  .site-header .site-nav > a {
+    margin-right: 30px; } }
+@media screen and (max-width: 875px) {
+  /* line 36, ../sass/includes/mediaqueries.scss */
+  .site-header .logo {
+    width: 220px;
+    margin-top: 4px; }
+
+  /* line 44, ../sass/includes/mediaqueries.scss */
+  .site-footer .footer-site-nav > a {
+    margin: 0 10px; } }
+@media screen and (max-width: 795px) {
+  /* line 60, ../sass/includes/mediaqueries.scss */
+  .site-header .site-nav > a {
+    margin-right: 20px; }
+
+  /* line 70, ../sass/includes/mediaqueries.scss */
+  .section-header .description br {
+    display: none; } }
+@media screen and (max-width: 760px) {
+  /* line 82, ../sass/includes/mediaqueries.scss */
+  .site-header .navtrigger {
+    margin-top: 5px;
+    cursor: pointer; }
+    /* line 86, ../sass/includes/mediaqueries.scss */
+    .site-header .navtrigger .hambergericon {
+      display: block; }
+  /* line 90, ../sass/includes/mediaqueries.scss */
+  .site-header .navwrap {
+    display: none;
+    position: absolute;
+    right: 9px;
+    top: -6px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    padding-top: 46px; }
+    /* line 99, ../sass/includes/mediaqueries.scss */
+    .site-header .navwrap.open {
+      display: block; }
+  /* line 103, ../sass/includes/mediaqueries.scss */
+  .site-header .site-login {
+    float: none;
+    display: block;
+    background-color: transparent;
+    background-position: 96% center;
+    border: none;
+    border-top: 1px solid #dbdbdb;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0; }
+  /* line 112, ../sass/includes/mediaqueries.scss */
+  .site-header .site-nav {
+    float: none; }
+    /* line 114, ../sass/includes/mediaqueries.scss */
+    .site-header .site-nav > a {
+      display: block;
+      padding: 7px 10px;
+      border-top: 1px solid #dbdbdb;
+      margin: 0;
+      line-height: 1.5; }
+
+  /* line 127, ../sass/includes/mediaqueries.scss */
+  .about-browserswarm .article-title {
+    text-align: center; }
+  /* line 129, ../sass/includes/mediaqueries.scss */
+  .about-browserswarm .content {
+    float: none;
+    width: 100%; }
+  /* line 131, ../sass/includes/mediaqueries.scss */
+  .about-browserswarm figure {
+    width: auto;
+    float: none;
+    margin-top: 40px; }
+  /* line 133, ../sass/includes/mediaqueries.scss */
+  .about-browserswarm .bsicon {
+    width: 100px; } }
+@media screen and (max-width: 460px) {
+  /* line 143, ../sass/includes/mediaqueries.scss */
+  .wrap {
+    padding: 0 12px; }
+
+  /* line 145, ../sass/includes/mediaqueries.scss */
+  body {
+    padding-top: 56px; }
+
+  /* line 147, ../sass/includes/mediaqueries.scss */
+  .site-header {
+    padding: 10px 0;
+    height: 56px; }
+    /* line 149, ../sass/includes/mediaqueries.scss */
+    .site-header .navtrigger {
+      margin-top: 4px; }
+
+  /* line 157, ../sass/includes/mediaqueries.scss */
+  .framework-matrix .framework-item {
+    width: 100%;
+    margin: 6px 0 0;
+    min-height: 0;
+    padding: 4px; }
+    /* line 163, ../sass/includes/mediaqueries.scss */
+    .framework-matrix .framework-item .framework-logo {
+      display: none; }
+    /* line 165, ../sass/includes/mediaqueries.scss */
+    .framework-matrix .framework-item .framework-name {
+      line-height: 1;
+      height: auto;
+      padding: 10px 5px;
+      font-size: 1.5em; }
+    /* line 171, ../sass/includes/mediaqueries.scss */
+    .framework-matrix .framework-item .view-framework {
+      margin-top: 0; }
+  /* line 175, ../sass/includes/mediaqueries.scss */
+  .framework-matrix footer {
+    font-size: 0.875em; }
+  
+  .about-browserswarm .about-general .article-title {
+    font-size: 2.25em; }
+
+  .mc_embed_signup .email-input {
+    width: 100%;
+    line-height: 55px;
+    text-align: center; }
+
+  .mc_embed_signup .submit-button {
+    position: static;
+    margin: 10px 0 0;
+    width: 100%;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    height: 50px; }
+
+  footer .footer-site-nav > a {
+    margin: 0;
+    display: block; } }
+/* @end Media Queries */
