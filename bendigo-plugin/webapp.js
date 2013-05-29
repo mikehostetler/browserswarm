@@ -20,15 +20,19 @@ module.exports = function(ctx, cb){
 
     if(!framework) return next();
     
-    var jobs = res.locals.models.Job.find({repo_url: framework.repo_url}).limit(10).exec(function(){
+    var jobs = res.locals.models.Job
+                 .find({repo_url: framework.repo_url})
+                 .limit(10)
+                 .exec(function(){
+
       console.log("!!!", arguments);
+      // TODO : Filter jobs for browsers
+      // TODO : Marshall into usable json
+      res.send(swig.compileFile(__dirname + "/framework.html").render({
+          "id" : framework.id
+        , "name" : framework.name
+      }))
     })
-
-
-    res.send(swig.compileFile(__dirname + "/framework.html").render({
-        "id" : framework.id
-      , "name" : framework.name
-    }))
   })
 
   ctx.registerBlock("Nav", function(context, cb){
