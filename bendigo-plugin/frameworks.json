@@ -1,0 +1,71 @@
+[{
+    "id" : "jquery",
+    "src" : "/ext/bendigo-plugin/framework-logo/jquery.png",
+    "name" : "jQuery"
+}, {
+    "id" : "jquery-ui",
+    "src" : "/ext/bendigo-plugin/framework-logo/jqueryui.png",
+    "name" : "jQuery UI"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/jquerymobile.png",
+	"name" : "jQuery Mobile"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/dojo.jpg",
+	"name" : "Dojo Toolkit"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/mootools.png",
+	"name" : "Mootools"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/prototype.png",
+	"name" : "Prototype"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/modernizr.png",
+	"name" : "Modernizr"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/underscorejs.png",
+	"name" : "Underscore JS"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/backbonejs.png",
+	"name" : "Backbone JS"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/knockout.png",
+	"name" : "Knockout"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/ember.png",
+	"name" : "Ember"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/angular.png",
+	"name" : "Angular JS"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/enyo.png",
+	"name" : "Enyo"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/jqtouch.png",
+	"name" : "jQTouch"
+},{
+	"name" : "jQuery Validate"
+},{
+	"name" : "jQuery Cycle"
+},{
+	"name" : "jQuery Form"
+},{
+	"name" : "jQuery Easing"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/zeptojs.png",
+	"name" : "Zepto JS"
+},{
+	"name" : "zui.js"
+},{
+	"name" : "qooxdoo.js"
+},{
+	"name" : "stapes.js"
+},{
+	"name" : "Twitter Bootstrap"
+},{
+	"src" : "/ext/bendigo-plugin/framework-logo/extjs.jpg",
+	"name" : "ExtJS"
+},{
+	"name" : "Sencha Touch"
+},{
+	"name" : "Scriptaculous"
+}]
