@@ -20,7 +20,10 @@ module.exports = function(ctx, cb){
 
     if(!framework) return next();
     
-    console.log("!!>", framework);
+    var jobs = res.locals.models.Job.find({repo_url: framework.repo_url}).limit(10).exec(function(){
+      console.log("!!!", arguments);
+    })
+
 
     res.send(swig.compileFile(__dirname + "/framework.html").render({
         "id" : framework.id

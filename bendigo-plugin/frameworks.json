@@ -1,9 +1,9 @@
 [{
     "id" : "jquery",
     "src" : "/ext/bendigo-plugin/framework-logo/jquery.png",
-    "name" : "jQuery"
+    "name" : "jQuery",
+    "repo_url" : "https://github.com/estebansoze/jquery"
 }, {
-    "id" : "jquery-ui",
     "src" : "/ext/bendigo-plugin/framework-logo/jqueryui.png",
     "name" : "jQuery UI"
 },{

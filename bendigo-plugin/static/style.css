@@ -1351,3 +1351,24 @@ footer {
   margin:2em auto;
   border-radius:10px;
 }
+
+.page-intro {
+  background-color: #0f7ccc;
+  background-image: url(./honeycomb-pattern.png);
+  background: url("./honeycomb-pattern.png"), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjAlIiByPSIxMjAwIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTJhNGUwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMGY3Y2NjIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background: url("./honeycomb-pattern.png"), -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 1200, color-stop(0%, #12a4e0), color-stop(100%, #0f7ccc));
+  background: url("./honeycomb-pattern.png"), -webkit-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  background: url("./honeycomb-pattern.png"), -moz-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  background: url("./honeycomb-pattern.png"), -o-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+  background: url("./honeycomb-pattern.png"), radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
+   }
+
+.site-header .site-login {
+  background-image: url(./login-door.png);
+}
+.about-browserswarm {
+  background-image: url(./honeycomb-bg.jpg);
+}
+.email-signup {
+  background-image: url(./hands-bg.jpg);
+}
