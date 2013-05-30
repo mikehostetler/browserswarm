@@ -5,6 +5,10 @@
     , "ExtraStyles" : "<link rel='stylesheet' href = '/ext/bendigo-plugin/style.css' />"
     , "FooterText" : "./footer.html"
     , "AfterHead" : "./after-head.html"
+
+
+    , "JobPagePreTitle" : "<p class='job-pre-title'>Framework / Placeholder</p>"
+    , "JobPagePostTitle" : "<p class='job-post-title'>Placeholder / Placeholder</p>"
     }
 
  , "webapp" : "webapp.js"

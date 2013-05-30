@@ -1352,7 +1352,7 @@ footer {
   border-radius:10px;
 }
 
-.page-intro {
+.page-intro, .job-page-intro   {
   background-color: #0f7ccc;
   background-image: url(./honeycomb-pattern.png);
   background: url("./honeycomb-pattern.png"), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjAlIiByPSIxMjAwIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTJhNGUwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMGY3Y2NjIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
@@ -1361,7 +1361,18 @@ footer {
   background: url("./honeycomb-pattern.png"), -moz-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
   background: url("./honeycomb-pattern.png"), -o-radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
   background: url("./honeycomb-pattern.png"), radial-gradient(center top, circle cover, #12a4e0, #0f7ccc 1200px);
-   }
+  color: #fff;
+  text-align: center;
+  -webkit-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.4);
+  padding: 40px 0; }
+.page-intro .page-heading {
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
+  font-size: 2.625em;
+  letter-spacing: -2px;
+  margin: 15px 0 25px;
+  line-height: 1; }
 
 .site-header .site-login {
   background-image: url(./login-door.png);
@@ -1392,4 +1403,40 @@ footer{
 
 p {
   font-size: 0.9375em; }
+
 .StriderBlock_FooterText{ margin:0;}
+
+.job-wrap{
+  max-width: 1284px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 26px;
+}
+.job-page-intro {
+  padding-bottom:77px;
+}
+
+/* all the important hacks are to override bootstrap */
+.job-title {
+  max-width: 1284px;
+  width:inherit !important;
+  float:none !important;
+  margin-left: 0 !important;
+  margin: 0 auto !important;
+  position: relative;
+  padding: 0 26px;
+}
+
+.job-title h3 {
+  text-align: left;
+  max-width: 100%;
+  margin: 0 auto 25px auto;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
+  font-size: 3.25em;
+  letter-spacing: -2px;
+  line-height: 1;
+  color: #fff;
+}
+
+
+
