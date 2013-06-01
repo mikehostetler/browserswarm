@@ -13,7 +13,7 @@
     "url": "git://github.com/appendto/strider.git"
   },
   "dependencies": {
-    "strider": "1.2.12",
+    "strider": "1.2.13",
     "strider-browserstack": "https://github.com/Strider-CD/strider-browserstack/archive/master.tar.gz",
     "strider-qunit": "https://github.com/Strider-CD/strider-qunit/archive/master.tar.gz",
     "swig": "~0.13.5"
