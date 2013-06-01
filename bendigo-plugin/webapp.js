@@ -50,7 +50,7 @@ module.exports = function(ctx, cb){
           "id" : framework.id
         , "name" : framework.name
         , "results" : mockData
-        , "repo" : "peterbraden/jquery"
+        , "repo" : framework.repo
         , "browsers" : [
           {id : "chrome24", name : "Chrome 24", ico : "chrome"}
         , {id : "chrome25", name : "Chrome 25", ico : "chrome"}

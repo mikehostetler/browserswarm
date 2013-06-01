@@ -2,10 +2,14 @@
     "id" : "jquery",
     "src" : "/ext/bendigo-plugin/framework-logo/jquery.png",
     "name" : "jQuery",
-    "repo_url" : "https://github.com/estebansoze/jquery"
+    "repo_url" : "https://github.com/niallo/jquery",
+    "repo" : "niallo/jquery"
 }, {
+    "id" : "jquery-ui",
     "src" : "/ext/bendigo-plugin/framework-logo/jqueryui.png",
-    "name" : "jQuery UI"
+    "name" : "jQuery UI",
+    "repo_url" : "https://github.com/niallo/jquery-ui",
+    "repo" : "niallo/jquery-ui"
 },{
 	"src" : "/ext/bendigo-plugin/framework-logo/jquerymobile.png",
 	"name" : "jQuery Mobile"
