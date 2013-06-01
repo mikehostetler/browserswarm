@@ -90,7 +90,9 @@
 				</div>
 
 				<ul class="joblist">
-					<li><a href="/peterbraden/jquery/latest_build">Job ID 89736645287...</a></li>
+          {% for job in results %}
+            <li><a href="{{ repo }}/{{ job.id }}">Job ID {{ job.id }}</a></li>
+          {% endfor %}
 				</ul>
 
 			</aside>
@@ -98,143 +100,24 @@
 			<section class="browser-stats">
 
 				<div class="title-row">
-
+        {% for browser in browsers %}
 					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-chrome.png" align="center" border="0" alt="Chrome 24" width="48" height="48" />
-						<p>Chrome 24</p>
+            <img src="/ext/bendigo-plugin/browser-logo/browser-{{ browser.ico }}.png"
+                align="center" border="0" alt="{{ browser.name }}" width="48" height="48" />
+            <p>{{ browser.name }}</p>
 					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-chrome.png" align="center" border="0" alt="Chrome 25" width="48" height="48" />
-						<p>Chrome 25</p>
-					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-firefox.png" align="center" border="0" alt="Firefox 18 Mac OS X" width="48" height="48" />
-						<p class="small-line">Firefox 18<br />Mac OS X</p>
-					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-firefox.png" align="center" border="0" alt="Firefox 19" width="48" height="48" />
-						<p>Firefox 19</p>
-					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-ie-6.png" align="center" border="0" alt="IE 6" width="46" height="48" />
-						<p>IE 6</p>
-					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-ie-8.png" align="center" border="0" alt="IE 7" width="48" height="48" />
-						<p>IE 7</p>
-					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-ie-8.png" align="center" border="0" alt="IE 8" width="48" height="48" />
-						<p>IE 8</p>
-					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-ie.png" align="center" border="0" alt="IE 9" width="53" height="48" />
-						<p>IE 9</p>
-					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-ie-10.png" align="center" border="0" alt="IE 10" width="42" height="41" />
-						<p class="larger-line">IE 10</p>
-					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-safari.png" align="center" border="0" alt="Safari 5.1" width="42" height="46" />
-						<p class="large-line">Safari 5.1</p>
-					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-safari.png" align="center" border="0" alt="Safari 6.0" width="42" height="46" />
-						<p class="large-line">Safari 6.0</p>
-					</div>
-
-					<div class="browser-title">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-opera.png" align="center" border="0" alt="Opera 12.0" width="48" height="48" />
-						<p>Opera 12.0</p>
-					</div>
-
-					<div class="browser-title last">
-						<img src="/ext/bendigo-plugin/browser-logo/browser-opera.png" align="center" border="0" alt="Opera 13.0" width="48" height="48" />
-						<p>Opera 13.0</p>
-					</div>
-
+        {% endfor %}
 				</div>
 
 				<div class="results-row">
 
-					<ul id="chrome24" class="browser-results first">
-						<li class="supported"></li>
+          {% for browser in browsers %}
+          <ul id="{{ browser.id }}" class="browser-results first">
+            {% for result in results %}
+            <li class="{{ result[browser.id] }}"></li>
+            {% endfor %}
 					</ul>
-
-					<ul id="chrome25" class="browser-results">
-						<li class="supported"></li>
-					</ul>
-
-					<ul id="firefox18" class="browser-results">
-						<li class="supported"></li>
-					</ul>
-
-					<ul id="firefox19" class="browser-results">
-						<li class="supported"></li>
-					</ul>
-
-					<ul id="ie6" class="browser-results">
-						<li class="supported"></li>
-					</ul>
-
-					<ul id="ie7" class="browser-results">
-						<li class="supported"></li>
-					</ul>
-
-					<ul id="ie8" class="browser-results">
-						<li class="supported"></li>
-					</ul>
-
-					<ul id="ie9" class="browser-results">
-						<li class="supported"></li>
-					</ul>
-
-					<ul id="ie10" class="browser-results">
-						<li class="supported"></li>
-					</ul>
-
-					<ul id="safari5" class="browser-results">
-						<li class="supported"></li>
-						<!--li class="unknown"></li>
-						<li class="supported"></li>
-						<li class="not"></li>
-						<li class="supported"></li>
-						<li class="supported"></li>
-						<li class="supported"></li>
-						<li class="supported"></li>
-						<li class="supported"></li>
-						<li class="not"></li>
-						<li class="not"></li>
-						<li class="supported"></li>
-						<li class="supported"></li>
-						<li class="supported"></li>
-						<li class="not"></li>
-						<li class="supported"></li-->
-					</ul>
-
-					<ul id="safari6" class="browser-results">
-						<li class="supported"></li>
-					</ul>
-
-					<ul id="opera12" class="browser-results">
-						<li class="supported"></li>
-					</ul>
-
-					<ul id="opera13" class="browser-results last">
-						<li class="supported"></li>
-					</ul>
-
+          {% endfor %}
 				</div>
 
 				<div class="shadow"></div>
