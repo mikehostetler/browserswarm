@@ -9,6 +9,9 @@
 
     , "JobPagePreTitle" : "<p class='job-pre-title'>Framework / Placeholder</p>"
     , "JobPagePostTitle" : "<p class='job-post-title'>Placeholder / Placeholder</p>"
+
+    , "JobPagePreCols" : "./JobPagePreCols.html"
+    , "JobPagePreConsole" : "<h4 class='job-page-pre-console'>Job Output</h4>"
     }
 
  , "webapp" : "webapp.js"
