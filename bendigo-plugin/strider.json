@@ -12,6 +12,7 @@
 
     , "JobPagePreCols" : "./JobPagePreCols.html"
     , "JobPagePreConsole" : "<h4 class='job-page-pre-console'>Job Output</h4>"
+    , "AfterJobPage" : "./AfterJobPage.html"
     }
 
  , "webapp" : "webapp.js"
