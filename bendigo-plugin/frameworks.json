@@ -3,7 +3,7 @@
     "src" : "/ext/bendigo-plugin/framework-logo/jquery.png",
     "name" : "jQuery",
     "repo_url" : "https://github.com/peterbraden/jquery",
-    "repo" : "peterbraden/jquery"
+    "repo" : "niallo/jquery"
 }, {
     "id" : "jquery-ui",
     "src" : "/ext/bendigo-plugin/framework-logo/jqueryui.png",
