@@ -2,7 +2,7 @@
     "id" : "jquery",
     "src" : "/ext/bendigo-plugin/framework-logo/jquery.png",
     "name" : "jQuery",
-    "repo_url" : "https://github.com/peterbraden/jquery",
+    "repo_url" : "https://github.com/niallo/jquery",
     "repo" : "niallo/jquery"
 }, {
     "id" : "jquery-ui",
