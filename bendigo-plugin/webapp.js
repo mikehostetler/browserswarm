@@ -48,9 +48,9 @@ module.exports = function(ctx, cb){
       var mockData = []
       for (x in jobs){ 
         var job = jobs[x]
-        console.log("Job: " , job._id)
-        var j = {id : job._id}
-        j.id_short  = (job._id + "").slice(0,9)
+        console.log("Job: " , job.id)
+        var j = {id : job.id}
+        j.id_short  = (job.id + "").slice(0,9)
         for (var i in browsers){
          j[browsers[i].id] = "unknown"
         }
