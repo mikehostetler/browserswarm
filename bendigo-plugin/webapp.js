@@ -86,7 +86,32 @@ module.exports = function(ctx, cb){
     fn(null, swig.compileFile(__dirname + '/dashboard.html').render({}));
  })
 
+  ctx.registerBlock("JobPagePreCols", function(context, fn){
+    var tmpl = swig.compileFile(__dirname  + "/JobPagePreCols.html")
+      , job = context.models.Job
+                 .find()
+                // Reverse chronological order
+                 .sort({'finished_timestamp': -1})
+                // Only jobs for this repo
+         //        .where('repo_url', framework.repo_url)
+                // Only finished jobs
+                 .where('finished_timestamp').ne(null)
+                // Only jobs which have not been archived
+                 .where('archived_timestamp', null)
+                 .limit(1)
+                 .populate('_owner')
+                 .lean(true)
+                 .exec(function(err, jobs){
 
+      var out = tmpl.render({
+        passrate : 0
+      , passed : 1234
+      , total : 9999
+      , duration: 123
+      })
+      fn(null, out);
+    })
+  })
   
 
   console.log("bendigo webapp extension loaded");
