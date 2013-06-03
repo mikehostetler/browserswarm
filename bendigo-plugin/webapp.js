@@ -37,8 +37,18 @@ module.exports = function(ctx, cb){
     if(!framework) return next();
     
     var jobs = res.locals.models.Job
-                 .find({repo_url: framework.repo_url})
+                 .find()
+                // Reverse chronological order
+                 .sort({'finished_timestamp': -1})
+                // Only jobs for this repo
+                 .where('repo_url', framework.repo_url)
+                // Only finished jobs
+                 .where('finished_timestamp').ne(null)
+                // Only jobs which have not been archived
+                 .where('archived_timestamp', null)
                  .limit(10)
+                 .populate('_owner')
+                 .lean(true)
                  .exec(function(err, jobs){
 
       // TODO : Filter jobs for browsers
@@ -48,9 +58,9 @@ module.exports = function(ctx, cb){
       var mockData = []
       for (x in jobs){ 
         var job = jobs[x]
-        console.log("Job: " , job.id)
-        var j = {id : job.id}
-        j.id_short  = (job.id + "").slice(0,9)
+        console.log("Job: " , job._id)
+        var j = {id : job._id}
+        j.id_short  = (job._id + "").slice(0,9)
         for (var i in browsers){
          j[browsers[i].id] = "unknown"
         }
