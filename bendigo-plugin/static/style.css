@@ -698,10 +698,10 @@ p.different-framework a {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center center; }
-.framework-matrix footer {
+.framework-matrix footer , .framework-matrix .footer{
   color: #737373;
   text-align: center; }
-.framework-matrix footer a {
+.framework-matrix footer a , .framework-matrix .footer a{
   text-decoration: underline; }
 
 /* @end Framework Matrix */
@@ -1527,3 +1527,10 @@ pre.console-output{
 .build-item-duration{ display:none;} 
 
 .job-page {margin-bottom:40px !important;}
+
+
+.framework-matrix .footer{ 
+  font-size:1em;
+  padding-top:1em;
+  padding-bottom:1em;
+}
