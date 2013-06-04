@@ -86,6 +86,16 @@ module.exports = function(ctx, cb){
     fn(null, swig.compileFile(__dirname + '/dashboard.html').render({}));
  })
 
+  ctx.registerBlock("JobPagePreTitle", function(context, fn){
+    fn(null, "<p class='job-pre-title'>Framework / " + context.repo_url+ "</p>")
+  })
+  ctx.registerBlock("JobPagePostTitle", function(context, fn){
+    fn(null,"<p class='job-post-title'>" + context.repo_url + " / " + context.repo_url + "</p>")
+  })
+  ctx.registerBlock("JobPagePreConsole", function(context, fn){
+    fn(null, "<h4 class='job-page-pre-console'>Job Output</h4>")
+  })
+
   ctx.registerBlock("JobPagePreCols", function(context, fn){
     var tmpl = swig.compileFile(__dirname  + "/JobPagePreCols.html")
       , job = context.models.Job
@@ -93,7 +103,7 @@ module.exports = function(ctx, cb){
                 // Reverse chronological order
                  .sort({'finished_timestamp': -1})
                 // Only jobs for this repo
-         //        .where('repo_url', framework.repo_url)
+                 .where('repo_url', context.repo_url)
                 // Only finished jobs
                  .where('finished_timestamp').ne(null)
                 // Only jobs which have not been archived
