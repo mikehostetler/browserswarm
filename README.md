@@ -122,4 +122,21 @@ Sometimes you may wish to execute a full deploy from clean. This will blow away 
 
 Again, this can take 10-15 minutes to complete. PHP, Java Node.JS and all the NPM modules must be installed on dotCloud.
 
+## Details of dotCloud config
+
+Hopefully you won't need to changed any of these details, but it may be helpful to be aware of how it works. 
+
+The dotCloud application is implemented as a `custom` service. This is because we require multiple languages in a single application container: Java, PHP and Node. Refer to the [dotCloud custom service documentation](http://docs.dotcloud.com/services/custom/) for gorey details.
+
+The build script for the `custom` service is in [dotcloud-builder/builder](https://github.com/appendto/strider/blob/master/dotcloud-builder/builder). The most likely reason to edit this script is to change the version of Node.JS used to run Bendigo on production. 
+
+The rest of the configuration is stored in the [dotcloud.yml](https://github.com/appendto/strider/blob/master/dotcloud.yml) file in the project root. This file specified:
+
+- PHP5-cli package should be installed in the dotCloud container.
+- The MongoDB URL (`DB_URI` variable)
+- The Internet-accessible hostname of Bendigo (`SERVER_NAME` variable)
+- The Github OAuth Application ID and Secret (`GITHUB_APP_ID` and `GITHUB_APP_SECRET` variables)
+- The SMTP server settings to send email (`SMTP_HOST`, `SMTP_USER`, `SMTP_PASS` variables) (currently using a free [Mailgun](http://mailgun.org) account)
+- The start command for the application server (`npm start`)
+    
 
