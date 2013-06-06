@@ -60,7 +60,6 @@ module.exports = function(ctx, cb){
         if (!job.tasks.length)
           continue;
 
-        console.log(job.tasks);
         var j = {id : job._id}
         j.id_short  = (job._id + "").slice(0,9)
 
@@ -117,10 +116,9 @@ module.exports = function(ctx, cb){
   })
 
   ctx.registerBlock("JobPagePreCols", function(context, fn){
-    console.log("Job Page: need job id", Object.keys(context))
-    console.dir(context)
     var tmpl = swig.compileFile(__dirname  + "/JobPagePreCols.html")
-      , job = context.models.Job
+    /*  , job = context.models.Job
+
                  .find()
                 // Reverse chronological order
                  .sort({'finished_timestamp': -1})
@@ -134,15 +132,39 @@ module.exports = function(ctx, cb){
                  .populate('_owner')
                  .lean(true)
                  .exec(function(err, jobs){
+*/
+      var job = null
+      for (var i = 0; i< context.jobs.length; i++){
+        if (context.jobs[i].id.indexOf(context.job_id) == 0){
+          job = context.jobs[i]
+          break
+        }
+      }
+      if (!job){
+        // something went wrong...
+        console.error("NO JOB FOUND!")
+        job = {}
+      }
+
+      var passtotal = 0
+        , testtotal = 0
+
+      for (var i = 0; i< job.tasks.length; i++){
+        if (!job.tasks[i].id == 'browserstack') continue;
+
+        passtotal += job.tasks[i].data.passed
+        testtotal += job.tasks[i].data.passed + job.tasks[i].data.failed
+
+      }
 
       var out = tmpl.render({
-        passrate : 0
-      , passed : 1234
-      , total : 9999
-      , duration: 123
+        passrate : passtotal / testtotal
+      , passed : passtotal
+      , total : testtotal
+      , duration: job.duration
       })
       fn(null, out);
-    })
+  //  })
   })
   
 
