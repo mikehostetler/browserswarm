@@ -348,6 +348,7 @@ a:hover {
   margin: 0 0 10px;
   line-height: 1; }
 .section-header .description {
+  font-size:1em;
   margin: 0; }
 
 h4 {
@@ -1533,4 +1534,8 @@ pre.console-output{
   font-size:1em;
   padding-top:1em;
   padding-bottom:1em;
+}
+
+h1, h2, h3, h4, h5, h6{
+  text-rendering:inherit;
 }
