@@ -57,7 +57,7 @@ Assuming all went well, your Bendigo instance should now be accessible at http:/
 
 ## Production Environment
 
-The live Bendigo application is hosted on [dotCloud](http://dotcloud.com). We use dotCloud because they are the only PaaS provider we're aware of who support:
+The [live Bendigo application](http://bendigolive-appendto.dotcloud.com) is hosted on [dotCloud](http://dotcloud.com). We use dotCloud because they are the only PaaS provider we're aware of who support:
 
 - Up to 64G of memory per process (Bendigo needs about 768M to run the JVM process, PHP and the JavaScript tests)
 - Support for Node.JS, Websockets, Java and PHP all in the same application environment
