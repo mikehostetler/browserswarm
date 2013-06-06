@@ -2,8 +2,8 @@
     "id" : "jquery",
     "src" : "/ext/bendigo-plugin/framework-logo/jquery.png",
     "name" : "jQuery",
-    "repo_url" : "https://github.com/niallo/jquery",
-    "repo" : "niallo/jquery"
+    "repo_url" : "https://github.com/estebansoze/jquery",
+    "repo" : "estebansoze/jquery"
 }, {
     "id" : "jquery-ui",
     "src" : "/ext/bendigo-plugin/framework-logo/jqueryui.png",
@@ -72,5 +72,4 @@
 	"name" : "Sencha Touch"
 },{
 	"name" : "Scriptaculous"
-
 }]
