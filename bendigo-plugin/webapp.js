@@ -60,6 +60,7 @@ module.exports = function(ctx, cb){
         if (!job.tasks.length)
           continue;
 
+        console.log(job.tasks);
         var j = {id : job._id}
         j.id_short  = (job._id + "").slice(0,9)
 
@@ -69,11 +70,14 @@ module.exports = function(ctx, cb){
 
           if (browsers[i].bs){
             for (var z =0; z< job.tasks.length; z++){
-              var brows = job.tasks[z].id;
+              if (! job.tasks[z].id == 'browserstack')
+                continue;
+
+              var brows = job.tasks[z].data.id;
 
               if (browsers[i].bs == brows){
                 // Browser in job results:
-                j[browsers[i].id] = (job.tasks[z].failed == 0) ? "supported" : "not";
+                j[browsers[i].id] = (job.tasks[z].data.failed == 0) ? "supported" : "not";
               }
             }
           }
