@@ -527,6 +527,7 @@ p.different-framework a {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   border: none;
   font-size: 1.375em;
+  margin:0;
   font-style: italic; }
 .mc_embed_signup .email-input:hover, .mc_embed_signup .email-input:focus {
   color: #2c2c2c;
