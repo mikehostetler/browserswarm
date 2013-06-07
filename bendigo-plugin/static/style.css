@@ -348,6 +348,7 @@ a:hover {
   margin: 0 0 10px;
   line-height: 1; }
 .section-header .description {
+  font-size:1em;
   margin: 0; }
 
 h4 {
@@ -526,6 +527,7 @@ p.different-framework a {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   border: none;
   font-size: 1.375em;
+  margin:0;
   font-style: italic; }
 .mc_embed_signup .email-input:hover, .mc_embed_signup .email-input:focus {
   color: #2c2c2c;
@@ -1533,4 +1535,8 @@ pre.console-output{
   font-size:1em;
   padding-top:1em;
   padding-bottom:1em;
+}
+
+h1, h2, h3, h4, h5, h6{
+  text-rendering:inherit;
 }

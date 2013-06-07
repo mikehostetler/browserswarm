@@ -143,11 +143,13 @@ module.exports = function(ctx, cb){
       if (!job){
         // something went wrong...
         console.error("NO JOB FOUND!")
-        job = {}
+        job = {tasks:[]}
       }
 
       var passtotal = 0
         , testtotal = 0
+
+      if (! job.tasks) job.tasks = [];
 
       for (var i = 0; i< job.tasks.length; i++){
         if (!job.tasks[i].id == 'browserstack') continue;
