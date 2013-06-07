@@ -22,7 +22,7 @@ Object.keys(libs).forEach(function(lib) {
   f.push(function(cb) {
 
     function start() {
-      console.log("deleteing %s...", lib)
+      console.log("deleting %s...", lib)
       rimraf(path.join(process.cwd(), lib), clone)
     }
 
