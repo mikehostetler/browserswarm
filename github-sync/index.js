@@ -43,7 +43,7 @@ Object.keys(libs).forEach(function(lib) {
       }
       console.log("clone of %s complete", lib)
       var cmd = "git remote add upstream " + libs[lib]
-      cmd += "&& git pull upstream master"
+      cmd += " && git pull upstream master"
 
       console.log("pulling from %s", libs[lib])
       gitane.run(path.join(process.cwd(), lib), SSH_PRIV_KEY, cmd, push)
