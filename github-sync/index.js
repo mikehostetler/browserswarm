@@ -43,10 +43,15 @@ Object.keys(libs).forEach(function(lib) {
       }
       console.log("clone of %s complete", lib)
       var cmd = "git remote add upstream " + libs[lib]
-      cmd += " && git pull upstream master"
-
-      console.log("pulling from %s", libs[lib])
-      gitane.run(path.join(process.cwd(), lib), SSH_PRIV_KEY, cmd, push)
+      gitane.run(path.join(process.cwd(), lib), SSH_PRIV_KEY, cmd, function() {
+        if (err) {
+          console.log("error adding upstream remote %s: %s", lib, err)
+          process.exit(1)
+        }
+        cmd = "git pull upstream master"
+        console.log("pulling from %s", libs[lib])
+        gitane.run(path.join(process.cwd(), lib), SSH_PRIV_KEY, cmd, push)
+      })
     }
 
     function push(err, stdout, stderr) {
@@ -76,7 +81,7 @@ Object.keys(libs).forEach(function(lib) {
 
 })
 
-console.log("starting sync for libraries %s at %s",
+console.log("starting sync for libraries: %s at %s",
   Object.keys(libs).join(" "), new Date())
 
 async.series(f, function(err, res) {
@@ -85,7 +90,7 @@ async.series(f, function(err, res) {
     process.exit(1)
   }
 
-  console.log("sync complete for libraries %s at %s",
+  console.log("sync complete for libraries: %s at %s",
     Object.keys(libs).join(" "), new Date())
 
 })
