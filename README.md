@@ -171,3 +171,11 @@ u: browserswarm-sync
 p: QjNVifpcz7KQT3x`.
 
 Strider master account:
+u: hi@frozenridge.co
+p: H+U8tM4JJ09+tA=
+
+MongoLab:
+https://mongolab.com/login/
+
+Username: appendto
+Password: oTM2Cy2eEhtUuNX
