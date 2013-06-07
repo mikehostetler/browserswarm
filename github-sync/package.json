@@ -1,0 +1,18 @@
+{
+  "name": "github-sync",
+  "version": "0.0.0",
+  "description": "There is a special Github user which runs the automated sync jobs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Niall O'Higgins",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "gitane": "~0.3.0",
+    "async": "~0.2.9",
+    "rimraf": "~2.1.4"
+  }
+}
