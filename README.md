@@ -140,3 +140,24 @@ The rest of the configuration is stored in the [dotcloud.yml](https://github.com
 - The start command for the application server (`npm start`)
     
 
+
+
+
+## Library setup
+
+Most of the libraries require manual configuration of strider plugins:
+
+### jQuery
+
+jquery uses the strider-qunit plugin with the strider-browserstack plugin.
+
+qunit path : 'test'
+qunit testfile : 'test/index.html'
+
+
+Grunt builds are done with a *custom* prepare script
+
+```bash
+NODE_ENV=dev; (grunt || (npm install -g grunt-cli && npm install && npm install gzip-js grunt-compare-size grunt-git-authors grunt-update-submodules grunt-contrib-watch grunt-contrib-uglify grunt-contrib-jshint@0.4 && grunt))
+```
+
