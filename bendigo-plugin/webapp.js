@@ -149,6 +149,8 @@ module.exports = function(ctx, cb){
       var passtotal = 0
         , testtotal = 0
 
+      if (! job.tasks) job.tasks = [];
+
       for (var i = 0; i< job.tasks.length; i++){
         if (!job.tasks[i].id == 'browserstack') continue;
 
