@@ -1,7 +1,7 @@
-var async = require('async')
-var fs = require('fs')
+var async  = require('async')
+var fs     = require('fs')
 var gitane = require('gitane')
-var path = require('path')
+var path   = require('path')
 var rimraf = require('rimraf')
 
 var BASE_SSH = "git@github.com:BrowserSwarm/"
