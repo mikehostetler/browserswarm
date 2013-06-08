@@ -14,7 +14,12 @@ var libs = {
   'jquery': 'https://github.com/jquery/jquery.git',
   'jquery-ui': 'https://github.com/jquery/jquery-ui.git',
   'jquery-mobile': 'https://github.com/jquery/jquery-mobile.git',
-  'Modernizr': 'https://github.com/Modernizr/Modernizr.git'
+  'Modernizr': 'https://github.com/Modernizr/Modernizr.git',
+  'backbone': 'https://github.com/documentcloud/backbone.git',
+  'underscore': 'https://github.com/documentcloud/underscore.git',
+  'dojo': 'https://github.com/dojo/dojo-oldmirror.git',
+  'prototype': 'https://github.com/sstephenson/prototype.git',
+  'mootools-core': 'https://github.com/mootools/mootools-core.git',
 }
 
 var f = []
