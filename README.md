@@ -2,7 +2,7 @@
 
 Bendigo is a heavily customized version of [StriderCD](http://stridercd.com).
 The Strider core is BSD-licensed and is desigend to be highly customizable and
-extensible. Strider is written in JavaScript / Node.JS and uses MongoDB as it's
+extensible. Strider is written in JavaScript / Node.JS and uses MongoDB as a
 database backend.
 
 The Bendigo web application server is implemented as a consumer of Strider as a
