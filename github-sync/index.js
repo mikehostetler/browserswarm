@@ -6,7 +6,7 @@ var rimraf = require('rimraf')
 
 var BASE_SSH = "git@github.com:BrowserSwarm/"
 
-var SSH_PRIV_KEY = fs.readFileSync(path.join(process.cwd(), 'browserswarm-sync_id_dsa'), 'utf8')
+var SSH_PRIV_KEY = fs.readFileSync(path.join(__dirname, 'browserswarm-sync_id_dsa'), 'utf8')
 
 var libs = {
   'jquery': 'https://github.com/jquery/jquery.git',
