@@ -1,0 +1,2 @@
+MAILTO=hi@frozenridge.co
+00 * * * * node ~/github-sync/index.js
