@@ -1,2 +1,2 @@
 MAILTO=hi@frozenridge.co
-00 * * * * node ~/github-sync/index.js
+00 * * * * (cd ~/github-sync && node index.js)
