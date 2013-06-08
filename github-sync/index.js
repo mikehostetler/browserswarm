@@ -8,6 +8,8 @@ var BASE_SSH = "git@github.com:BrowserSwarm/"
 
 var SSH_PRIV_KEY = fs.readFileSync(path.join(__dirname, 'browserswarm-sync_id_dsa'), 'utf8')
 
+// Map each Git repo under BrowserSwarm Github organization to it's upstream remote.
+// This upstream remote is where we pull the latest changes from during sync.
 var libs = {
   'jquery': 'https://github.com/jquery/jquery.git',
   'jquery-ui': 'https://github.com/jquery/jquery-ui.git',
