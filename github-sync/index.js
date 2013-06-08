@@ -84,6 +84,7 @@ Object.keys(libs).forEach(function(lib) {
 console.log("starting sync for libraries: %s at %s",
   Object.keys(libs).join(" "), new Date())
 
+// simply change to async.parallel to run these in parallel...
 async.series(f, function(err, res) {
   if (err) {
     console.log("sync error: %s", err)
