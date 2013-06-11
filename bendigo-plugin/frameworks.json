@@ -23,8 +23,11 @@
 	"src" : "/ext/bendigo-plugin/framework-logo/prototype.png",
 	"name" : "Prototype"
 },{
+  "id" : "modernizr",
 	"src" : "/ext/bendigo-plugin/framework-logo/modernizr.png",
-	"name" : "Modernizr"
+	"name" : "Modernizr",
+  "repo_url" : "https://github.com/browserswarm/modernizr",
+  "repo" : "browserswarm/modernizr"
 },{
 	"src" : "/ext/bendigo-plugin/framework-logo/underscorejs.png",
 	"name" : "Underscore JS"
