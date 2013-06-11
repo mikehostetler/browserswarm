@@ -20,7 +20,7 @@ var browsers = [
 , {id : "safari5", name : "Safari 5.1", ico : "safari", bs: "mac-safari-5.1"}
 , {id : "safari6", name : "Safari 6.0", ico : "safari", bs :"mac-safari-6.0"}
 , {id : "opera12", name : "Opera 12.10", ico : "opera", bs: "win-opera-12.10"}
-, {id : "opera13", name : "Opera 13.0", ico : "opera"}
+, {id : "opera12_14", name : "Opera 12.14", ico : "opera", bs: "win-opera-12.14"}
 ]
 
 module.exports = function(ctx, cb){
