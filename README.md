@@ -161,6 +161,12 @@ Grunt builds are done with a *custom* prepare script
 NODE_ENV=dev; (grunt || (npm install -g grunt-cli && npm install && npm install gzip-js grunt-compare-size grunt-git-authors grunt-update-submodules grunt-contrib-watch grunt-contrib-uglify grunt-contrib-jshint@0.4 && grunt))
 ```
 
+### jQuery UI
+QUnit config:
+
+path : "."
+test file  : "./tests/unit/all.html"
+
 
 
 ## Auth
