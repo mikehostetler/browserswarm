@@ -168,6 +168,14 @@ path : "."
 test file  : "./tests/unit/all.html"
 
 
+### Backbone
+
+This one is a fun one - we want to polyfill phantom, so it skips to browserstack plugin - custom pre script:
+
+```bash
+sed -i.bak 's/phantomjs/true/' package.json && sed -i.bak 's/coffee/true/' package.json && cat package.json && echo "POLYFILLED PHANTOM"
+```
+
 
 ## Auth
 

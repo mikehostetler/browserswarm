@@ -32,8 +32,11 @@
 	"src" : "/ext/bendigo-plugin/framework-logo/underscorejs.png",
 	"name" : "Underscore JS"
 },{
+  "id" : "backbone",
 	"src" : "/ext/bendigo-plugin/framework-logo/backbonejs.png",
-	"name" : "Backbone JS"
+	"name" : "Backbone JS",
+  "repo_url" : "https://github.com/browserswarm/backbone",
+  "repo" : "browserswarm/backbone"
 },{
 	"src" : "/ext/bendigo-plugin/framework-logo/knockout.png",
 	"name" : "Knockout"
