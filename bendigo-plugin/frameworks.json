@@ -29,8 +29,11 @@
   "repo_url" : "https://github.com/browserswarm/modernizr",
   "repo" : "browserswarm/modernizr"
 },{
+  "id" : "underscore",
 	"src" : "/ext/bendigo-plugin/framework-logo/underscorejs.png",
-	"name" : "Underscore JS"
+	"name" : "Underscore JS",
+  "repo_url" : "https://github.com/browserswarm/underscore",
+  "repo" : "browserswarm/underscore"
 },{
   "id" : "backbone",
 	"src" : "/ext/bendigo-plugin/framework-logo/backbonejs.png",

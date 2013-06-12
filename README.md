@@ -193,3 +193,12 @@ https://mongolab.com/login/
 
 Username: appendto
 Password: oTM2Cy2eEhtUuNX
+
+
+## Making repo's public:
+
+In mongo:
+
+```mongo
+ db.users.update({"github_config.url" : "https://github.com/browserswarm/backbone"}, {"$set" : {"github_config.$.public" : true }})
+```
