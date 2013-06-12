@@ -1,10 +1,14 @@
 var swig = require('swig')
   , frameworks = require("./frameworks.json")
   , frameworksObj = {}
+  , repoFrameworks = {}
 
 frameworks.forEach(function(x){
   if (x.id)
-  frameworksObj[x.id] = x;
+    frameworksObj[x.id] = x;
+
+  if (x.repo_url)
+    repoFrameworks[x.repo_url] = x;
 })
 
 var browsers = [
@@ -106,10 +110,12 @@ module.exports = function(ctx, cb){
  })
 
   ctx.registerBlock("JobPagePreTitle", function(context, fn){
-    fn(null, "<p class='job-pre-title'>Framework / " + context.repo_url+ "</p>")
+    var r = repoFrameworks[context.repo_url] || {}
+    fn(null, "<p class='job-pre-title'>Framework / " + r.name + "</p>")
   })
   ctx.registerBlock("JobPagePostTitle", function(context, fn){
-    fn(null,"<p class='job-post-title'>" + context.repo_url + " / " + context.repo_url + "</p>")
+    var r = repoFrameworks[context.repo_url] || {}
+    fn(null,"<p class='job-post-title'>" + r.name + " / " + r.name + "</p>")
   })
   ctx.registerBlock("JobPagePreConsole", function(context, fn){
     fn(null, "<h4 class='job-page-pre-console'>Job Output</h4>")
@@ -117,23 +123,9 @@ module.exports = function(ctx, cb){
 
   ctx.registerBlock("JobPagePreCols", function(context, fn){
     var tmpl = swig.compileFile(__dirname  + "/JobPagePreCols.html")
-    /*  , job = context.models.Job
 
-                 .find()
-                // Reverse chronological order
-                 .sort({'finished_timestamp': -1})
-                // Only jobs for this repo
-                 .where('repo_url', context.repo_url)
-                // Only finished jobs
-                 .where('finished_timestamp').ne(null)
-                // Only jobs which have not been archived
-                 .where('archived_timestamp', null)
-                 .limit(1)
-                 .populate('_owner')
-                 .lean(true)
-                 .exec(function(err, jobs){
-*/
       var job = null
+
       for (var i = 0; i< context.jobs.length; i++){
         if (context.jobs[i].id.indexOf(context.job_id) == 0){
           job = context.jobs[i]
@@ -160,7 +152,7 @@ module.exports = function(ctx, cb){
       }
 
       var out = tmpl.render({
-        passrate : passtotal / testtotal
+        passrate : parseInt((passtotal / testtotal) * 100)
       , passed : passtotal
       , total : testtotal
       , duration: job.duration
