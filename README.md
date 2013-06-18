@@ -175,6 +175,14 @@ pre:
 sed -i.bak 's/grunt/true/' package.json && cat package.json && echo "POLYFILLED GRUNT"
 ```
 
+### Jquery mobile
+
+pre:
+
+```bash
+export NODE_ENV=dev npm install && npm install grunt && grunt --force js:release  && sed -i.bak 's/grunt/true/' package.json && cat package.json && echo "POLYFILLED GRUNT"
+```
+
 ### Backbone
 
 This one is a fun one - we want to polyfill phantom, so it skips to browserstack plugin - custom pre script:
