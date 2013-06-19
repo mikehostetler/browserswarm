@@ -13,16 +13,16 @@ frameworks.forEach(function(x){
 
 var browsers = [
   {id : "chrome24", name : "Chrome 26", ico : "chrome", bs : "win-chrome-26.0"}
-, {id : "chrome27", name : "Chrome 27", ico : "chrome", bs : "win-chrome-27.0"}
-, {id : "firefox18", name : "Firefox 18", ico : "firefox", bs : "win-firefox-18.0"}
-, {id : "firefox19", name : "Firefox 19", ico : "firefox", bs : "win-firefox-19.0"}
-, {id : "ie6", name : "IE 6", ico : "ie-6", bs : "win-ie-6.0"}
-, {id : "ie7", name : "IE 7", ico : "ie-8", bs : "win-ie-7.0"}
-, {id : "ie8", name : "IE 8", ico : "ie-8", bs : "win-ie-8.0"}
-, {id : "ie9", name : "IE 9", ico : "ie", bs : "win-ie-9.0"}
-, {id : "ie10", name : "IE 10", ico : "ie-10", bs : "win-ie-10.0"}
-, {id : "safari5", name : "Safari 5.1", ico : "safari", bs: "mac-safari-5.1"}
-, {id : "safari6", name : "Safari 6.0", ico : "safari", bs :"mac-safari-6.0"}
+, {id : "chrome27", name : "Chrome 27", ico : "chrome", bs : "win-chrome-27.0", sl: "chrome-27-windows-8"}
+, {id : "firefox18", name : "Firefox 18", ico : "firefox", bs : "win-firefox-18.0", sl: "firefox-18-windows-8"}
+, {id : "firefox19", name : "Firefox 19", ico : "firefox", bs : "win-firefox-19.0", sl: "firefox-19-windows-8"}
+, {id : "ie6", name : "IE 6", ico : "ie-6", bs : "win-ie-6.0", sl: "ie-6-windows-xp"}
+, {id : "ie7", name : "IE 7", ico : "ie-8", bs : "win-ie-7.0", sl: "ie-7-windows-xp"}
+, {id : "ie8", name : "IE 8", ico : "ie-8", bs : "win-ie-8.0", sl: "ie-8-windows-xp"}
+, {id : "ie9", name : "IE 9", ico : "ie", bs : "win-ie-9.0", sl: "ie-9-windows-7"}
+, {id : "ie10", name : "IE 10", ico : "ie-10", bs : "win-ie-10.0", sl: "ie-10-windows-8"}
+, {id : "safari5", name : "Safari 5.1", ico : "safari", bs: "mac-safari-5.1", sl: "safari-5-os-x-10.6"}
+, {id : "safari6", name : "Safari 6.0", ico : "safari", bs :"mac-safari-6.0", sl: "safari-6-os-x-10.8"}
 , {id : "opera12", name : "Opera 12.10", ico : "opera", bs: "win-opera-12.10"}
 , {id : "opera12_14", name : "Opera 12.14", ico : "opera", bs: "win-opera-12.14"}
 ]
@@ -71,14 +71,14 @@ module.exports = function(ctx, cb){
 
           j[browsers[i].id] = "unknown"
 
-          if (browsers[i].bs){
+          if (browsers[i].sl){
             for (var z =0; z< job.tasks.length; z++){
               if (! job.tasks[z].id == 'browserstack')
                 continue;
 
               var brows = job.tasks[z].data.id;
 
-              if (browsers[i].bs == brows){
+              if (browsers[i].sl == brows){
                 // Browser in job results:
                 j[browsers[i].id] = (job.tasks[z].data.failed == 0) ? "supported" : "not";
               }
