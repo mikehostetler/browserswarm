@@ -12,6 +12,8 @@ All the customizations and special logic is contained in a number of Strider plu
 
 - [strider-qunit](https://github.com/Strider-CD/strider-qunit): QUnit test support for Strider (jQuery, jQuery-UI, jQuery-Mobile lal use QUnit). 
 - [strider-browserstack](https://github.com/Strider-CD/strider-browserstack): BrowserStack.com support for running front-end JavaScript tests in multiple Browser/OS combinations on the BrowserStack cloud. This plugin transparently works with strider-qunit. Note that [strider-sauce](https://github.com/Strider-CD/strider-sauce) may also be used if you wish to run the tests on Sauce Labs cloud instead of BrowserStack.
+- [strider-jelly](https://github.com/Strider-CD/strider-jelly): Strider Jelly-Proxy plugin.
+- [strider-custom](https://github.com/Strider-CD/strider-custom): Run custom shell commands for projects in each phase.
 - [bendigo-plugin](https://github.com/appendto/strider/tree/master/bendigo-plugin): Front-end and mostly display customization for the Bendigo project resides here. This is a private, non-open source plugin.
 
 ## Dependencies
@@ -53,7 +55,7 @@ Start Bendigo application server:
 
 `npm start`
 
-Assuming all went well, your Bendigo instance should now be accessible at http://localhost:3000
+Assuming all went well, your Bendigo instance should now be accessible at [http://localhost:3000](http://localhost:3000)
 
 ## Production Environment
 
@@ -68,14 +70,14 @@ more than performance per se) with 768M of reserved memory each.
 The live Bendigo MongoDB database is a [MongoLab shared cluster
 plan](https://mongolab.com/products/architecture/). The shared cluster plan
 includes a replica in a different EC2 availability zone for redundancy.
-MongoLab can also be used to monitor performance and data, and offers scheduled
+MongoLab can also be used to monitor performance, query data, and offers scheduled
 database backup services if required. At this time, it is unlikely Bendigo will
-need higher performance, but if necessary it can be moved to a MongoLab
+need higher performance, but if necessary it can be upgraded to a MongoLab
 dedicated plan.
 
-This is hosted in Amazon EC2 us-east-1 location, which is the same location as
-dotCloud. This means that there is minimal network latency between the Bendigo
-applciation server and the Benidgo MongoDB server.
+The MongoDB database is hosted in the Amazon EC2 us-east-1 location, which is
+the same location as dotCloud. This means that there is minimal network latency
+between the Bendigo applciation server and the Benidgo MongoDB server.
 
 ## Setting up dotCloud Tools & Account
 
@@ -108,7 +110,7 @@ expected month-end cost:    $207
 
 ## Deploying to dotCloud
 
-Deploying a new version of Bendigo to dotCloud is a straight-forward process. However, you should be aware that it does occasionally fail or error out. If you receive and error, simply retry.
+Deploying a new version of Bendigo to dotCloud is a straight-forward process. However, you should be aware that it does occasionally fail or error out. If you receive an error, simply retry.
 
 To execute an incremental deploy to Bendigo, simply run the following command from the Bendigo repo clone. This is the same directly that contains a file named `dotcloud.yml`:
 
@@ -116,21 +118,21 @@ To execute an incremental deploy to Bendigo, simply run the following command fr
 
 Expect this to take up to 10 minutes to complete as NPM modules must be installed etc.
 
-Sometimes you may wish to execute a full deploy from clean. This will blow away any existing binaries or modules in the dotCloud build. This can be a helpful thing to do if you wish to ensure all the latest changes are reflected in the live instance:
+Sometimes you may wish to execute a full deploy from a clean state. A "clean" deploy will blow away any existing binaries or modules in the dotCloud build. This can be a helpful thing to do if you wish to be sure all the latest changes are reflected in the live instance:
 
 `dotloud push --clean`
 
-Again, this can take 10-15 minutes to complete. PHP, Java Node.JS and all the NPM modules must be installed on dotCloud.
+Again, this can take 10-15 minutes to complete. PHP, Java, Node.JS and all the NPM modules must be installed on dotCloud.
 
 ## Details of dotCloud config
 
-Hopefully you won't need to changed any of these details, but it may be helpful to be aware of how it works. 
+Hopefully you won't need to change any of these details, but it may be helpful to be aware of how configuration works. 
 
-The dotCloud application is implemented as a `custom` service. This is because we require multiple languages in a single application container: Java, PHP and Node. Refer to the [dotCloud custom service documentation](http://docs.dotcloud.com/services/custom/) for gorey details.
+The dotCloud application is implemented as a `custom` service. This is because we require multiple languages in a single application container: Java, PHP and Node. Refer to the [dotCloud custom service documentation](http://docs.dotcloud.com/services/custom/) for the gorey details.
 
 The build script for the `custom` service is in [dotcloud-builder/builder](https://github.com/appendto/strider/blob/master/dotcloud-builder/builder). The most likely reason to edit this script is to change the version of Node.JS used to run Bendigo on production. 
 
-The rest of the configuration is stored in the [dotcloud.yml](https://github.com/appendto/strider/blob/master/dotcloud.yml) file in the project root. This file specified:
+The rest of the configuration is stored in the [dotcloud.yml](https://github.com/appendto/strider/blob/master/dotcloud.yml) file in the project root. This file specifies:
 
 - PHP5-cli package should be installed in the dotCloud container.
 - The MongoDB URL (`DB_URI` variable)
@@ -145,7 +147,7 @@ The rest of the configuration is stored in the [dotcloud.yml](https://github.com
 
 ## Library setup
 
-Most of the libraries require manual configuration of strider plugins:
+Most of the libraries require manual configuration of Strider plugins:
 
 ### jQuery
 
@@ -155,7 +157,7 @@ qunit path : 'test'
 qunit testfile : 'test/index.html'
 
 
-Grunt builds are done with a *custom* prepare script
+Grunt builds are done with a *custom* prepare script:
 
 ```bash
 NODE_ENV=dev; (grunt || (npm install -g grunt-cli && npm install && npm install gzip-js grunt-compare-size grunt-git-authors grunt-update-submodules grunt-contrib-watch grunt-contrib-uglify grunt-contrib-jshint@0.4 && grunt))
