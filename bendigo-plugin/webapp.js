@@ -133,8 +133,6 @@ module.exports = function(ctx, cb){
         }
       }
       if (!job){
-        // something went wrong...
-        console.error("NO JOB FOUND!")
         job = {tasks:[]}
       }
 
