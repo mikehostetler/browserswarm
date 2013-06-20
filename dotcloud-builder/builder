@@ -3,7 +3,7 @@
 packages_dir=node_modules
 node_root=/opt/node
 
-NODE_VERSION=v0.10.10
+NODE_VERSION=v0.10.12
 
 startdir=$(pwd)
 
