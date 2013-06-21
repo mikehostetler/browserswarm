@@ -4,13 +4,22 @@
     "name" : "jQuery",
     "repo_url" : "https://github.com/browserswarm/jquery",
     "repo" : "browserswarm/jquery"
-}, {
+}, 
+{
     "id" : "jquery-ui",
     "src" : "/ext/bendigo-plugin/framework-logo/jqueryui.png",
     "name" : "jQuery UI",
     "repo_url" : "https://github.com/browserswarm/jquery-ui",
     "repo" : "browserswarm/jquery-ui"
-},{
+},
+{
+    "id" : "jquery-mobile",
+    "src" : "/ext/bendigo-plugin/framework-logo/jquerymobile.png",
+    "name" : "jQuery Mobile",
+    "repo_url" : "https://github.com/browserswarm/jquery-mobile",
+    "repo" : "browserswarm/jquery-mobile"
+},
+{
 	"src" : "/ext/bendigo-plugin/framework-logo/jquerymobile.png",
 	"name" : "jQuery Mobile"
 },{
