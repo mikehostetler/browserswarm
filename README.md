@@ -187,7 +187,7 @@ test file : "tests/unit/kitchensink/index.html"
 pre:
 
 ```bash
-export NODE_ENV=dev npm install && npm install -g grunt-cli && grunt --force js:release  && sed -i.bak 's/grunt/true/' package.json && cat package.json && echo "POLYFILLED GRUNT"
+export NODE_ENV=dev npm install && npm install grunt && npm install -g grunt-cli && grunt --force js:release  && sed -i.bak 's/grunt/true/' package.json && cat package.json && echo "POLYFILLED GRUNT"
 ```
 
 ### Backbone
