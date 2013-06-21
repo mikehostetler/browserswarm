@@ -12,20 +12,32 @@ frameworks.forEach(function(x){
 })
 
 var browsers = [
-  {id : "chrome24", name : "Chrome 26", ico : "chrome", bs : "win-chrome-26.0"}
-, {id : "chrome27", name : "Chrome 27", ico : "chrome", bs : "win-chrome-27.0", sl: "chrome-27-windows-8"}
-, {id : "firefox18", name : "Firefox 18", ico : "firefox", bs : "win-firefox-18.0", sl: "firefox-18-windows-8"}
-, {id : "firefox19", name : "Firefox 19", ico : "firefox", bs : "win-firefox-19.0", sl: "firefox-19-windows-8"}
-, {id : "ie6", name : "IE 6", ico : "ie-6", bs : "win-ie-6.0", sl: "ie-6-windows-xp"}
-, {id : "ie7", name : "IE 7", ico : "ie-8", bs : "win-ie-7.0", sl: "ie-7-windows-xp"}
-, {id : "ie8", name : "IE 8", ico : "ie-8", bs : "win-ie-8.0", sl: "ie-8-windows-xp"}
-, {id : "ie9", name : "IE 9", ico : "ie", bs : "win-ie-9.0", sl: "ie-9-windows-7"}
-, {id : "ie10", name : "IE 10", ico : "ie-10", bs : "win-ie-10.0", sl: "ie-10-windows-8"}
-, {id : "safari5", name : "Safari 5.1", ico : "safari", bs: "mac-safari-5.1", sl: "safari-5-os-x-10.6"}
-, {id : "safari6", name : "Safari 6.0", ico : "safari", bs :"mac-safari-6.0", sl: "safari-6-os-x-10.8"}
-, {id : "opera12", name : "Opera 12.10", ico : "opera", bs: "win-opera-12.10"}
-, {id : "opera12_14", name : "Opera 12.14", ico : "opera", bs: "win-opera-12.14"}
+  {id : "chrome27", name : "Chrome 27", ico : "chrome", bs : "win-chrome-27.0", sl: "chrome"}
+, {id : "firefox18", name : "Firefox 18", ico : "firefox", bs : "win-firefox-18.0", sl: "firefox-18"}
+, {id : "firefox19", name : "Firefox 19", ico : "firefox", bs : "win-firefox-19.0", sl: "firefox-19"}
+, {id : "firefox20", name : "Firefox 20", ico : "firefox", bs : "win-firefox-20.0", sl: "firefox-20"}
+, {id : "ie6", name : "IE 6", ico : "ie-6", bs : "win-ie-6.0", sl: "internet explorer-6"}
+, {id : "ie7", name : "IE 7", ico : "ie-8", bs : "win-ie-7.0", sl: "internet explorer-7"}
+, {id : "ie8", name : "IE 8", ico : "ie-8", bs : "win-ie-8.0", sl: "internet explorer-8"}
+, {id : "ie9", name : "IE 9", ico : "ie", bs : "win-ie-9.0", sl: "internet explorer-9"}
+, {id : "ie10", name : "IE 10", ico : "ie-10", bs : "win-ie-10.0", sl: "internet explorer-10"}
+, {id : "safari5", name : "Safari 5.1", ico : "safari", bs: "mac-safari-5.1", sl: "safari-5"}
+, {id : "safari6", name : "Safari 6.0", ico : "safari", bs :"mac-safari-6.0", sl: "safari-6"}
+, {id : "opera11_64", name : "Opera 11.64", ico : "opera", bs: "win-opera-12.10", sl: "opera-11"}
+, {id : "opera12_12", name : "Opera 12.12", ico : "opera", bs: "win-opera-12.14", sl:"opera-12"}
 ]
+
+if (!String.prototype.startsWith) {
+  Object.defineProperty(String.prototype, 'startsWith', {
+    enumerable: false,
+    configurable: false,
+    writable: false,
+    value: function (searchString, position) {
+      position = position || 0;
+      return this.indexOf(searchString, position) === position;
+    }
+  });
+}
 
 module.exports = function(ctx, cb){
 
@@ -73,13 +85,16 @@ module.exports = function(ctx, cb){
 
           if (browsers[i].sl){
             for (var z =0; z< job.tasks.length; z++){
-              if (! job.tasks[z].id == 'browserstack')
+              var task_id = job.tasks[z].id;
+              var brows = job.tasks[z].data.id;
+              if (! (task_id == 'browserstack' || task_id == 'sauce'))
                 continue;
 
-              var brows = job.tasks[z].data.id;
-
-              if (browsers[i].sl == brows){
-                // Browser in job results:
+              // Sauce Labs fuzzy matching of browsers
+              if (brows.startsWith(browsers[i].sl)) {
+                j[browsers[i].id] = (job.tasks[z].data.failed == 0) ? "supported" : "not";
+              } else if (browsers[i].bs == brows){
+                // BrowserStack not fuzzy
                 j[browsers[i].id] = (job.tasks[z].data.failed == 0) ? "supported" : "not";
               }
             }
