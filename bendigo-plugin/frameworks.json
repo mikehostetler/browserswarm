@@ -50,8 +50,11 @@
   "repo_url" : "https://github.com/browserswarm/backbone",
   "repo" : "browserswarm/backbone"
 },{
+  "id" : "knockout",
 	"src" : "/ext/bendigo-plugin/framework-logo/knockout.png",
-	"name" : "Knockout"
+	"name" : "Knockout",
+  "repo" :"browserswarm/knockout",
+  "repo_url" :"https://github.com/browserswarm/knockout"
 },{
 	"src" : "/ext/bendigo-plugin/framework-logo/ember.png",
 	"name" : "Ember"
