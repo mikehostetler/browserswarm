@@ -16,11 +16,11 @@ var browsers = [
 , {id : "firefox18", name : "Firefox 18", ico : "firefox", bs : "win-firefox-18.0", sl: "firefox-18"}
 , {id : "firefox19", name : "Firefox 19", ico : "firefox", bs : "win-firefox-19.0", sl: "firefox-19"}
 , {id : "firefox20", name : "Firefox 20", ico : "firefox", bs : "win-firefox-20.0", sl: "firefox-20"}
-, {id : "ie6", name : "IE 6", ico : "ie-6", bs : "win-ie-6.0", sl: "internet explorer-6"}
-, {id : "ie7", name : "IE 7", ico : "ie-8", bs : "win-ie-7.0", sl: "internet explorer-7"}
-, {id : "ie8", name : "IE 8", ico : "ie-8", bs : "win-ie-8.0", sl: "internet explorer-8"}
-, {id : "ie9", name : "IE 9", ico : "ie", bs : "win-ie-9.0", sl: "internet explorer-9"}
-, {id : "ie10", name : "IE 10", ico : "ie-10", bs : "win-ie-10.0", sl: "internet explorer-10"}
+, {id : "ie6", name : "IE 6", ico : "ie-6", bs : "win-ie-6.0", sl: "internet_explorer-6"}
+, {id : "ie7", name : "IE 7", ico : "ie-8", bs : "win-ie-7.0", sl: "internet_explorer-7"}
+, {id : "ie8", name : "IE 8", ico : "ie-8", bs : "win-ie-8.0", sl: "internet_explorer-8"}
+, {id : "ie9", name : "IE 9", ico : "ie", bs : "win-ie-9.0", sl: "internet_explorer-9"}
+, {id : "ie10", name : "IE 10", ico : "ie-10", bs : "win-ie-10.0", sl: "internet_explorer-10"}
 , {id : "safari5", name : "Safari 5.1", ico : "safari", bs: "mac-safari-5.1", sl: "safari-5"}
 , {id : "safari6", name : "Safari 6.0", ico : "safari", bs :"mac-safari-6.0", sl: "safari-6"}
 , {id : "opera11_64", name : "Opera 11.64", ico : "opera", bs: "win-opera-12.10", sl: "opera-11"}
