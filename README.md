@@ -307,9 +307,13 @@ serve: .
 Similar to Knockout, this one also uses strider-jelly.
 
 URL of test content: `http://localhost:9090/Specs/Runner/runner.html`
+
 Port on which Jelly-Proxy listens: `8080`
+
 JS Shim: Same as Knockout (copy & paste from above)
+
 Static file server: enable
+
 Server from path: `.`
 
 
