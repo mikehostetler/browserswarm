@@ -91,7 +91,7 @@ module.exports = function(ctx, cb){
                 continue;
 
               // Sauce Labs fuzzy matching of browsers
-              if (brows.startsWith(browsers[i].sl)) {
+              if (brows.indexOf(browsers[i].sl) > -1) {
                 j[browsers[i].id] = (job.tasks[z].data.failed == 0) ? "supported" : "not";
               } else if (browsers[i].bs == brows){
                 // BrowserStack not fuzzy
