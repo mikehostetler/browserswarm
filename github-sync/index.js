@@ -20,6 +20,7 @@ var libs = {
   'dojo': 'https://github.com/dojo/dojo-oldmirror.git',
   'prototype': 'https://github.com/sstephenson/prototype.git',
   'mootools-core': 'https://github.com/mootools/mootools-core.git',
+  'knockout': 'https://github.com/knockout/knockout.git',
 }
 
 var f = []
