@@ -27,17 +27,6 @@ var browsers = [
 , {id : "opera12_12", name : "Opera 12.12", ico : "opera", bs: "win-opera-12.14", sl:"opera-12"}
 ]
 
-if (!String.prototype.startsWith) {
-  Object.defineProperty(String.prototype, 'startsWith', {
-    enumerable: false,
-    configurable: false,
-    writable: false,
-    value: function (searchString, position) {
-      position = position || 0;
-      return this.indexOf(searchString, position) === position;
-    }
-  });
-}
 
 module.exports = function(ctx, cb){
 
