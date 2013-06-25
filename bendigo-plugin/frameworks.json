@@ -26,8 +26,11 @@
 	"src" : "/ext/bendigo-plugin/framework-logo/dojo.jpg",
 	"name" : "Dojo Toolkit"
 },{
+    "id": "mootools-core",
 	"src" : "/ext/bendigo-plugin/framework-logo/mootools.png",
-	"name" : "Mootools"
+    "name" : "Mootools",
+    "repo_url" : "https://github.com/browserswarm/mootools-core",
+    "repo" : "browserswarm/mootools-core"
 },{
 	"src" : "/ext/bendigo-plugin/framework-logo/prototype.png",
 	"name" : "Prototype"
