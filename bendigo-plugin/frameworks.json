@@ -23,6 +23,9 @@
 	"src" : "/ext/bendigo-plugin/framework-logo/jquerymobile.png",
 	"name" : "jQuery Mobile"
 },{
+  "id" : "dojo",
+  "repo" : "browserswarm/dojo",
+  "repo_url" : "https://github.com/browserswarm/dojo",
 	"src" : "/ext/bendigo-plugin/framework-logo/dojo.jpg",
 	"name" : "Dojo Toolkit"
 },{
