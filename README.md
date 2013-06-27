@@ -317,6 +317,90 @@ Static file server: enable
 Server from path: `.`
 
 
+## Prototype
+
+This one sucks. Prototype have made the dubious choice to use a rake taks and
+some ruby testing stuff. They also don't concatenate their tests which is a
+pain.
+
+Custom Pre Script: `rake test:build`
+
+Jelly URL: http://localhost:8080/tmp/class_test.html
+Jelly Port: 9090
+
+Jelly Proxy Shim:
+```javascript
+<script>
+(function(){
+// Tiny Ajax Post
+var post = function (url, json, cb){
+  var req;
+
+  if (window.ActiveXObject)
+    req = new ActiveXObject('Microsoft.XMLHTTP');
+  else if (window.XMLHttpRequest)
+    req = new XMLHttpRequest();
+  else
+    throw "Strider: No ajax"
+
+  req.onreadystatechange = function () {
+      if (req.readyState==4)
+        cb(req.responseText);
+    };
+  var data = "data=" + JSON.stringify(json)
+  req.open("POST", url, true);
+  req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  req.setRequestHeader('Content-length',  data.length);
+  req.setRequestHeader('Connection', 'close');
+  req.send(data);
+}
+
+
+var _run = 0;
+
+var checkTests = function(){
+  var res = document.getElementById("testlog").firstChild.innerHTML
+  var dat = res.match(/(\d*) tests, (\d*) assertions, (\d*) failures, (\d*) errors/);
+  if (dat && dat.length == 5){ // str, tests, assertions, fails, errors
+    var tests = dat[1]
+      , fails = dat[3]
+
+    var data = {
+        total: tests
+      , passed : tests - fails
+      , failed : fails
+      , tracebacks: []
+      , url : window.location.pathname
+    }
+    if (tests == _run){
+      // complete (this is a dubious assumption - they could have just timed out :/ )
+      post("/_jelly/results", data, function(){});
+    } else {
+      _run = tests;
+      post('/_jelly/progress', data, function(){});
+      setTimeout(checkTests, 500);
+    }
+  } else {
+    // Aaah, couldnt find the elem. Bail.
+    post("/_jelly/results", {"error" : "Couldn't find the results elem"}, function(){});
+  }
+}
+
+setTimeout(checkTests, 500)
+
+
+
+})();
+</script>
+```
+
+Jelly Serve:
+Yes
+Path: "/test/unit"
+
+
+
 ## Auth
 
 Github Account:

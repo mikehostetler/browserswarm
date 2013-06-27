@@ -32,6 +32,9 @@
     "repo_url" : "https://github.com/browserswarm/mootools-core",
     "repo" : "browserswarm/mootools-core"
 },{
+  "id" : "prototype",
+  "repo" : "browserswarm/prototype",
+  "repo_url" : "https://github.com/browserswarm/prototype",
 	"src" : "/ext/bendigo-plugin/framework-logo/prototype.png",
 	"name" : "Prototype"
 },{
