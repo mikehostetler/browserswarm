@@ -978,7 +978,7 @@ p.different-framework a {
   margin-top: -3px; }
 .job-details .console {
   float: left;
-  width: 76%;
+  width: 74%;
   position: relative;
   margin-top: 8px; }
 .job-details .console .header {
@@ -997,7 +997,7 @@ p.different-framework a {
   padding: 14px 20px; }
 .job-details ul.job-history {
   float: right;
-  width: calc(24% - 8px);
+  width: 24%;
   height: 635px;
   overflow-x: scroll;
   list-style: none;
@@ -1471,7 +1471,7 @@ pre.console-output{
 
 .job-detail-sidebar {
   float: right;
-  width: -webkit-calc(24% - 8px) !important;
+  width: 22% !important;
   width: calc(24% - 8px) !important;
   height: 635px;
   overflow-x: scroll;
