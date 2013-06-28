@@ -940,7 +940,7 @@ p.different-framework a {
   width: 22%; }
 .job-details .top .column .framework-logo {
   max-width: 100%;
-  vertical-align: middle; }
+  }
 .job-details .top .column p, .job-details .top .column h1, .job-details .top .column h2 {
   float: left; }
 .job-details .top .column p {
@@ -1104,7 +1104,6 @@ span.underline {
 /* @group Media Queries -------------------- */
 @media screen and (max-width: 1215px) {
   .job-details .top {
-    height: 131px;
     overflow: hidden; }
   .job-details .top .column {
     height: 130px;
