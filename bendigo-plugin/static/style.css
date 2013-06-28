@@ -1522,11 +1522,37 @@ pre.console-output{
   width: inherit;
   border: none;
   border-top:1px solid #dbdbdb;
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
 
-.build-item-duration{ display:none;} 
+.build-list-item .span11 a:before{
+  content: "Job ID";
+  font-size:12px;
+  display:inline;
+}
+.build-list-item .span11{
+  font-size:0;
+}
+.build-list-item .span6{
+  width:inherit !important;
+}
+.build-list-item .span11 a{
+  font-size:12px;
+  font-weight:bold;
+}
+
+.build-list-item .icon-remove{
+  display:none;
+}
+
+.build-item-duration:before{content:"Duration:";} 
+.build-item-duration{ 
+  float:none;
+  display:block;
+  font-size:12px;
+  font-weight:normal;
+} 
 
 .job-page {margin-bottom:40px !important;}
 
