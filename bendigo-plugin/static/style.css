@@ -776,7 +776,7 @@ p.different-framework a {
   padding: 8px; }
 .framework-grid aside.sidebar {
   float: left;
-  width: 193px;
+  width: 16%;
   border: 1px solid #dbdbdb;
   z-index: 500;
   -webkit-box-shadow: 4px 1px 11px -6px rgba(0, 0, 0, 0.25);
@@ -789,12 +789,15 @@ p.different-framework a {
   background: #fff;
   padding: 20px 20px 0 20px;
   height: 79px;
-  width: 191px; }
+  width: 100%; }
+.framework-grid aside.sidebar .title-row img{
+  width:100%;
+}
 .framework-grid aside.sidebar ul.joblist {
   float: left;
   background: #f2f2f2;
   list-style: none;
-  width: 192px;
+  width: 16%;
   border-right: 1px solid #dbdbdb;
   font-size: 14px;
   padding: 0;
@@ -808,8 +811,7 @@ p.different-framework a {
   font-weight: bold; }
 .framework-grid .browser-stats {
   float: left;
-  width: -webkit-calc(100% - 193px);
-  width: calc(100% - 193px);
+  width: 84%;
   white-space: nowrap;
   overflow-x: auto;
   font-size: 0; }
@@ -1559,6 +1561,7 @@ pre.console-output{
 
 .job-page {margin-bottom:40px !important;}
 
+.job-page-intro h3 .job-repo{display:none;}
 
 .framework-matrix .footer{ 
   font-size:1em;
