@@ -453,6 +453,7 @@ var checkTests = function(){
   }
   var tests = doh._testCount
     , fails = doh._failureCount
+    , tme = doh._totalTime
 
   var data = {
       total: tests
@@ -461,13 +462,12 @@ var checkTests = function(){
     , tracebacks: []
     , url : window.location.pathname
   }
-  if (tests > 0 && tests == _run){
-    // complete (this is a dubious assumption - they could have just timed out :/ )
+  if (tme > 0 && tme == _run){
     post("/_jelly/results", data, function(){});
   } else {
-    _run = tests;
+    _run = tme;
     post('/_jelly/progress', data, function(){});
-    setTimeout(checkTests, 10000);
+    setTimeout(checkTests, 30000);
   }
 }
 

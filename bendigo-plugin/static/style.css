@@ -807,7 +807,10 @@ p.different-framework a {
   height: 34px;
   float: left;
   border-top: 1px solid #dbdbdb;
-  padding: 6px 22px;
+  padding: 6px 10px;
+  font-size:12px;
+  overflow:hidden;
+  text-align:center;
   font-weight: bold; }
 .framework-grid .browser-stats {
   float: left;
