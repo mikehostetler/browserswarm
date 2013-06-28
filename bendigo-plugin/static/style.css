@@ -940,7 +940,7 @@ p.different-framework a {
   width: 22%; }
 .job-details .top .column .framework-logo {
   max-width: 100%;
-}
+  vertical-align: middle; }
 .job-details .top .column p, .job-details .top .column h1, .job-details .top .column h2 {
   float: left; }
 .job-details .top .column p {
@@ -1104,6 +1104,7 @@ span.underline {
 /* @group Media Queries -------------------- */
 @media screen and (max-width: 1215px) {
   .job-details .top {
+    height: 131px;
     overflow: hidden; }
   .job-details .top .column {
     height: 130px;
@@ -1229,7 +1230,7 @@ span.underline {
   .job-details .top .column.third, .job-details .top .column.fourth {
     border-bottom: none; }
   .job-details .top .column .total {
-    width: 120px; } 
+    width: 120px; } }
 @media screen and (max-width: 520px) {
   .job-details .top {
     height: auto; }
@@ -1292,10 +1293,10 @@ span.underline {
 
   .site-footer .footer-site-nav > a {
     margin: 0;
-    display: block; } 
+    display: block; } }
 @media screen and (max-width: 400px) {
   .job-details .top .column .total {
-    width: 150px; } 
+    width: 150px; } }
 /* @end Media Queries */
 
 
