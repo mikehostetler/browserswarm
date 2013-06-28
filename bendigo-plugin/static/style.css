@@ -520,7 +520,7 @@ p.different-framework a {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
-  line-height: 75px;
+  height: 75px;
   padding: 0 30px;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
@@ -808,6 +808,7 @@ p.different-framework a {
   font-weight: bold; }
 .framework-grid .browser-stats {
   float: left;
+  width: -webkit-calc(100% - 193px);
   width: calc(100% - 193px);
   white-space: nowrap;
   overflow-x: auto;
@@ -821,6 +822,7 @@ p.different-framework a {
   top: 8px;
   right: 14px;
   width: 20px;
+  height: -webkit-calc(100% - 16px);
   height: calc(100% - 16px);
   border-left: 1px solid #dbdbdb; }
 .framework-grid .browser-stats .title-row {
@@ -978,6 +980,7 @@ p.different-framework a {
   position: relative;
   margin-top: 8px; }
 .job-details .console .header {
+  width: -webkit-calc(100% - 2px);
   width: calc(100% - 2px);
   height: 45px;
   color: #2e2e2e;
@@ -1387,7 +1390,6 @@ footer {
 }
 
 .site-footer, footer p{
-  margin-top:1em;
   margin-bottom:1em;
 }
 
@@ -1467,6 +1469,7 @@ pre.console-output{
 
 .job-detail-sidebar {
   float: right;
+  width: -webkit-calc(24% - 8px) !important;
   width: calc(24% - 8px) !important;
   height: 635px;
   overflow-x: scroll;
