@@ -13,8 +13,7 @@
     "url": "git://github.com/appendto/strider.git"
   },
   "dependencies": {
-    "strider": "git+https://github.com/Strider-CD/strider.git#a5b9ed618a83c31e2bf5fdc8d8584e6770aa4a8a",
-    "strider-simple-worker": "git+https://github.com/Strider-CD/strider-simple-worker.git#6d63c2a468be23faac516063e6752563eb04b83d",
+    "strider": "git+https://github.com/mikehostetler/strider.git#8173d97b7bb24754a6ecf8d1e531f9e491456171",
     "strider-browserstack": "https://github.com/Strider-CD/strider-browserstack/archive/master.tar.gz",
     "strider-qunit": "https://github.com/Strider-CD/strider-qunit/archive/master.tar.gz",
     "swig": "~0.13.5",
