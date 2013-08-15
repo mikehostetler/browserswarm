@@ -105,8 +105,8 @@ module.exports = function(ctx, cb){
     })
   })
 
-  ctx.registerBlock("Nav", function(context, cb){
-    cb(null, "&nbsp;");
+  ctx.registerBlock("Nav", function(context, fn){
+    fn(null, "&nbsp;");
   })
 
   ctx.registerBlock("LoggedOutFillContent", function(context, fn){
@@ -117,10 +117,12 @@ module.exports = function(ctx, cb){
     var r = repoFrameworks[context.repo_url] || {}
     fn(null, "<p class='job-pre-title'>Framework / " + r.name + "</p>")
   })
+
   ctx.registerBlock("JobPagePostTitle", function(context, fn){
     var r = repoFrameworks[context.repo_url] || {}
     fn(null,"<p class='job-post-title'>" + r.name + " / " + r.name + "</p>")
   })
+
   ctx.registerBlock("JobPagePreConsole", function(context, fn){
     fn(null, "<h4 class='job-page-pre-console'>Job Output</h4>")
   })
@@ -128,13 +130,19 @@ module.exports = function(ctx, cb){
   ctx.registerBlock("JobPagePreCols", function(context, fn){
     var tmpl = swig.compileFile(__dirname  + "/JobPagePreCols.html")
 
+    var framework = frameworksObj[context.repo]
+
       var job = null
+
+			console.info("PreCol Job ID: " + context.job_id);
 
       for (var i = 0; i< context.jobs.length; i++){
         if (context.jobs[i].id.indexOf(context.job_id) == 0){
-          job = context.jobs[i]
-          break
+          job = context.jobs[i];
+          break;
         }
+				else {
+				}
       }
       if (!job){
         job = {tasks:[]}
@@ -148,16 +156,22 @@ module.exports = function(ctx, cb){
       for (var i = 0; i< job.tasks.length; i++){
         if (!job.tasks[i].id == 'browserstack') continue;
 
+
         passtotal += job.tasks[i].data.passed
         testtotal += job.tasks[i].data.passed + job.tasks[i].data.failed
 
       }
+
+			//console.log("Passrate: "+parseInt((passtotal / testtotal) * 100));
 
       var out = tmpl.render({
         passrate : parseInt((passtotal / testtotal) * 100)
       , passed : passtotal
       , total : testtotal
       , duration: job.duration
+      , "name" : framework.name
+      , "src" : framework.src
+      , "browsers" : browsers
       })
       fn(null, out);
   //  })
