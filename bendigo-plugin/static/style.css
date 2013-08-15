@@ -329,7 +329,7 @@ body {
   box-sizing: border-box; }
 
 a {
-  color: #0d79c8;
+  color: #2b3954;
   text-decoration: none;
   -webkit-transition: color 0.3s ease;
   -moz-transition: color 0.3s ease;
@@ -487,7 +487,7 @@ p.different-framework a {
 /* @end Intro styles */
 /* @group Email Signup Styles -------------------- */
 .email-signup {
-  padding: 100px 0;
+  padding: 40px 0;
   color: #fff;
   background-color: #44413d;
   background-image: url(../img/hands-bg.jpg);
@@ -709,7 +709,7 @@ p.different-framework a {
 /* @end Framework Matrix */
 /* @group About BrowserSwarm -------------------- */
 .about-browserswarm {
-  padding: 100px 0;
+  padding: 40px 0;
   color: #fff;
   background-color: #0f7ecd;
   background-image: url(../img/honeycomb-bg.jpg);
@@ -755,9 +755,17 @@ p.different-framework a {
 .about-browserswarm .about-credits .article-title {
   font-size: 2em; }
 .about-browserswarm .ielogo {
-  margin-top: -10px; }
+  margin-top: 20px; }
 .about-browserswarm .a2logo {
   margin-top: 40px; }
+.about-browserswarm .saucelogo {
+  margin-top: 40px; }
+.about-browserswarm li {
+	line-height: 20px;
+	padding: 10px 0; }
+.about-browserswarm p {
+	line-height: 20px !important;
+}
 
 /* @end About BrowserStack */
 /* @group Framework Grid styles -------------------- */

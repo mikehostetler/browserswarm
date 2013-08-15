@@ -10,6 +10,8 @@ $(function(){
 
 	$(".scroll").click(function(event){
 
+		
+
 		//prevent the default action for the click event
 		event.preventDefault();
 
@@ -22,7 +24,7 @@ $(function(){
 
 		//get the top offset of the target anchor
 		var target_offset = $("#"+trgt).offset();
-		var target_top = target_offset.top;
+		var target_top = target_offset.top - 75;
 
 		//goto that anchor by setting the body scroll top to anchor top
 		$('html, body').animate({scrollTop:target_top}, 'slow');

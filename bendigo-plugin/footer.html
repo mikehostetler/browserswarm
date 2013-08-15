@@ -1,20 +1,17 @@
-
 		<div class="wrap">
-
 			<nav class="footer-site-nav">
-				<a href="/#framework-matrix">Test Results</a>
-				<a href="/#about-browserswarm">About</a>
-				<a href="/#email-signup">Newsletter</a>
-				<a href="/#framework-author-info">Framework Authors</a>
+				<a href="/#framework-matrix" class="nav-link scroll">Test Results</a>
+				<a href="/#email-signup" class="nav-link scroll">Start Testing</a>
+				<a href="/#about-browserswarm" class="nav-link scroll">About</a>
 				<a href="/#">Terms of Service</a>
 				<a href="/#">Privacy Policy</a>
 			</nav>
-
-			<p>Site content licensing info can go here and any other important information or notice about the project like appendTo and Internet Explorer. </p>
-
+			<p>
+				All Framework logo's are the property of their respective owners.  
+				<br />Open Source code used on this site is copyright of their respective owners and under their respective Open Source Licenses.
+				<br />All other content is copyright &copy; 2013 appendTo, LLC. All rights reserved.
+			</p>
 		</div>
-
-
 
 <!-- Load jQuery: using Google CDN -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
@@ -37,11 +34,17 @@
 <script>
 $.getJSON("/frameworks.json", function(frameworks, stat){
   var content = $("#frameworkTemplate").html();
-
   var template = Handlebars.compile(content);
-
   $("#frameworkslist").html( template({
       frameworks: frameworks
   }));
 }) 
+</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-10552823-15', 'browserswarm.com');
+ga('send', 'pageview');
 </script>
