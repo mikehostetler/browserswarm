@@ -227,9 +227,9 @@ module.exports = function(ctx, cb){
 		context.results_detail.error_output = context.results_detail.output.match(/^.*\[ERROR\](.*)$/mg, "");
 		if(context.results_detail.error_output != null) {
 			context.results_detail.error_output = context.results_detail.error_output.join("\n");
+			context.results_detail.error_output = escapeHtml(context.results_detail.error_output);
 			show_error_console = true;
 		}	
-		context.results_detail.error_output = escapeHtml(context.results_detail.error_output);
 		context.results_detail.output = escapeHtml(context.results_detail.output);
 		if(context.results_detail.github_commit_info != undefined) {
 			context.results_detail.github_commit_info.short_id 
