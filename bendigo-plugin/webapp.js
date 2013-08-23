@@ -74,7 +74,7 @@ module.exports = function(ctx, cb){
 					job.stderr = "";
 					job.stdout = "";
 					job.stdmerged = "";
-					console.log(job);
+					//console.log(job);
 					showJob = false;
 				}
 
@@ -160,13 +160,12 @@ module.exports = function(ctx, cb){
 
       var job = null
 
+			// Find our job
       for (var i = 0; i< context.jobs.length; i++){
         if (context.jobs[i].id.indexOf(context.job_id) == 0){
           job = context.jobs[i];
           break;
         }
-				else {
-				}
       }
       if (!job){
         job = {tasks:[]}
@@ -184,6 +183,32 @@ module.exports = function(ctx, cb){
         testtotal += job.tasks[i].data.passed + job.tasks[i].data.failed
       }
 
+      for (var i in browsers){
+				// TODO - Set Default
+				browsers[i].supported = "unknown"
+
+				if (browsers[i].sl){
+					for (var z=0; z < job.tasks.length; z++){
+						var task_id = job.tasks[z].id;
+            var brows = job.tasks[z].data.id;
+            if (! (task_id == 'browserstack' || task_id == 'sauce'))
+							continue;
+
+            if (brows.indexOf(browsers[i].sl) > -1) {
+							// Sauce Labs fuzzy matching of browsers
+							browsers[i].supported = (job.tasks[z].data.failed == 0) ? "supported" : "not";
+							browsers[i].passed = job.tasks[z].data.passed;
+							browsers[i].total = job.tasks[z].data.passed + job.tasks[z].data.failed;
+            } else if (browsers[i].bs == brows){
+							// BrowserStack not fuzzy
+							browsers[i].supported = (job.tasks[z].data.failed == 0) ? "supported" : "not";
+							browsers[i].passed = job.tasks[z].data.passed;
+							browsers[i].total = job.tasks[z].data.passed + job.tasks[z].data.failed;
+            }
+					}
+				}
+			}
+
       return {
         passrate : parseInt((passtotal / testtotal) * 100)
       , passed : passtotal
@@ -197,12 +222,23 @@ module.exports = function(ctx, cb){
 
   ctx.registerBlock("JobMain", function(context, fn){
     var tmpl = swig.compileFile(__dirname  + "/JobMain.html")
+		var show_error_console = false;
 
-		// Need to escape this
-		// context.results_detail.output;
+		context.results_detail.error_output = context.results_detail.output.match(/^.*\[ERROR\](.*)$/mg, "");
+		if(context.results_detail.error_output != null) {
+			context.results_detail.error_output = context.results_detail.error_output.join("\n");
+			show_error_console = true;
+		}	
+		context.results_detail.error_output = escapeHtml(context.results_detail.error_output);
 		context.results_detail.output = escapeHtml(context.results_detail.output);
+		if(context.results_detail.github_commit_info != undefined) {
+			context.results_detail.github_commit_info.short_id 
+				= (context.results_detail.github_commit_info.id + "").slice(0,9);
+		}
 
-		var out = _.extend(context,JobPagePreCols(context,fn));
+		var out = _.extend(context,JobPagePreCols(context,fn),{
+			show_error_console: show_error_console
+		});
     fn(null, tmpl.render(out));
 	});
   
