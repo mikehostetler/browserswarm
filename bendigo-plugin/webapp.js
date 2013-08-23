@@ -246,6 +246,7 @@ module.exports = function(ctx, cb){
 }
 
 function escapeHtml(text) {
+	text = text + "";
 	return text
 		.replace(/&/g, "&amp;")
 		.replace(/</g, "&lt;")
