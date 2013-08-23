@@ -1,4 +1,5 @@
 var swig = require('swig')
+	, _ = require('underscore')
   , frameworks = require("./frameworks.json")
   , frameworksObj = {}
   , repoFrameworks = {}
@@ -58,14 +59,39 @@ module.exports = function(ctx, cb){
                  .lean(true)
                  .exec(function(err, jobs){
 
+			var showJob = true;
+			var showTask = true;
+
+
       var jobData = []
       for (x in jobs){
         var job = jobs[x]
+					job.stderr = "";
+					job.stdout = "";
+					job.stdmerged = "";
+
+				if(showJob) {
+					job.stderr = "";
+					job.stdout = "";
+					job.stdmerged = "";
+					console.log(job);
+					showJob = false;
+				}
 
         if (!job.tasks.length)
           continue;
 
-        var j = {id : job._id}
+				//console.log(job.github_commit_info);
+
+				var finishedDate = new Date(job.finished_timestamp);
+
+        var j = {
+					id : job._id,
+					github_commit_info: job.github_commit_info,
+					repo_url: job.repo_url,
+					short_time: (finishedDate.getMonth()+1) + "/" + finishedDate.getDate() + "/" + finishedDate.getFullYear()
+				};
+
         j.id_short  = (job._id + "").slice(0,9)
 
         for (var i in browsers){
@@ -74,6 +100,12 @@ module.exports = function(ctx, cb){
 
           if (browsers[i].sl){
             for (var z =0; z< job.tasks.length; z++){
+							/*
+							if(showTask) {
+								console.log(job.tasks[z]);
+								showTask = false;
+							}
+							*/
               var task_id = job.tasks[z].id;
               var brows = job.tasks[z].data.id;
               if (! (task_id == 'browserstack' || task_id == 'sauce'))
@@ -111,7 +143,7 @@ module.exports = function(ctx, cb){
 
   ctx.registerBlock("LoggedOutFillContent", function(context, fn){
     fn(null, swig.compileFile(__dirname + '/dashboard.html').render({}));
- })
+	})
 
   ctx.registerBlock("JobPagePreTitle", function(context, fn){
     var r = repoFrameworks[context.repo_url] || {}
@@ -127,14 +159,10 @@ module.exports = function(ctx, cb){
     fn(null, "<h4 class='job-page-pre-console'>Job Output</h4>")
   })
 
-  ctx.registerBlock("JobPagePreCols", function(context, fn){
-    var tmpl = swig.compileFile(__dirname  + "/JobPagePreCols.html")
-
+	function JobPagePreCols(context, fn) {
     var framework = frameworksObj[context.repo]
 
       var job = null
-
-			console.info("PreCol Job ID: " + context.job_id);
 
       for (var i = 0; i< context.jobs.length; i++){
         if (context.jobs[i].id.indexOf(context.job_id) == 0){
@@ -154,17 +182,13 @@ module.exports = function(ctx, cb){
       if (! job.tasks) job.tasks = [];
 
       for (var i = 0; i< job.tasks.length; i++){
-        if (!job.tasks[i].id == 'browserstack') continue;
-
-
+        if (!job.tasks[i].id == 'browserstack') 
+					continue;
         passtotal += job.tasks[i].data.passed
         testtotal += job.tasks[i].data.passed + job.tasks[i].data.failed
-
       }
 
-			//console.log("Passrate: "+parseInt((passtotal / testtotal) * 100));
-
-      var out = tmpl.render({
+      return {
         passrate : parseInt((passtotal / testtotal) * 100)
       , passed : passtotal
       , total : testtotal
@@ -172,12 +196,15 @@ module.exports = function(ctx, cb){
       , "name" : framework.name
       , "src" : framework.src
       , "browsers" : browsers
-      })
-      fn(null, out);
-  //  })
-  })
-  
+      };
+  }
 
-  console.log("bendigo webapp extension loaded");
+  ctx.registerBlock("JobMain", function(context, fn){
+    var tmpl = swig.compileFile(__dirname  + "/JobMain.html")
+
+		var out = _.extend(context,JobPagePreCols(context,fn));
+    fn(null, tmpl.render(out));
+	});
+  
   cb(null);
 }

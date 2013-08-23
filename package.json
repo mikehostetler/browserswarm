@@ -17,7 +17,8 @@
     "strider-browserstack": "https://github.com/Strider-CD/strider-browserstack/archive/master.tar.gz",
     "strider-qunit": "https://github.com/Strider-CD/strider-qunit/archive/master.tar.gz",
     "swig": "~0.13.5",
-    "strider-jelly" : "latest"
+    "strider-jelly" : "latest",
+    "underscore": ">=1.3.1"
   },
   "author": ""
 }
