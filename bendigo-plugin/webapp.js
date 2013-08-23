@@ -155,10 +155,6 @@ module.exports = function(ctx, cb){
     fn(null,"<p class='job-post-title'>" + r.name + " / " + r.name + "</p>")
   })
 
-  ctx.registerBlock("JobPagePreConsole", function(context, fn){
-    fn(null, "<h4 class='job-page-pre-console'>Job Output</h4>")
-  })
-
 	function JobPagePreCols(context, fn) {
     var framework = frameworksObj[context.repo]
 
@@ -202,9 +198,22 @@ module.exports = function(ctx, cb){
   ctx.registerBlock("JobMain", function(context, fn){
     var tmpl = swig.compileFile(__dirname  + "/JobMain.html")
 
+		// Need to escape this
+		// context.results_detail.output;
+		context.results_detail.output = escapeHtml(context.results_detail.output);
+
 		var out = _.extend(context,JobPagePreCols(context,fn));
     fn(null, tmpl.render(out));
 	});
   
   cb(null);
+}
+
+function escapeHtml(text) {
+	return text
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;")
+		.replace(/'/g, "&#039;");
 }
