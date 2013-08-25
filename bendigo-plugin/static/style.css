@@ -1354,6 +1354,7 @@ span.underline {
 
 /* FORCE STRIDER OVERRIDE */
 .wrap{
+	padding-top: 0px !important;
   min-height:inherit !important;
 }
 

@@ -31,11 +31,16 @@ var browsers = [
 
 module.exports = function(ctx, cb){
 
+	//console.dir(ctx.common.app.routes);
   ctx.route.get("/frameworks.json", function(req, res, next){
     var f = frameworks.filter(function(x){return !!x.id})  
     res.send(f)
   })
 
+  ctx.route.get("/:org/:repo/job/:job_id", function(req, res, next){
+		console.log("One Two Three!");
+    res.send("bla")
+	});
   ctx.route.get("/framework/results/:id", function(req, res, next){
 
     var framework = frameworksObj[req.params.id]
@@ -136,6 +141,8 @@ module.exports = function(ctx, cb){
       }))
     })
   })
+
+	console.dir(ctx.extensionRoutes);
 
   ctx.registerBlock("Nav", function(context, fn){
     fn(null, "&nbsp;");
@@ -241,6 +248,7 @@ module.exports = function(ctx, cb){
 		});
     fn(null, tmpl.render(out));
 	});
+
   
   cb(null);
 }
