@@ -1,11 +1,11 @@
 {
   "templates" :{
       "title" : "BrowserSwarm"
-    , "TopNav" : "./nav.html"
+    , "TopNav" : "./partials/nav.html"
     , "ExtraStyles" : "<link rel='stylesheet' href = '/ext/bendigo-plugin/style.css' />"
-    , "FooterText" : "./footer.html"
-    , "AfterHead" : "./after-head.html"
-    , "AfterJobPage" : "./AfterJobPage.html"
+    , "FooterText" : "./partials/footer.html"
+    , "AfterHead" : "./partials/after-head.html"
+    , "AfterJobPage" : "./partials/AfterJobPage.html"
     }
 
  , "webapp" : "webapp.js"
