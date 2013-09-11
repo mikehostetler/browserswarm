@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block bodyContent %}
+	<div class="page-intro framework">
+		<div class="wrap">
+      <h1 class="page-heading-lrg">{{ name }}</h1>
+      <p class="description">Refer to the grid below to see how {{ name }}’s recent builds perform across browsers.</p>
+		</div>
+	</div>
+	<main>
+		<div class="wrap">
+			<div class="framework-grid">
+				<aside class="sidebar">
+					<div class="title-row">
+						<div class="framework-title">
+							<img src="{{ src }}" border="0" alt="{{ name }}" />
+						</div>
+					</div>
+					<ul class="joblist">
+						{% for job in results %}
+							<li>
+								<a href="/{{ repo }}/result/{{ job.id }}">{{job.short_time}} - #{{ job.id_short }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</aside>
+				<section class="browser-stats">
+					<div class="title-row">
+					{% for browser in browsers %}
+						<div class="browser-title">
+							<img src="/ext/bendigo-plugin/browser-logo/browser-{{ browser.ico }}.png"
+									align="center" border="0" alt="{{ browser.name }}" width="48" height="48" />
+							<p>{{ browser.name }}</p>
+						</div>
+					{% endfor %}
+					</div>
+
+					<div class="results-row">
+						{% for browser in browsers %}
+						<ul id="{{ browser.id }}" class="browser-results first">
+							{% for result in results %}
+							<li class="{{ result[browser.id] }}"></li>
+							{% endfor %}
+						</ul>
+						{% endfor %}
+					</div>
+					<div class="shadow"></div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<h4>Or, view results from <a href="/">another framework</a>.</h4>
+
+	{% pluginblock EmailSignup %}{% endpluginblock %}
+
+{% endblock %}

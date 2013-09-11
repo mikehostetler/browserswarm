@@ -6,6 +6,8 @@
     , "FooterText" : "./partials/footer.html"
     , "AfterHead" : "./partials/after-head.html"
     , "AfterJobPage" : "./partials/AfterJobPage.html"
+    , "EmailSignup" : "./partials/EmailSignup.html"
+    , "LoggedOutFillContent" : "./partials/dashboard.html"
     }
 
  , "webapp" : "webapp.js"

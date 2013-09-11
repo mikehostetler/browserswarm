@@ -1,11 +1,11 @@
 ## Overview
 
-Bendigo is a heavily customized version of [StriderCD](http://stridercd.com).
+BrowserSwarm is a heavily customized version of [StriderCD](http://stridercd.com).
 The Strider core is BSD-licensed and is desigend to be highly customizable and
 extensible. Strider is written in JavaScript / Node.JS and uses MongoDB as a
 database backend.
 
-The Bendigo web application server is implemented as a consumer of Strider as a
+The BrowserSwarm web application server is implemented as a consumer of Strider as a
 library.
 
 All the customizations and special logic is contained in a number of Strider plugins:
@@ -14,11 +14,11 @@ All the customizations and special logic is contained in a number of Strider plu
 - [strider-browserstack](https://github.com/Strider-CD/strider-browserstack): BrowserStack.com support for running front-end JavaScript tests in multiple Browser/OS combinations on the BrowserStack cloud. This plugin transparently works with strider-qunit. Note that [strider-sauce](https://github.com/Strider-CD/strider-sauce) may also be used if you wish to run the tests on Sauce Labs cloud instead of BrowserStack.
 - [strider-jelly](https://github.com/Strider-CD/strider-jelly): Strider Jelly-Proxy plugin.
 - [strider-custom](https://github.com/Strider-CD/strider-custom): Run custom shell commands for projects in each phase.
-- [bendigo-plugin](https://github.com/appendto/strider/tree/master/bendigo-plugin): Front-end and mostly display customization for the Bendigo project resides here. This is a private, non-open source plugin.
+- [browserswarm-plugin](https://github.com/appendto/strider/tree/master/browserswarm-plugin): Front-end and mostly display customization for the BrowserSwarm project resides here. This is a private, non-open source plugin.
 
 ## Dependencies
 
-Bendigo consists of a single node.js web application process, which spawns test jobs in response to Github commits and manual test runs.
+BrowserSwarm consists of a single node.js web application process, which spawns test jobs in response to Github commits and manual test runs.
 
 In order to run the jQuery tests, it requires:
 
@@ -29,7 +29,7 @@ In order to run the jQuery tests, it requires:
 
 ## Running Locally
 
-Bendigo is quite easy to run in a development setting on your local machine. You need:
+BrowserSwarm is quite easy to run in a development setting on your local machine. You need:
 
 - MongoDB running on local machine. Get MongoDB at http://www.mongodb.org/downloads
 - Node.JS installed on local machine. Get Node.JS at http://nodejs.org
@@ -51,53 +51,53 @@ Add an admin user to log in with:
 
 `./node_modules/strider/bin/strider addUser`
 
-Start Bendigo application server:
+Start BrowserSwarm application server:
 
 `npm start`
 
-Assuming all went well, your Bendigo instance should now be accessible at [http://localhost:3000](http://localhost:3000)
+Assuming all went well, your BrowserSwarm instance should now be accessible at [http://localhost:3000](http://localhost:3000)
 
 ## Production Environment
 
-The [live Bendigo application](http://bendigolive-appendto.dotcloud.com) is hosted on [dotCloud](http://dotcloud.com). We use dotCloud because they are the only PaaS provider we're aware of who support:
+The [live BrowserSwarm application](http://browserswarmlive-appendto.dotcloud.com) is hosted on [dotCloud](http://dotcloud.com). We use dotCloud because they are the only PaaS provider we're aware of who support:
 
-- Up to 64G of memory per process (Bendigo needs about 768M to run the JVM process, PHP and the JavaScript tests)
+- Up to 64G of memory per process (BrowserSwarm needs about 768M to run the JVM process, PHP and the JavaScript tests)
 - Support for Node.JS, Websockets, Java and PHP all in the same application environment
 
 The dotCloud production application consists of two instances (for redundancy
 more than performance per se) with 768M of reserved memory each.
 
-The live Bendigo MongoDB database is a [MongoLab shared cluster
+The live BrowserSwarm MongoDB database is a [MongoLab shared cluster
 plan](https://mongolab.com/products/architecture/). The shared cluster plan
 includes a replica in a different EC2 availability zone for redundancy.
 MongoLab can also be used to monitor performance, query data, and offers scheduled
-database backup services if required. At this time, it is unlikely Bendigo will
+database backup services if required. At this time, it is unlikely BrowserSwarm will
 need higher performance, but if necessary it can be upgraded to a MongoLab
 dedicated plan.
 
 The MongoDB database is hosted in the Amazon EC2 us-east-1 location, which is
 the same location as dotCloud. This means that there is minimal network latency
-between the Bendigo applciation server and the Benidgo MongoDB server.
+between the BrowserSwarm applciation server and the Benidgo MongoDB server.
 
 ## Setting up dotCloud Tools & Account
 
-[dotCloud](http://docs.dotcloud.com/firststeps/install/) has a web interface and a CLI tool. To deploy Bendigo to dotCloud, you must use the CLI tool. [See the dotCloud website for help on installing the CLI tool on multiple platforms](http://docs.dotcloud.com/firststeps/install/)
+[dotCloud](http://docs.dotcloud.com/firststeps/install/) has a web interface and a CLI tool. To deploy BrowserSwarm to dotCloud, you must use the CLI tool. [See the dotCloud website for help on installing the CLI tool on multiple platforms](http://docs.dotcloud.com/firststeps/install/)
 
 Once you have the `dotcloud` command available on the machine you wish to deploy from, ensure you are logged into the `appendto` dotCloud account (Mike has the credentials).
 
-You can do this by `cd`'ing into the [Bendigo repo](https://github.com/appendto/strider) you cloned from Github earlier:
+You can do this by `cd`'ing into the [BrowserSwarm repo](https://github.com/appendto/strider) you cloned from Github earlier:
 
 `cd /path/to/strider && dotcloud setup`
 
-The name of the production dotCloud app for Bendigo is `bendigolive`. You should connect the Bendigo repo copy to this app with the following command:
+The name of the production dotCloud app for BrowserSwarm is `browserswarmlive`. You should connect the BrowserSwarm repo copy to this app with the following command:
 
-`cd /path/to/strider && dotcloud connect --git bendigolive`
+`cd /path/to/strider && dotcloud connect --git browserswarmlive`
 
 Now to confirm you are correctly connect, run `dotcloud info` and you should see something like the following output on your terminal:
 
 ```
 $ dotcloud info
-=== bendigolive
+=== browserswarmlive
 flavor:                     live
 cost to date:               $41
 expected month-end cost:    $207
@@ -110,9 +110,9 @@ expected month-end cost:    $207
 
 ## Deploying to dotCloud
 
-Deploying a new version of Bendigo to dotCloud is a straight-forward process. However, you should be aware that it does occasionally fail or error out. If you receive an error, simply retry.
+Deploying a new version of BrowserSwarm to dotCloud is a straight-forward process. However, you should be aware that it does occasionally fail or error out. If you receive an error, simply retry.
 
-To execute an incremental deploy to Bendigo, simply run the following command from the Bendigo repo clone. This is the same directly that contains a file named `dotcloud.yml`:
+To execute an incremental deploy to BrowserSwarm, simply run the following command from the BrowserSwarm repo clone. This is the same directly that contains a file named `dotcloud.yml`:
 
 `dotcloud push`
 
@@ -130,13 +130,13 @@ Hopefully you won't need to change any of these details, but it may be helpful t
 
 The dotCloud application is implemented as a `custom` service. This is because we require multiple languages in a single application container: Java, PHP and Node. Refer to the [dotCloud custom service documentation](http://docs.dotcloud.com/services/custom/) for the gorey details.
 
-The build script for the `custom` service is in [dotcloud-builder/builder](https://github.com/appendto/strider/blob/master/dotcloud-builder/builder). The most likely reason to edit this script is to change the version of Node.JS used to run Bendigo on production. 
+The build script for the `custom` service is in [dotcloud-builder/builder](https://github.com/appendto/strider/blob/master/dotcloud-builder/builder). The most likely reason to edit this script is to change the version of Node.JS used to run BrowserSwarm on production. 
 
 The rest of the configuration is stored in the [dotcloud.yml](https://github.com/appendto/strider/blob/master/dotcloud.yml) file in the project root. This file specifies:
 
 - PHP5-cli package should be installed in the dotCloud container.
 - The MongoDB URL (`DB_URI` variable)
-- The Internet-accessible hostname of Bendigo (`SERVER_NAME` variable)
+- The Internet-accessible hostname of BrowserSwarm (`SERVER_NAME` variable)
 - The Github OAuth Application ID and Secret (`GITHUB_APP_ID` and `GITHUB_APP_SECRET` variables)
 - The SMTP server settings to send email (`SMTP_HOST`, `SMTP_USER`, `SMTP_PASS` variables) (currently using a free [Mailgun](http://mailgun.org) account)
 - The start command for the application server (`npm start`)
