@@ -1532,6 +1532,7 @@ pre.console-output{
 }
 
 #list-of-builds{ 
+	position: relative !important;
   border:none; 
   margin:0;
 }
