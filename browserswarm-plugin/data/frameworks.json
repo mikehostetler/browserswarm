@@ -1,36 +1,36 @@
 [{
     "id" : "jquery",
-    "src" : "/ext/bendigo-plugin/framework-logo/jquery.png",
+    "src" : "/ext/browserswarm-plugin/framework-logo/jquery.png",
     "name" : "jQuery",
     "repo_url" : "https://github.com/browserswarm/jquery",
     "repo" : "browserswarm/jquery"
 }, 
 {
     "id" : "jquery-ui",
-    "src" : "/ext/bendigo-plugin/framework-logo/jqueryui.png",
+    "src" : "/ext/browserswarm-plugin/framework-logo/jqueryui.png",
     "name" : "jQuery UI",
     "repo_url" : "https://github.com/browserswarm/jquery-ui",
     "repo" : "browserswarm/jquery-ui"
 },
 {
     "id" : "jquery-mobile",
-    "src" : "/ext/bendigo-plugin/framework-logo/jquerymobile.png",
+    "src" : "/ext/browserswarm-plugin/framework-logo/jquerymobile.png",
     "name" : "jQuery Mobile",
     "repo_url" : "https://github.com/browserswarm/jquery-mobile",
     "repo" : "browserswarm/jquery-mobile"
 },
 {
-	"src" : "/ext/bendigo-plugin/framework-logo/jquerymobile.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/jquerymobile.png",
 	"name" : "jQuery Mobile"
 },{
   "id" : "dojo",
   "repo" : "browserswarm/dojo",
   "repo_url" : "https://github.com/browserswarm/dojo",
-	"src" : "/ext/bendigo-plugin/framework-logo/dojo.jpg",
+	"src" : "/ext/browserswarm-plugin/framework-logo/dojo.jpg",
 	"name" : "Dojo Toolkit"
 },{
     "id": "mootools-core",
-	"src" : "/ext/bendigo-plugin/framework-logo/mootools.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/mootools.png",
     "name" : "Mootools",
     "repo_url" : "https://github.com/browserswarm/mootools-core",
     "repo" : "browserswarm/mootools-core"
@@ -38,43 +38,43 @@
   "id" : "prototype",
   "repo" : "browserswarm/prototype",
   "repo_url" : "https://github.com/browserswarm/prototype",
-	"src" : "/ext/bendigo-plugin/framework-logo/prototype.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/prototype.png",
 	"name" : "Prototype"
 },{
   "id" : "modernizr",
-	"src" : "/ext/bendigo-plugin/framework-logo/modernizr.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/modernizr.png",
 	"name" : "Modernizr",
   "repo_url" : "https://github.com/browserswarm/modernizr",
   "repo" : "browserswarm/modernizr"
 },{
   "id" : "underscore",
-	"src" : "/ext/bendigo-plugin/framework-logo/underscorejs.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/underscorejs.png",
 	"name" : "Underscore JS",
   "repo_url" : "https://github.com/browserswarm/underscore",
   "repo" : "browserswarm/underscore"
 },{
   "id" : "backbone",
-	"src" : "/ext/bendigo-plugin/framework-logo/backbonejs.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/backbonejs.png",
 	"name" : "Backbone JS",
   "repo_url" : "https://github.com/browserswarm/backbone",
   "repo" : "browserswarm/backbone"
 },{
   "id" : "knockout",
-	"src" : "/ext/bendigo-plugin/framework-logo/knockout.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/knockout.png",
 	"name" : "Knockout",
   "repo" :"browserswarm/knockout",
   "repo_url" :"https://github.com/browserswarm/knockout"
 },{
-	"src" : "/ext/bendigo-plugin/framework-logo/ember.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/ember.png",
 	"name" : "Ember"
 },{
-	"src" : "/ext/bendigo-plugin/framework-logo/angular.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/angular.png",
 	"name" : "Angular JS"
 },{
-	"src" : "/ext/bendigo-plugin/framework-logo/enyo.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/enyo.png",
 	"name" : "Enyo"
 },{
-	"src" : "/ext/bendigo-plugin/framework-logo/jqtouch.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/jqtouch.png",
 	"name" : "jQTouch"
 },{
 	"name" : "jQuery Validate"
@@ -85,7 +85,7 @@
 },{
 	"name" : "jQuery Easing"
 },{
-	"src" : "/ext/bendigo-plugin/framework-logo/zeptojs.png",
+	"src" : "/ext/browserswarm-plugin/framework-logo/zeptojs.png",
 	"name" : "Zepto JS"
 },{
 	"name" : "zui.js"
@@ -96,7 +96,7 @@
 },{
 	"name" : "Twitter Bootstrap"
 },{
-	"src" : "/ext/bendigo-plugin/framework-logo/extjs.jpg",
+	"src" : "/ext/browserswarm-plugin/framework-logo/extjs.jpg",
 	"name" : "ExtJS"
 },{
 	"name" : "Sencha Touch"
