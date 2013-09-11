@@ -25,7 +25,9 @@ frameworks.forEach(function(x){
     repoFrameworks[x.repo_url] = x;
 })
 
-
+/** 
+ * Initialize SWIG, the template engine, with the same settings as Strider core
+ */
 swig.init({
 	root: ['.',__dirname + '/views',__dirname+'/partials',BASE_PATH+"../views"]
 	, allowErrors: true // allows errors to be thrown and caught by express instead of suppressed by Swig
@@ -49,17 +51,18 @@ module.exports = function(ctx, cb){
     fn(null, "<p class='job-pre-title'>Framework / " + r.name + "</p>")
   });
 
-	ctx.registerBlock("LoggedOutFillContent", function(context, fn){
-		fn(null, swig.compileFile(__dirname + '/partials/dashboard.html').render({}));
-	});
-
   ctx.registerBlock("JobPagePostTitle", function(context, fn){
     var r = repoFrameworks[context.repo_url] || {}
     fn(null,"<p class='job-post-title'>" + r.name + " / " + r.name + "</p>")
   });
 
+	ctx.registerBlock("LoggedOutFillContent", function(context, fn){
+    var tmpl = swig.compileFile(__dirname  + "/partials/dashboard.html")
+    fn(null, tmpl.render({}));
+	});
+
   ctx.registerBlock("JobMain", function(context, fn){
-    var tmpl = swig.compileFile(__dirname  + "/views/JobMain.html")
+    var tmpl = swig.compileFile(__dirname  + "/partials/jobmain.html")
 		var show_error_console = false;
 
 		context.results_detail.error_output = context.results_detail.output.match(/^.*\[ERROR\](.*)$/mg, "");
