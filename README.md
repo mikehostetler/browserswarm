@@ -14,7 +14,7 @@ All the customizations and special logic is contained in a number of Strider plu
 - [strider-browserstack](https://github.com/Strider-CD/strider-browserstack): BrowserStack.com support for running front-end JavaScript tests in multiple Browser/OS combinations on the BrowserStack cloud. This plugin transparently works with strider-qunit. Note that [strider-sauce](https://github.com/Strider-CD/strider-sauce) may also be used if you wish to run the tests on Sauce Labs cloud instead of BrowserStack.
 - [strider-jelly](https://github.com/Strider-CD/strider-jelly): Strider Jelly-Proxy plugin.
 - [strider-custom](https://github.com/Strider-CD/strider-custom): Run custom shell commands for projects in each phase.
-- [browserswarm-plugin](https://github.com/appendto/strider/tree/master/browserswarm-plugin): Front-end and mostly display customization for the BrowserSwarm project resides here. This is a private, non-open source plugin.
+- [browserswarm-plugin](https://github.com/appendto/browserswarm/tree/master/browserswarm-plugin): Front-end and mostly display customization for the BrowserSwarm project resides here. This is a private, non-open source plugin.
 
 ## Dependencies
 
@@ -41,7 +41,7 @@ Optionally:
 
 Clone the repo from github:
 
-`git clone git@github.com:appendto/strider.git`
+`git clone git@github.com:appendto/browserswarm.git`
 
 Install dependencies:
 
@@ -85,7 +85,7 @@ between the BrowserSwarm applciation server and the Benidgo MongoDB server.
 
 Once you have the `dotcloud` command available on the machine you wish to deploy from, ensure you are logged into the `appendto` dotCloud account (Mike has the credentials).
 
-You can do this by `cd`'ing into the [BrowserSwarm repo](https://github.com/appendto/strider) you cloned from Github earlier:
+You can do this by `cd`'ing into the [BrowserSwarm repo](https://github.com/appendto/browserswarm) you cloned from Github earlier:
 
 `cd /path/to/strider && dotcloud setup`
 
@@ -130,9 +130,9 @@ Hopefully you won't need to change any of these details, but it may be helpful t
 
 The dotCloud application is implemented as a `custom` service. This is because we require multiple languages in a single application container: Java, PHP and Node. Refer to the [dotCloud custom service documentation](http://docs.dotcloud.com/services/custom/) for the gorey details.
 
-The build script for the `custom` service is in [dotcloud-builder/builder](https://github.com/appendto/strider/blob/master/dotcloud-builder/builder). The most likely reason to edit this script is to change the version of Node.JS used to run BrowserSwarm on production. 
+The build script for the `custom` service is in [dotcloud-builder/builder](https://github.com/appendto/browserswarm/blob/master/dotcloud-builder/builder). The most likely reason to edit this script is to change the version of Node.JS used to run BrowserSwarm on production. 
 
-The rest of the configuration is stored in the [dotcloud.yml](https://github.com/appendto/strider/blob/master/dotcloud.yml) file in the project root. This file specifies:
+The rest of the configuration is stored in the [dotcloud.yml](https://github.com/appendto/browserswarm/blob/master/dotcloud.yml) file in the project root. This file specifies:
 
 - PHP5-cli package should be installed in the dotCloud container.
 - The MongoDB URL (`DB_URI` variable)
