@@ -264,8 +264,6 @@ module.exports = function(ctx, cb){
     })
   })
 
-	console.dir(ctx.extensionRoutes);
-
   ctx.registerBlock("Nav", function(context, fn){
     fn(null, "&nbsp;");
   })

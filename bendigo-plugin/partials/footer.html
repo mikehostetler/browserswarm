@@ -14,38 +14,38 @@
 			</p>
 		</div>
 
-<!-- Load jQuery: using Google CDN -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+		<!-- Load jQuery: using Google CDN -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
-<script src="/ext/bendigo-plugin/handlebars.min.js"></script>
-<script src="/ext/bendigo-plugin/site.js"></script>
+		<script src="/ext/bendigo-plugin/handlebars.min.js"></script>
+		<script src="/ext/bendigo-plugin/site.js"></script>
 
-<!-- Handlebars tempaltes -->
-<script type="text/html" id="frameworkTemplate">
-{{#each frameworks}}
-    <li class="framework-item">
-    <a href="/framework/results/{{ this.id }}">
-    		<h3 class="framework-name">{{this.name}}</h3>
-    		{{#if this.src}}<div class="framework-logo" style="background-image: url({{this.src}});"></div>{{/if}}
-    		<p class="btn view-framework">View Test Results</p>
-    	</a>
-    </li>
-{{/each}}
-</script>
-<script>
-$.getJSON("/frameworks.json", function(frameworks, stat){
-  var content = $("#frameworkTemplate").html();
-  var template = Handlebars.compile(content);
-  $("#frameworkslist").html( template({
-      frameworks: frameworks
-  }));
-}) 
-</script>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-10552823-15', 'browserswarm.com');
-ga('send', 'pageview');
-</script>
+		<!-- Handlebars tempaltes -->
+		<script type="text/html" id="frameworkTemplate">
+		{{#each frameworks}}
+				<li class="framework-item">
+				<a href="/framework/results/{{ this.id }}">
+						<h3 class="framework-name">{{this.name}}</h3>
+						{{#if this.src}}<div class="framework-logo" style="background-image: url({{this.src}});"></div>{{/if}}
+						<p class="btn view-framework">View Test Results</p>
+					</a>
+				</li>
+		{{/each}}
+		</script>
+		<script>
+		$.getJSON("/frameworks.json", function(frameworks, stat){
+			var content = $("#frameworkTemplate").html();
+			var template = Handlebars.compile(content);
+			$("#frameworkslist").html( template({
+					frameworks: frameworks
+			}));
+		}) 
+		</script>
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-10552823-15', 'browserswarm.com');
+		ga('send', 'pageview');
+		</script>
