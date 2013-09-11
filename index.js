@@ -1,5 +1,14 @@
 var strider = require('strider')
 
-strider([".", "node_modules", "node_modules/strider/node_modules"], {}, function(){
-  console.log("BrowserSwarm is running");
+var testWorker = false;
+var includePath = [];
+if(testWorker) {
+	includePath = [".", "node_modules", "node_modules/strider/node_modules"];
+}
+else {
+	includePath = ["node_modules", "node_modules/strider/node_modules"];
+}
+
+strider(includePath, {}, function(){
+	console.log("BrowserSwarm is running");
 });
