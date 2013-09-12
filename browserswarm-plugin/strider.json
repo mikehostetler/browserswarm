@@ -1,7 +1,6 @@
 {
   "templates" :{
       "title" : "BrowserSwarm"
-    , "TopNav" : "./partials/nav.html"
     , "ExtraStyles" : "<link rel='stylesheet' href = '/ext/browserswarm-plugin/style.css' />"
     , "FooterText" : "./partials/footer.html"
     , "AfterHead" : "./partials/after-head.html"
