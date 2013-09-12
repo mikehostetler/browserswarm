@@ -2,3 +2,4 @@ node_modules
 .dotcloud/*
 config.sh
 .idea/*
+.tmp/
