@@ -156,7 +156,7 @@ module.exports = function(ctx, cb){
     res.send(f)
   })
 
-  ctx.route.get("/:org/:repo/result/:job_id", function(req, res, next){
+  ctx.route.get("/:org/:repo/job/:job_id", function(req, res, next){
 		res.statusCode = 200;
 		var org = req.params.org;
 		var repo = req.params.repo;
