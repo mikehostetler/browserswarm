@@ -16,12 +16,14 @@
                 {% endif %}
 
 				<nav class="site-nav">
+                    {% if currentUser %}
+                        <a href="/" class="nav-link">Dashboard</a>
+                        <a href="/account" class="nav-link">Settings</a>
+                    {% endif %}
 					<a href="/#framework-matrix" class="nav-link">Framework Results</a>
 					<a href="/#about-browserswarm" class="nav-link">About</a>
 
-                    {% if currentUser %}
-                        <a href="/account" class="nav-link">Settings</a>
-                    {% else %}
+                    {% if !currentUser %}
                         <a href="/register" class="nav-link">Register</a>
                     {% endif %}
 				</nav>
