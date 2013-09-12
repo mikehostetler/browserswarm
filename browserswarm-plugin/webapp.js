@@ -46,9 +46,14 @@ module.exports = function(ctx, cb){
     fn(null, "&nbsp;");
   });
 
+  ctx.registerBlock("TopNav", function(context, fn){
+    var tmpl = swig.compileFile(__dirname  + "/partials/nav.html");
+    fn(null, tmpl.render({ currentUser: (context.currentUser || null) }));
+  });
+
   ctx.registerBlock("JobPagePreTitle", function(context, fn){
-    var r = repoFrameworks[context.repo_url] || {}
-    fn(null, "<p class='job-pre-title'>Framework / " + r.name + "</p>")
+    var r = repoFrameworks[context.repo_url] || {};
+    fn(null, "<p class='job-pre-title'>Framework / " + r.name + "</p>");
   });
 
   ctx.registerBlock("JobPagePostTitle", function(context, fn){

@@ -9,14 +9,23 @@
 
 			<div class="navwrap">
 
-				<a href="/login" class="site-login">
-					<span class="drop">Framework Author</span> Login
-				</a>
+                {% if currentUser %}
+                    <a href="/logout" class="site-login">Logout</a>
+                {% else %}
+                    <a href="/login" class="site-login">Login</a>
+                {% endif %}
 
 				<nav class="site-nav">
-					<a href="/#framework-matrix" class="nav-link scroll">Test Results</a>
-					<a href="/#email-signup" class="nav-link scroll">Start Testing</a>
-					<a href="/#about-browserswarm" class="nav-link scroll">About</a>
+                    {% if currentUser %}
+                        <a href="/" class="nav-link">Dashboard</a>
+                        <a href="/account" class="nav-link">Settings</a>
+                    {% endif %}
+					<a href="/#framework-matrix" class="nav-link">Framework Results</a>
+					<a href="/#about-browserswarm" class="nav-link">About</a>
+
+                    {% if !currentUser %}
+                        <a href="/register" class="nav-link">Register</a>
+                    {% endif %}
 				</nav>
 
 			</div><!--/.navwrap-->
