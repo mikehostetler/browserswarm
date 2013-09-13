@@ -1649,3 +1649,14 @@ h1, h2, h3, h4, h5, h6{
 	background: #fff;
 	border: 1px solid #c8c8c8;
 }
+
+
+/* 
+Override Strider styles for project page (/github-user/project-name/)
+TODO: We should rework these elements as we can't see the footer currently!
+*/
+body.job_view .job-left-col {
+    top: 0;
+    bottom: auto;
+}
+body.job_view footer { display: block; }
