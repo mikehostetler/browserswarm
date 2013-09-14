@@ -5,7 +5,7 @@
     , "FooterText" : "./partials/footer.html"
     , "AfterHead" : "./partials/after-head.html"
     , "EmailSignup" : "./partials/EmailSignup.html"
-    , "LoggedOutFillContent" : "./partials/dashboard.html"
+    , "LoggedOutFillContent" : "./partials/home.html"
     }
 
  , "webapp" : "webapp.js"
