@@ -4,7 +4,6 @@
     , "ExtraStyles" : "<link rel='stylesheet' href = '/ext/browserswarm-plugin/style.css' />"
     , "FooterText" : "./partials/footer.html"
     , "AfterHead" : "./partials/after-head.html"
-    , "AfterJobPage" : "./partials/AfterJobPage.html"
     , "EmailSignup" : "./partials/EmailSignup.html"
     , "LoggedOutFillContent" : "./partials/dashboard.html"
     }
