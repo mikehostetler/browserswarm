@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "strider": "https://github.com/appendto/strider/archive/bs1.3.5.tar.gz",
-    "strider-browserstack": "https://github.com/appendto/strider-browserstack/archive/master.tar.gz",
     "strider-qunit": "https://github.com/appendto/strider-qunit/archive/master.tar.gz",
     "strider-jelly": "https://github.com/appendto/strider-jelly/archive/master.tar.gz",
     "swig": "~0.13.5",
