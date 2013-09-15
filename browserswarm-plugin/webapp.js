@@ -347,6 +347,21 @@ module.exports = function(ctx, cb){
     })
   })
 
+  ctx.route.post("/pre-register", function(req, res, next) {
+    
+    console.log("Pre-register submit: " + req.body.email);
+
+    // TODO: capture the email address for sending updates before actual registration
+
+    res.redirect("/signup?email=" + req.body.email);
+  });
+
+  ctx.route.get('/signup', function(req, res, next){
+    var email = (req.query.email || "");
+    console.log("hitting sign up page with email: " + email, req.query);
+    return res.render(__dirname + '/views/signup.html', { email: email });
+  })
+
   cb(null);
 }
 
