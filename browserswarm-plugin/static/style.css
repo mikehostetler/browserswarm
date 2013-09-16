@@ -934,7 +934,7 @@ p.different-framework a {
   border: 1px solid #FFF;
 }
 
-.job-details .job-detail 
+.job-details .job-detail
 .framework-grid {
 	margin-top: 0px;
   -webkit-border-radius: 0px;
@@ -1405,7 +1405,7 @@ footer {
 
 .strider-fillpage .login-form{
   display:block;
-  width:400px; 
+  width:400px;
   background-color:#fff;
   padding:3em;
   margin:2em auto;
@@ -1453,7 +1453,7 @@ footer{
   text-align: center;
   -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2); 
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
 .footer-site-nav a {
   font-size: 0.875em;
@@ -1531,9 +1531,9 @@ pre.console-output{
   border: 1px solid #dbdbdb;
 }
 
-#list-of-builds{ 
+#list-of-builds{
 	position: relative !important;
-  border:none; 
+  border:none;
   margin:0;
 }
 #list-of-builds .icon-ok {display:none;}
@@ -1615,19 +1615,19 @@ pre.console-output{
   display:none;
 }
 
-.build-item-duration:before{content:"Duration:";} 
-.build-item-duration{ 
+.build-item-duration:before{content:"Duration:";}
+.build-item-duration{
   float:none;
   display:block;
   font-size:12px;
   font-weight:normal;
-} 
+}
 
 .job-page {margin-bottom:40px !important;}
 
 .job-page-intro h3 .job-repo{display:none;}
 
-.framework-matrix .footer{ 
+.framework-matrix .footer{
   font-size:1em;
   padding-top:1em;
   padding-bottom:1em;
@@ -1648,4 +1648,35 @@ h1, h2, h3, h4, h5, h6{
 	font-size: 1px;
 	background: #fff;
 	border: 1px solid #c8c8c8;
+}
+
+
+
+/* LOGIN */
+
+.strider-fillpage form.login-form {
+	padding-bottom: 1.2em;
+}
+
+form.login-form > div {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+form.login-form label {
+	display: inline-block;
+	width: 62px;
+	text-align: right;
+	line-height: 7px;
+	margin-right: 10px;
+}
+
+form.login-form input[type="text"] {
+
+}
+
+form.login-form input[type="submit"] {
+	float: right;
+	margin-right: 18px;
+	padding: 5px 10px;
 }
