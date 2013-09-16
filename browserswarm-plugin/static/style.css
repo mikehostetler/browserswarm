@@ -1651,6 +1651,17 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
+/* FOOTER */
+
+footer .wrap {
+	margin-bottom: -60px;
+	padding-bottom: 60px;
+}
+
+footer .wrap p {
+	margin-bottom: 0;
+}
+
 
 /* LOGIN */
 
@@ -1679,4 +1690,17 @@ form.login-form input[type="submit"] {
 	float: right;
 	margin-right: 18px;
 	padding: 5px 10px;
+}
+
+
+/* PROJECT */
+
+body.job_view .body-content {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+body.job_view footer {
+	display: block;
 }
