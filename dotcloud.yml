@@ -5,6 +5,6 @@ www:
     - rake
   buildscript: dotcloud-builder/builder
   node_version: v0.10.x
-  process: env PORT=$PORT_WWW DB_URI="mongodb://strider:FA2DcssxX6JEPku@ds029458-a0.mongolab.com:29458/bendigolive" SERVER_NAME=https://bendigolive-appendto.dotcloud.com GITHUB_APP_ID=67044dcc57624b53fd63 GITHUB_APP_SECRET=4b36db0cbc729b0f3020b992b562f7df5ef1092c SMTP_HOST=smtp.mailgun.org SMTP_PORT=587 SMTP_USER=postmaster@appendto-bendigo.mailgun.org SMTP_PASS=421v8ogkxkn6 NODE_ENV=production npm start
+  process: env PORT=$PORT_WWW DB_URI="mongodb://strider:FA2DcssxX6JEPku@ds029458-a0.mongolab.com:29458/bendigolive" SERVER_NAME=https://bendigolive-appendto.dotcloud.com GITHUB_APP_ID=afa1f4a0f8bcb932ad4d GITHUB_APP_SECRET=337ef13b759770f4ea30f063733d19d3998ed50a SMTP_HOST=smtp.mailgun.org SMTP_PORT=587 SMTP_USER=postmaster@appendto-bendigo.mailgun.org SMTP_PASS=421v8ogkxkn6 NODE_ENV=production npm start
   ports:
     www: http
