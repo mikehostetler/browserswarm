@@ -21,6 +21,18 @@ var libs = {
   'prototype': 'https://github.com/sstephenson/prototype.git',
   'mootools-core': 'https://github.com/mootools/mootools-core.git',
   'knockout': 'https://github.com/knockout/knockout.git',
+	'ember.js': 'https://github.com/emberjs/ember.js.git',
+	'angular.js': 'https://github.com/angular/angular.js.git',
+	'selectize.js': 'https://github.com/brianreavis/selectize.js.git',
+	'bootstrap': 'https://github.com/twbs/bootstrap.git',
+	'zepto': 'https://github.com/madrobby/zepto.git',
+	'fine-uploader': 'https://github.com/Widen/fine-uploader.git',
+	'form': 'https://github.com/malsup/form.git',
+	'cycle2': 'https://github.com/malsup/cycle2.git',
+	'jquery.maskedinput': 'https://github.com/digitalBush/jquery.maskedinput.git',
+	'jquery-validation': 'https://github.com/jzaefferer/jquery-validation.git',
+	'knockout-postbox': 'https://github.com/rniemeyer/knockout-postbox.git',
+	'knockout-kendo': 'https://github.com/kendo-labs/knockout-kendo.git'
 }
 
 var f = []
