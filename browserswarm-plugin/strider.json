@@ -1,12 +1,13 @@
 {
-  "templates" :{
-      "title" : "BrowserSwarm"
-    , "ExtraStyles" : "<link rel='stylesheet' href = '/ext/browserswarm-plugin/style.css' />"
-    , "FooterText" : "./partials/footer.html"
-    , "AfterHead" : "./partials/after-head.html"
-    , "EmailSignup" : "./partials/EmailSignup.html"
-    , "LoggedOutFillContent" : "./partials/home.html"
-    }
-
- , "webapp" : "webapp.js"
+  "templates": {
+    "title": "BrowserSwarm",
+    "ExtraStyles": "<link rel='stylesheet' href = '/ext/browserswarm-plugin/style.css' />",
+    "FooterText": "./partials/footer.html",
+    "AfterHead": "./partials/after-head.html",
+    "EmailSignup": "./partials/EmailSignup.html",
+    "LoggedOutFillContent": "./partials/home.html",
+    "http404": "./partials/404.html",
+    "http500": "./partials/500.html"
+  },
+  "webapp": "webapp.js"
 }
