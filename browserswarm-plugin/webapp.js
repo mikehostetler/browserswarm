@@ -143,8 +143,8 @@ module.exports = function(ctx, cb){
       , passed : passtotal
       , total : testtotal
       , duration: job.duration
-      , "name" : framework.name
-      , "src" : framework.src
+      , "name" : framework.name || ""
+      , "src" : framework.src || ""
       , "browsers" : browsers
 		});
     fn(null, tmpl.render(out));
