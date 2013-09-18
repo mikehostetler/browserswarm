@@ -1663,6 +1663,21 @@ footer .wrap p {
 }
 
 
+/* REGISTER */
+
+.hero-unit > h1 {
+	margin-bottom: 20px;
+}
+
+.hero-unit > center {
+	text-align: left;
+}
+
+.hero-unit > center .form-inline {
+	margin-top: 10px;
+}
+
+
 /* LOGIN */
 
 .strider-fillpage form.login-form {
