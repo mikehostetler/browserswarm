@@ -1763,6 +1763,21 @@ body .wrap {
 }
 
 
+/* DASHBOARD */
+
+#dashboard {
+	width: 1230px;
+	margin: 0 auto;
+}
+
+#dashboard .span6 > h3 {
+	margin: 20px 0;
+}
+
+th.job-header { padding-left: 13px; }
+.committer-header { display: none; }
+
+
 /* PROJECT */
 
 body.job_view .body-content {
