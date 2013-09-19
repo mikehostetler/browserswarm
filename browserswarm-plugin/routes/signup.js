@@ -20,7 +20,10 @@ module.exports = function (ctx) {
     res.redirect('/signup?email=' + req.body.email);
   });
 
-  ctx.route.get('/signup', function(req, res, next){
+  ctx.route.get('/signup', function(req, res, next) {
+    if (req.user) {
+      return res.redirect('/dashboard');
+    }
     var email = (req.query.email || '');
     console.log('hitting sign up page with email: ' + email, req.query);
     return res.render(view('signup.html'), { email: email });
