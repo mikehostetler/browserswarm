@@ -1674,7 +1674,16 @@ footer .wrap p {
 }
 
 .hero-unit > center .form-inline {
-	margin-top: 10px;
+	margin-top: 20px;
+}
+
+.hero-unit > center .form-inline input {
+	margin-top: 0;
+	vertical-align: top;
+}
+
+.hero-unit > center .form-inline input:active {
+	margin-bottom: 0;
 }
 
 
