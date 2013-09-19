@@ -64,8 +64,8 @@ module.exports = function(ctx, cb){
   });
 
 	ctx.registerBlock("LoggedOutFillContent", function(context, fn){
-    var tmpl = swig.compileFile(__dirname  + "/partials/dashboard.html")
-    fn(null, tmpl.render({}));
+    var tmpl = swig.compileFile(__dirname  + "/partials/home.html")
+    fn(null, tmpl.render({currentUser: context.currentUser}));
 	});
 
   ctx.registerBlock("JobMain", function(context, fn){
