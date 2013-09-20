@@ -57,7 +57,7 @@ module.exports = function (ctx) {
         if (err) {
           return res.render(view('signup.html'), {errors: [err]});
         }
-        res.redirect('/');
+        res.redirect('/dashboard');
       });
     }
 
