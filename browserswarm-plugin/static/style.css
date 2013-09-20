@@ -1777,6 +1777,33 @@ body .wrap {
 th.job-header { padding-left: 13px; }
 .committer-header { display: none; }
 
+#dashboard .empty-jobs {
+	float: none;
+	width: 56%;
+	padding: 17px 15px 26px;
+	margin: 0 auto 20px;
+}
+
+.span7.well {
+	float: none;
+	width: 697px;
+	margin: 20px auto;
+}
+
+.span7.well > h3 {
+	margin-bottom: 8px;
+}
+
+.span7.well > div.actions {
+	margin-top: 16px;
+}
+
+.strider-fillpage .span12:first-child {
+	float: none;
+	width: 1230px;
+	margin: 0 auto;
+}
+
 
 /* PROJECT */
 
