@@ -1704,3 +1704,53 @@ body.job_view .body-content {
 body.job_view footer {
 	display: block;
 }
+
+body.job_view #build-page .job-title h3 {
+	margin: 10px 0 6px;
+}
+
+body.job_view .job-post-title {
+	font-size: 28px;
+	margin-bottom: -80px;
+}
+
+body.job_view .job-detail-sidebar {
+	position: relative;
+	top: -130px;
+	right: 0;
+	bottom: auto;
+	background: #fafafa;
+	padding-top: 0;
+}
+
+body.job_view .job-detail-sidebar .build-list-header {
+	width: auto;
+	margin-right: 0;
+	background: #555;
+}
+
+body.job_view .job-detail-sidebar .build-list-header h3 {
+	color: #fff;
+}
+
+body.job_view .job-left-col {
+	position: relative;
+	top: 13px;
+	right: auto;
+	left: auto;
+	bottom: auto;
+	width: 912px !important;
+	min-height: 460px;
+}
+
+#build-metadata {
+	margin-bottom: -42px;
+}
+
+body.job_view .job-left-col .job-pre-console {
+	display: none !important;
+}
+
+body.job_view .job-detail-sidebar pre.console-output {
+	height: 331px;
+}
