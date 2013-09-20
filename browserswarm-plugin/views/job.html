@@ -5,6 +5,51 @@
   <div class="row-fluid job-page-intro">
     <div class="span7 job-title">
       {% pluginblock JobPagePreTitle %}{% endpluginblock %}
+      <h3 id="job-tools">
+        <!--
+        <a class="tool clickable test-and-deploy-action"
+           ng-show="!job.running && repo.access_level > 0"
+           ng-click="startDeploy(job)"
+           title="Retest &amp; Deploy">
+          <i class="icon-cloud-upload"></i>
+        </a>
+        <a class="tool" ng-hide="job.running || repo.access_level < 1"
+           ng-click="startTest(job)"
+           title="Retest" class="clickable">
+          <i class="icon-refresh"></i>
+        </a>
+        -->
+        <a class="tool" href="/{{ org }}/{{ repo }}/config"
+           ng-hide="repo.access_level < 1"
+           title="Configure">
+          <i class="icon-wrench"></i>
+        </a>
+        <a class="tool" href="{{ repo_url }}"
+           target="_blank">
+          <i class="icon-github"></i>
+        </a>
+      </h3>
+      <!--
+      <h3>
+          <span ng-show="!job.running && repo.access_level > 0"
+                ng-click="startDeploy(job)"
+                title="Retest &amp; Deploy"
+                class="clickable test-and-deploy-action">
+            <i class="icon-cloud-upload"></i>
+          </span>
+          <span ng-hide="job.running || repo.access_level < 1" ng-click="startTest(job)"
+                title="Retest" class="clickable test-only-action">
+            <i class="icon-refresh"></i>
+          </span>
+          <a href="/[[ job.project_name ]]/config" ng-hide="repo.access_level < 1" title="Configure">
+            <i class="icon-wrench"></i>
+          </a>
+          <span class='job-repo'>{{org}}/{{repo}}</span>
+          <a href="[[ job.repo_url ]]" target="_blank">
+            <i class="icon-github"></i>
+          </a>
+        </h3>
+      -->
       <h3>Job {{job_id}} <span class='job-repo'>{{org}}/{{repo}}</span></h3>
       {% pluginblock JobPagePostTitle %}{% endpluginblock %}
     </div>
