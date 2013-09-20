@@ -75,10 +75,10 @@ module.exports = function(ctx, cb){
 		context.results_detail.error_output = context.results_detail.output.match(/^.*\[ERROR\](.*)$/mg, "");
 		if(context.results_detail.error_output != null) {
 			context.results_detail.error_output = context.results_detail.error_output.join("\n");
-			context.results_detail.error_output = escapeHtml(context.results_detail.error_output);
+			context.results_detail.error_output = context.results_detail.error_output;
 			show_error_console = true;
 		}	
-		context.results_detail.output = escapeHtml(context.results_detail.output);
+		context.results_detail.output = context.results_detail.output;
 		if(context.results_detail.github_commit_info != undefined) {
 			context.results_detail.github_commit_info.short_id 
 				= (context.results_detail.github_commit_info.id + "").slice(0,9);
@@ -86,7 +86,7 @@ module.exports = function(ctx, cb){
 
     var framework = frameworksObj[context.repo]
 
-    var job = null
+    var job = null;
 
 		// Find our job
 		for (var i = 0; i< context.jobs.length; i++){
@@ -375,13 +375,3 @@ function lookup(case_insensitive_url, cb) {
     return cb(null, repo);
   });
 };
-
-function escapeHtml(text) {
-	text = text + "";
-	return text
-		.replace(/&/g, "&amp;")
-		.replace(/</g, "&lt;")
-		.replace(/>/g, "&gt;")
-		.replace(/"/g, "&quot;")
-		.replace(/'/g, "&#039;");
-}
