@@ -529,9 +529,9 @@ p.different-framework a {
   font-size: 1.375em;
   margin:0;
   font-style: italic; }
-.pre-register-form .email-input:hover, 
+.pre-register-form .email-input:hover,
 .pre-register-form .email-input:focus,
-.mc_embed_signup .email-input:hover, 
+.mc_embed_signup .email-input:hover,
 .mc_embed_signup .email-input:focus {
   color: #2c2c2c;
   outline: none; }
@@ -2274,3 +2274,46 @@ body.job_view .job-detail-sidebar pre.console-output {
 	margin-top: 10px;
 }
 
+
+/* PROJECT */
+
+body.job_view .body-content {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+body.job_view footer {
+	display: block;
+}
+
+
+/* JOB */
+
+.job-console-header {
+	margin-top: 58px;
+}
+
+.job-details .top .column {
+	padding-top: 0;
+}
+
+.job-details .job-console-container {
+	margin-top: -50px;
+}
+
+#list-of-builds {
+	top: 0;
+	background: #fdfdfd;
+}
+
+.build-list-header {
+	width: 100%;
+	background: #333;
+	margin: 0;
+}
+
+.build-list-header h3 {
+	color: #fff;
+	margin: 0;
+}
