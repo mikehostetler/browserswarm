@@ -2067,3 +2067,8 @@ body.job_view .job-left-col .job-pre-console {
 body.job_view .job-detail-sidebar pre.console-output {
 	height: 331px;
 }
+
+
+#job-tools {float: right;}
+#job-tools .tool {color: #ffffff; text-decoration: none; cursor: pointer;}
+#job-tools .tool:hover {color: #455b87; text-decoration: none;}

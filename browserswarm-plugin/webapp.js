@@ -167,7 +167,7 @@ module.exports = function(ctx, cb){
 
 		// Ignore if can't parse as ObjectID
 		try {
-			job_id = mongoose.Types.ObjectId(job_id);
+			job_id = new mongoose.Types.ObjectId(job_id);
 		} catch(e) {
 			res.statusCode = 400;
 			return res.end("job_id must be a valid ObjectId");
@@ -229,47 +229,48 @@ module.exports = function(ctx, cb){
 
 				// if results_detail did not return, that means this is not a valid job id
 				if (!results_detail) {
-					res.render(404, 'invalid job id');
-				} else {
-
-					results_detail.duration = Math.round((results_detail.finished_timestamp - results_detail.created_timestamp)/1000);
-					results_detail.finished_at = humane.humaneDate(results_detail.finished_timestamp);
-					results_detail.id = results_detail._id.toString();
-
-					var triggered_by_commit = false;
-					if (results_detail.github_commit_info !== undefined && results_detail.github_commit_info.id !== undefined) {
-						triggered_by_commit = true;
-						results_detail.gravatar_url = 'https://secure.gravatar.com/avatar/' + crypto.createHash('md5').update(results_detail.github_commit_info.author.email).digest("hex") + '.jpg?' + 'd=' + encodeURIComponent('identicon');
-						if (results_detail.github_commit_info.author.username != undefined) {
-							results_detail.committer = results_detail.github_commit_info.author.username;
-							results_detail.committer_is_username = true;
-						} else {
-							results_detail.committer = results_detail.github_commit_info.author.name;
-							results_detail.committer_is_username = false;
-						}
-					}
-
-					// Jobs which have not finished have no output
-					if (!results_detail.stdmerged) {
-						results_detail.output = "[STRIDER] This job has no output."
-					} else {
-						results_detail.output = filter(results_detail.stdmerged);
-					}
-
-					res.render(__dirname + '/views/job.html',
-						{
-							admin_view: false,
-							jobs: results,
-							results_detail: results_detail,
-							job_id: req.params.job_id,
-							triggered_by_commit: triggered_by_commit,
-							org:org,
-							repo:repo,
-							repo_url:this.repo_config.url,
-							has_prod_deploy_target:this.repo_config.has_prod_deploy_target
-						});
-
+					return res.render(404, 'invalid job id');
 				}
+
+        results_detail.duration = Math.round((results_detail.finished_timestamp - results_detail.created_timestamp)/1000);
+        results_detail.finished_at = humane.humaneDate(results_detail.finished_timestamp);
+        results_detail.id = results_detail._id.toString();
+
+        var triggered_by_commit = false;
+        if (results_detail.github_commit_info !== undefined && results_detail.github_commit_info.id !== undefined) {
+          triggered_by_commit = true;
+          results_detail.gravatar_url = 'https://secure.gravatar.com/avatar/' + crypto.createHash('md5').update(results_detail.github_commit_info.author.email).digest("hex") + '.jpg?' + 'd=' + encodeURIComponent('identicon');
+          if (results_detail.github_commit_info.author.username != undefined) {
+            results_detail.committer = results_detail.github_commit_info.author.username;
+            results_detail.committer_is_username = true;
+          } else {
+            results_detail.committer = results_detail.github_commit_info.author.name;
+            results_detail.committer_is_username = false;
+          }
+        }
+
+        // Jobs which have not finished have no output
+        if (!results_detail.stdmerged) {
+          results_detail.output = "[STRIDER] This job has no output."
+        } else {
+          results_detail.output = filter(results_detail.stdmerged);
+        }
+
+        var thisJobId = req.params.job_id;
+        function isThisJob(jobId) { return jobId === thisJobId; }
+        res.render(__dirname + '/views/job.html',
+          {
+            admin_view: false,
+            jobs: results,
+            results_detail: results_detail,
+            job_id: thisJobId,
+            job: _.find(results, isThisJob) || {},
+            triggered_by_commit: triggered_by_commit,
+            org:org,
+            repo:repo,
+            repo_url:this.repo_config.url,
+            has_prod_deploy_target:this.repo_config.has_prod_deploy_target
+          });
 			}
 		);
 	});
