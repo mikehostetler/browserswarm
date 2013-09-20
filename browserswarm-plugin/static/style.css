@@ -1726,6 +1726,76 @@ form.login-form input[type="submit"] {
 }
 
 
+/* ACCOUNT */
+
+body .wrap {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.span12 > h3 {
+	margin: 20px 0;
+}
+
+#account_email,
+#change_password,
+#notifications,
+#github {
+	margin-left: 0;
+}
+
+#account_email legend,
+#change_password legend,
+#notifications legend,
+#github legend {
+	margin: 0 0 0 10px;
+	padding-left: 10px;
+}
+
+#account_email li,
+#change_password li,
+#notifications li,
+#github li {
+	margin: 5px 20px;
+}
+
+
+#account_email fieldset,
+#change_password fieldset,
+#notifications fieldset,
+#github fieldset {
+	padding: 20px 0;
+}
+
+#account_email fieldset > div,
+#change_password fieldset > div,
+#notifications fieldset > div,
+#github fieldset > div {
+	margin-left: 20px;
+}
+
+#account_email fieldset > div > *,
+#change_password fieldset > div > *,
+#notifications fieldset > div > *,
+#github fieldset > div > * {
+	margin: 0 0 10px 0;
+}
+
+#account_email fieldset > div.actions,
+#change_password fieldset > div.actions,
+#notifications fieldset > div.actions,
+#github fieldset > div.actions {
+	margin-top: 10px;
+}
+
+#account_email fieldset > div label,
+#change_password fieldset > div label,
+#notifications fieldset > div label,
+#github fieldset > div label {
+	margin: 0;
+}
+
+
 /* PROJECT */
 
 body.job_view .body-content {
