@@ -1766,7 +1766,7 @@ body .wrap {
 /* DASHBOARD */
 
 #dashboard {
-	width: 1230px;
+	width: 91.5%;
 	margin: 0 auto;
 }
 
@@ -1779,7 +1779,7 @@ th.job-header { padding-left: 13px; }
 
 #dashboard .empty-jobs {
 	float: none;
-	width: 56%;
+	width: 695px;
 	padding: 17px 15px 26px;
 	margin: 0 auto 20px;
 }
@@ -1800,7 +1800,7 @@ th.job-header { padding-left: 13px; }
 
 .strider-fillpage .span12:first-child {
 	float: none;
-	width: 1230px;
+	width: 100%;
 	margin: 0 auto;
 }
 
