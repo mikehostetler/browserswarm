@@ -1657,7 +1657,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
-/* 
+/*
 Override Strider styles for project page (/github-user/project-name/)
 TODO: We should rework these elements as we can't see the footer currently!
 */
@@ -1989,4 +1989,31 @@ body.job_view .body-content {
 
 body.job_view footer {
 	display: block;
+/* SIGNUP */
+
+/* REGISTER */
+
+.hero-unit > h1 {
+	margin-bottom: 40px;
+}
+
+.hero-unit {
+	text-align: left;
+}
+
+.hero-unit .form-inline {
+	margin-top: 20px;
+}
+
+.hero-unit .form-inline input {
+	margin-top: 0;
+	vertical-align: top;
+}
+
+.hero-unit .form-inline input:active {
+	margin-bottom: 0;
+}
+
+.hero-unit .form-inline .btn {
+	padding: 6px 10px 6px;
 }
