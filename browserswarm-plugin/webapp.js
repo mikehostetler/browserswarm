@@ -257,14 +257,12 @@ module.exports = function(ctx, cb){
         }
 
         var thisJobId = req.params.job_id;
-        function isThisJob(jobId) { return jobId === thisJobId; }
         res.render(__dirname + '/views/job.html',
           {
             admin_view: false,
             jobs: results,
             results_detail: results_detail,
             job_id: thisJobId,
-            job: _.find(results, isThisJob) || {},
             triggered_by_commit: triggered_by_commit,
             org:org,
             repo:repo,
