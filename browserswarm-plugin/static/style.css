@@ -1689,3 +1689,7 @@ form.login-form input[type="submit"] {
 	margin-right: 18px;
 	padding: 5px 10px;
 }
+
+#job-tools {float: right;}
+#job-tools .tool {color: #ffffff; text-decoration: none; cursor: pointer;}
+#job-tools .tool:hover {color: #455b87; text-decoration: none;}
