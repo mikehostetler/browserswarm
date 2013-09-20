@@ -529,9 +529,9 @@ p.different-framework a {
   font-size: 1.375em;
   margin:0;
   font-style: italic; }
-.pre-register-form .email-input:hover, 
+.pre-register-form .email-input:hover,
 .pre-register-form .email-input:focus,
-.mc_embed_signup .email-input:hover, 
+.mc_embed_signup .email-input:hover,
 .mc_embed_signup .email-input:focus {
   color: #2c2c2c;
   outline: none; }
@@ -2066,4 +2066,26 @@ body.job_view .job-left-col .job-pre-console {
 
 body.job_view .job-detail-sidebar pre.console-output {
 	height: 331px;
+}
+
+/* MANUAL SETUP */
+
+#manual-setup-app label {
+	font-size: 15px;
+}
+
+#manual-setup-app label > strong {
+	font-weight: normal;
+}
+
+#manual-setup-app input[type="text"] {
+	width: 332px;
+}
+
+#manual-setup-app h3 {
+	margin-bottom: -13px;
+}
+
+#manual-setup-app .span7 .control-group {
+	margin-top: 10px;
 }
