@@ -27,27 +27,6 @@
           <i class="icon-github"></i>
         </a>
       </h3>
-      <!--
-      <h3>
-          <span ng-show="!job.running && repo.access_level > 0"
-                ng-click="startDeploy(job)"
-                title="Retest &amp; Deploy"
-                class="clickable test-and-deploy-action">
-            <i class="icon-cloud-upload"></i>
-          </span>
-          <span ng-hide="job.running || repo.access_level < 1" ng-click="startTest(job)"
-                title="Retest" class="clickable test-only-action">
-            <i class="icon-refresh"></i>
-          </span>
-          <a href="/[[ job.project_name ]]/config" ng-hide="repo.access_level < 1" title="Configure">
-            <i class="icon-wrench"></i>
-          </a>
-          <span class='job-repo'>{{org}}/{{repo}}</span>
-          <a href="[[ job.repo_url ]]" target="_blank">
-            <i class="icon-github"></i>
-          </a>
-        </h3>
-      -->
       <h3>Job {{job_id}} <span class='job-repo'>{{org}}/{{repo}}</span></h3>
       {% pluginblock JobPagePostTitle %}{% endpluginblock %}
     </div>
@@ -57,13 +36,6 @@
 			{% include "partials/_build.html" %}
 		{% endpluginblock %}
   </div>
-  <script id="job-data" type="application/json">
-    {
-      "id": "{{job_id}}",
-      "repo_url": "{{repo_url}}",
-      "access_level": "{{access_level}}"
-    }
-  </script>
   <script src="/ext/browserswarm-plugin/scripts/job-tools.js"></script>
 </div>
 {% pluginblock AfterJobPage %}{% endpluginblock %}
