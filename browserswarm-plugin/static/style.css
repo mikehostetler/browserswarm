@@ -2332,3 +2332,63 @@ body.job_view footer {
 	color: #fff;
 	margin: 0;
 }
+/* MANUAL SETUP */
+
+.span8 {
+	float: none;
+}
+
+#manual-setup-app .span8 {
+	width: auto;
+}
+
+#manual-setup-app {
+	overflow: hidden;
+	width: 800px;
+}
+
+#manual-setup-app label {
+	font-size: 15px;
+}
+
+#manual-setup-app label > strong {
+	font-weight: normal;
+}
+
+#manual-setup-app img {
+	margin: 5px 0 30px;
+}
+
+#manual-setup-app p {
+	margin-bottom: 10px;
+}
+
+#manual-setup-app input[type="text"] {
+	width: 332px;
+}
+
+#manual-setup-app input:active {
+	margin-left: 0;
+}
+
+#manual-setup-app textarea {
+	display: block;
+	margin: 20px 0;
+}
+
+#manual-setup-app h3 {
+	margin-bottom: -13px;
+}
+
+#manual-setup-app h4 {
+	margin-top: 0;
+}
+
+#manual-setup-app .span7 .control-group {
+	margin-top: 10px;
+}
+
+#manual-setup-app .span7 .control-group .actions,
+#manual-setup-app .actions {
+	margin-top: 20px;
+}
