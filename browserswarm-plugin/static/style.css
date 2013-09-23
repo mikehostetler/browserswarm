@@ -529,9 +529,9 @@ p.different-framework a {
   font-size: 1.375em;
   margin:0;
   font-style: italic; }
-.pre-register-form .email-input:hover, 
+.pre-register-form .email-input:hover,
 .pre-register-form .email-input:focus,
-.mc_embed_signup .email-input:hover, 
+.mc_embed_signup .email-input:hover,
 .mc_embed_signup .email-input:focus {
   color: #2c2c2c;
   outline: none; }
@@ -2275,3 +2275,17 @@ body.job_view .job-detail-sidebar pre.console-output {
 	margin-top: 10px;
 }
 
+/* ERRORS */
+
+.offset2 {
+	margin-left: 0;
+}
+
+#errors {
+	list-style-position: inside;
+	margin-top: 20px;
+}
+
+#errors li {
+	margin-bottom: 5px;
+}
