@@ -1993,6 +1993,7 @@ body.job_view footer {
 /* SIGNUP */
 
 
+
 /* REGISTER */
 
 .hero-unit > h1 {
@@ -2306,15 +2307,15 @@ body.job_view footer {
 /* JOB */
 
 .job-console-header {
-	margin-top: 58px;
+	margin-top: 75px;
 }
 
 .job-details .top .column {
-	padding-top: 0;
+	padding-top: 20px;
 }
 
 .job-details .job-console-container {
-	margin-top: -50px;
+	margin-top: -65px;
 }
 
 #list-of-builds {
@@ -2333,10 +2334,6 @@ body.job_view footer {
 	margin: 0;
 }
 /* MANUAL SETUP */
-
-.span8 {
-	float: none;
-}
 
 #manual-setup-app .span8 {
 	width: auto;

@@ -6,6 +6,7 @@
     <div class="span7 job-title">
       {% pluginblock JobPagePreTitle %}{% endpluginblock %}
       <h3 id="job-tools">
+				{% if currentUser %}
         <a class="tool" id="retest-deploy-button"
            data-url="{{repo_url}}"
            data-task="TEST_AND_DEPLOY"
@@ -22,6 +23,7 @@
            title="Configure">
           <i class="icon-wrench"></i>
         </a>
+				{% endif %}
         <a class="tool" href="{{repo_url}}"
            target="_blank">
           <i class="icon-github"></i>

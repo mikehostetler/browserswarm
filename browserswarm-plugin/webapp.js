@@ -143,6 +143,7 @@ module.exports = function(ctx, cb){
       , passed : passtotal
       , total : testtotal
       , duration: job.duration
+			, currentUser: context.currentUser
       , "name" : framework.name || ""
       , "src" : framework.src || ""
       , "browsers" : browsers
