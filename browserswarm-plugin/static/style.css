@@ -537,8 +537,8 @@ p.different-framework a {
   outline: none; }
 .pre-register-form .submit-button,
 .mc_embed_signup .submit-button {
+	width: 500px;
 	margin-top:0px;
-  position: absolute;
   right: 0;
   top: 0;
   height: 75px;
@@ -555,12 +555,12 @@ p.different-framework a {
   background-image: -moz-linear-gradient(#d5d4d4, #aaa9a9);
   background-image: -o-linear-gradient(#d5d4d4, #aaa9a9);
   background-image: linear-gradient(#d5d4d4, #aaa9a9);
-  -moz-border-radius-topright: 6px;
-  -webkit-border-top-right-radius: 6px;
-  border-top-right-radius: 6px;
-  -moz-border-radius-bottomright: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
   color: #fff;
   font-weight: bold;
   font-size: 1.375em;
