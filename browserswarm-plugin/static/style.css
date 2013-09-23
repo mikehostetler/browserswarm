@@ -2074,6 +2074,7 @@ body.job_view .job-detail-sidebar pre.console-output {
 #job-tools {float: right;}
 #job-tools .tool {color: #ffffff; text-decoration: none; cursor: pointer;}
 #job-tools .tool:hover {color: #455b87; text-decoration: none;}
+#job-tools .tool.pending {color: #455b87;}
 
 /* PROJECT CONFIG */
 

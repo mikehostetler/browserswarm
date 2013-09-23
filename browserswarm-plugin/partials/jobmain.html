@@ -288,7 +288,8 @@ $(document).ready(function() {
         $("pre.console-output").append(data.msg);
         var offset = $('pre.console-output').prop('scrollHeight');
         $('pre.console-output').scrollTop(offset);
-        window.location = window.location;
+        $('.tool').removeClass('pending');
+        window.location = data.url || window.location;
       }
     });
   }
