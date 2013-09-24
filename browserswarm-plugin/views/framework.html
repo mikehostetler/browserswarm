@@ -13,7 +13,11 @@
 				<aside class="sidebar">
 					<div class="title-row">
 						<div class="framework-title">
-							<img src="{{ src }}" border="0" alt="{{ name }}" />
+							{% if src %}
+								<img src="{{ src }}" border="0" alt="{{ name }}" />
+							{% else %}
+								{{ name }}
+							{% endif %}
 						</div>
 					</div>
 					<ul class="joblist">

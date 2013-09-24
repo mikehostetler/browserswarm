@@ -4,24 +4,18 @@
     "name" : "jQuery",
     "repo_url" : "https://github.com/browserswarm/jquery",
     "repo" : "browserswarm/jquery"
-}, 
-{
+},{
     "id" : "jquery-ui",
     "src" : "/ext/browserswarm-plugin/framework-logo/jqueryui.png",
     "name" : "jQuery UI",
     "repo_url" : "https://github.com/browserswarm/jquery-ui",
     "repo" : "browserswarm/jquery-ui"
-},
-{
+},{
     "id" : "jquery-mobile",
     "src" : "/ext/browserswarm-plugin/framework-logo/jquerymobile.png",
     "name" : "jQuery Mobile",
     "repo_url" : "https://github.com/browserswarm/jquery-mobile",
     "repo" : "browserswarm/jquery-mobile"
-},
-{
-	"src" : "/ext/browserswarm-plugin/framework-logo/jquerymobile.png",
-	"name" : "jQuery Mobile"
 },{
   "id" : "dojo",
   "repo" : "browserswarm/dojo",
@@ -29,23 +23,17 @@
 	"src" : "/ext/browserswarm-plugin/framework-logo/dojo.jpg",
 	"name" : "Dojo Toolkit"
 },{
-    "id": "mootools-core",
+  "id": "mootools-core",
 	"src" : "/ext/browserswarm-plugin/framework-logo/mootools.png",
-    "name" : "Mootools",
-    "repo_url" : "https://github.com/browserswarm/mootools-core",
-    "repo" : "browserswarm/mootools-core"
+  "name" : "Mootools",
+  "repo_url" : "https://github.com/browserswarm/mootools-core",
+  "repo" : "browserswarm/mootools-core"
 },{
   "id" : "prototype",
   "repo" : "browserswarm/prototype",
   "repo_url" : "https://github.com/browserswarm/prototype",
 	"src" : "/ext/browserswarm-plugin/framework-logo/prototype.png",
 	"name" : "Prototype"
-},{
-  "id" : "modernizr",
-	"src" : "/ext/browserswarm-plugin/framework-logo/modernizr.png",
-	"name" : "Modernizr",
-  "repo_url" : "https://github.com/browserswarm/modernizr",
-  "repo" : "browserswarm/modernizr"
 },{
   "id" : "underscore",
 	"src" : "/ext/browserswarm-plugin/framework-logo/underscorejs.png",
@@ -65,6 +53,11 @@
   "repo" :"browserswarm/knockout",
   "repo_url" :"https://github.com/browserswarm/knockout"
 },{
+	"id" : "jquery-validation",
+	"name" : "jQuery Validate",
+  "repo" :"browserswarm/jquery-validation",
+  "repo_url" :"https://github.com/browserswarm/jquery-validation"
+},{
 	"src" : "/ext/browserswarm-plugin/framework-logo/ember.png",
 	"name" : "Ember"
 },{
@@ -76,8 +69,6 @@
 },{
 	"src" : "/ext/browserswarm-plugin/framework-logo/jqtouch.png",
 	"name" : "jQTouch"
-},{
-	"name" : "jQuery Validate"
 },{
 	"name" : "jQuery Cycle"
 },{

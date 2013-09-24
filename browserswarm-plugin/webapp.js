@@ -55,12 +55,15 @@ module.exports = function(ctx, cb){
 
   ctx.registerBlock("JobPagePreTitle", function(context, fn){
     var r = repoFrameworks[context.repo_url] || {};
-    fn(null, "<p class='job-pre-title'>Framework / " + r.name + "</p>");
+		if( r.name == undefined ) {
+			r.name = context.repo;
+		}
+    fn(null, "<p class='job-pre-title'>Project / " + r.name + "</p>");
   });
 
   ctx.registerBlock("JobPagePostTitle", function(context, fn){
     var r = repoFrameworks[context.repo_url] || {}
-    fn(null,"<p class='job-post-title'>" + r.name + " / " + r.name + "</p>")
+    fn(null,"<p class='job-post-title'>&nbsp;</p>")
   });
 
 	ctx.registerBlock("LoggedOutFillContent", function(context, fn){
@@ -84,7 +87,12 @@ module.exports = function(ctx, cb){
 				= (context.results_detail.github_commit_info.id + "").slice(0,9);
 		}
 
-    var framework = frameworksObj[context.repo]
+    var framework = frameworksObj[context.repo] 
+			|| { id: context.repo,
+					 src: "",
+					 name: context.repo,
+				   repo_url: context.repo_url,
+					 repo: context.org + "/" + context.repo };
 
     var job = null;
 

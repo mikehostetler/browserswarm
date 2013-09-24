@@ -8,11 +8,17 @@
 		<!-- DONE -->
 		<div class="top">
 			<div class="column first">
-				<img src="{{ src }}" border="0" alt="{{ name }}" />
+				{% if src %}
+					<img src="{{ src }}" border="0" alt="{{ name }}" />
+				{% else %}
+					{{ name }}
+				{% endif %}
 			</div>
 			<div class="column second">
 				<p>Total Passrate</p>
-				<h1>{{ passrate }}%</h1>
+					{% if passrate %}
+					<h1>{{ passrate }}%</h1>
+					{% endif %}
 				<!--div class="passed">{{ passed }} Passed</div>
 				<div class="total">{{ total }} Total</div-->
 			</div>
@@ -27,7 +33,7 @@
 			</div>
 			<div class="column fourth">
 				<p>Duration</p>
-				<h2>{{ duration }}ms</h2>
+					{% if duration %}<h2>{{ duration }}ms</h2>{% endif %}
 			</div>
 		</div>
 		<!-- //DONE -->
@@ -60,7 +66,7 @@
 					<div class="results-row">
 						{% for browser in browsers %}
 						<ul id="{{ browser.id }}" class="browser-results first">
-							<li class="{{ browser.supported }}">{{ browser.passed }} / {{ browser.total }}</li>
+							<li class="{{ browser.supported }}">{% if browser.passed %}{{ browser.passed }} / {{ browser.total }}{% endif %}&nbsp;</li>
 						</ul>
 						{% endfor %}
 					</div>

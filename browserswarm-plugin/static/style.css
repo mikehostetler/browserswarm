@@ -2183,11 +2183,13 @@ body.job_view .job-detail-sidebar pre.console-output {
 	margin-top: 20px;
 }
 
+/*
 #custom .savecode {
 	position: absolute;
 	top: 0;
 	right: 74px;
 }
+*/
 
 #environment .span8 {
 	width: 59%;
