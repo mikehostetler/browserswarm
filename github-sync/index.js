@@ -32,7 +32,8 @@ var libs = {
 	'jquery.maskedinput': 'https://github.com/digitalBush/jquery.maskedinput.git',
 	'jquery-validation': 'https://github.com/jzaefferer/jquery-validation.git',
 	'knockout-postbox': 'https://github.com/rniemeyer/knockout-postbox.git',
-	'knockout-kendo': 'https://github.com/kendo-labs/knockout-kendo.git'
+	'knockout-kendo': 'https://github.com/kendo-labs/knockout-kendo.git',
+	'moment': 'https://github.com/moment/moment.git'
 }
 
 var f = []
