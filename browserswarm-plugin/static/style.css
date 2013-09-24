@@ -2389,3 +2389,11 @@ body.job_view footer {
 #manual-setup-app .actions {
 	margin-top: 20px;
 }
+
+
+/* HOME */
+
+#about-browserswarm a {
+	color: #fff;
+	text-decoration: underline;
+}
