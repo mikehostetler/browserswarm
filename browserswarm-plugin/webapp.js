@@ -162,6 +162,10 @@ module.exports = function(ctx, cb){
 	/**
 	 * Define custom routes
 	 */
+  ctx.route.get("/privacy", function(req, res, next){
+		res.render(__dirname + '/views/privacy.html', {} );
+  })
+
   ctx.route.get("/frameworks.json", function(req, res, next){
     var f = frameworks.filter(function(x){return !!x.id})  
     res.send(f)
