@@ -54,9 +54,19 @@
   "repo_url" :"https://github.com/browserswarm/knockout"
 },{
 	"id" : "jquery-validation",
-	"name" : "jQuery Validate",
+	"name" : "jQuery Validation Plugin",
   "repo" :"browserswarm/jquery-validation",
   "repo_url" :"https://github.com/browserswarm/jquery-validation"
+},{
+	"id" : "knockout-postbox",
+	"name" : "Knockout Postbox Plugin",
+  "repo" :"browserswarm/knockout-postbox",
+  "repo_url" :"https://github.com/browserswarm/knockout-postbox"
+},{
+	"id" : "knockout-kendo",
+	"name" : "Knockout Kendo UI Bindings",
+  "repo" :"browserswarm/knockout-kendo",
+  "repo_url" :"https://github.com/browserswarm/knockout-kendo"
 },{
 	"src" : "/ext/browserswarm-plugin/framework-logo/ember.png",
 	"name" : "Ember"

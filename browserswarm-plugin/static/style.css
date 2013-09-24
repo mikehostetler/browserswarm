@@ -669,7 +669,7 @@ p.different-framework a {
   height: 110px;
   margin: 0;
   padding: 0;
-  line-height: 110px;
+	padding-top: 40px;
   color: #5d5d5d;
   letter-spacing: -1px; }
 .framework-matrix .framework-item .view-framework {
