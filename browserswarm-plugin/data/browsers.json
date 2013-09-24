@@ -1,8 +1,8 @@
 [
   {"id" : "chrome27", "name" : "Chrome 27", "ico" : "chrome", "bs" : "win-chrome-27.0", "sl": "chrome"}
-, {"id" : "firefox18", "name" : "Firefox 18", "ico" : "firefox", "bs" : "win-firefox-18.0", "sl": "firefox-18"}
 , {"id" : "firefox19", "name" : "Firefox 19", "ico" : "firefox", "bs" : "win-firefox-19.0", "sl": "firefox-19"}
 , {"id" : "firefox20", "name" : "Firefox 20", "ico" : "firefox", "bs" : "win-firefox-20.0", "sl": "firefox-20"}
+, {"id" : "firefox21", "name" : "Firefox 21", "ico" : "firefox", "bs" : "win-firefox-21.0", "sl": "firefox-21"}
 , {"id" : "ie6", "name" : "IE 6", "ico" : "ie-6", "bs" : "win-ie-6.0", "sl": "internet_explorer-6"}
 , {"id" : "ie7", "name" : "IE 7", "ico" : "ie-8", "bs" : "win-ie-7.0", "sl": "internet_explorer-7"}
 , {"id" : "ie8", "name" : "IE 8", "ico" : "ie-8", "bs" : "win-ie-8.0", "sl": "internet_explorer-8"}
