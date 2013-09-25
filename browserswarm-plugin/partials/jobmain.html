@@ -66,7 +66,7 @@
 					<div class="results-row">
 						{% for browser in browsers %}
 						<ul id="{{ browser.id }}" class="browser-results first">
-							<li class="{{ browser.supported }}">{% if browser.passed %}{{ browser.passed }} / {{ browser.total }}{% endif %}&nbsp;</li>
+							<li class="{{ browser.supported }}">{% if browser.supported != "unknown" %}{% if browser.passed %}{{ browser.passed }} / {{ browser.total }}{% endif %}{%endif%}&nbsp;</li>
 						</ul>
 						{% endfor %}
 					</div>
