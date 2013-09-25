@@ -2399,3 +2399,17 @@ body.job_view footer {
 	color: #fff;
 	text-decoration: underline;
 }
+
+
+/* TWITTER SHARING */
+
+.twitter {
+	float: right;
+	margin-top: 8px;
+	margin-left: 30px;
+}
+
+.twitter > iframe {
+	display: inline-block;
+	margin: 0 0 0 5px;
+}
