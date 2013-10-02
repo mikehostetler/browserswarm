@@ -43,13 +43,30 @@ Clone the repo from github:
 
 `git clone git@github.com:appendto/browserswarm.git`
 
-Install dependencies:
+Clone the strider repo from github:
 
-`cd strider && npm install`
+`git clone git@github.com:appendto/strider.git`
+
+Create a global npm link for strider and then add the link to browserswarm:
+
+```
+$ cd /Users/foo/projects/strider
+$ git checkout bs1.3.5
+$ npm link .
+$ npm ls -g | grep strider
+  (strider@1.3.5 -> /Users/foo/projects/strider)
+$ cd /Users/foo/projects/browserswarm
+$ rm -rf node_modules/strider
+$ npm link strider
+```
+
+Install browserswarm dependencies:
+
+`cd browserswarm && npm install`
 
 Add an admin user to log in with:
 
-`./node_modules/strider/bin/strider addUser`
+`./node_modules/browserswarm/bin/strider addUser`
 
 Start BrowserSwarm application server:
 
@@ -87,11 +104,11 @@ Once you have the `dotcloud` command available on the machine you wish to deploy
 
 You can do this by `cd`'ing into the [BrowserSwarm repo](https://github.com/appendto/browserswarm) you cloned from Github earlier:
 
-`cd /path/to/strider && dotcloud setup`
+`cd /path/to/browserswarm && dotcloud setup`
 
 The name of the production dotCloud app for BrowserSwarm is `browserswarmlive`. You should connect the BrowserSwarm repo copy to this app with the following command:
 
-`cd /path/to/strider && dotcloud connect --git browserswarmlive`
+`cd /path/to/browserswarm && dotcloud connect --git browserswarmlive`
 
 Now to confirm you are correctly connect, run `dotcloud info` and you should see something like the following output on your terminal:
 
