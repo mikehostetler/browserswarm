@@ -4,3 +4,4 @@ config.sh
 .idea/*
 .tmp/
 *.orig
+bswarm-jquery-test
