@@ -17,6 +17,7 @@ module.exports = function (ctx) {
     req.user.get_repo_config_list(function(err, repo_list) {
       if (err) throw err;
       res.render(view('index.html'), {
+	currentUser: req.user,
         total_configured_projects: repo_list.length,
         showHome: false
       });

@@ -11,12 +11,6 @@
     "repo_url" : "https://github.com/browserswarm/jquery-ui",
     "repo" : "browserswarm/jquery-ui"
 },{
-    "id" : "jquery-mobile",
-    "src" : "/ext/browserswarm-plugin/framework-logo/jquerymobile.png",
-    "name" : "jQuery Mobile",
-    "repo_url" : "https://github.com/browserswarm/jquery-mobile",
-    "repo" : "browserswarm/jquery-mobile"
-},{
   "id" : "dojo",
   "repo" : "browserswarm/dojo",
   "repo_url" : "https://github.com/browserswarm/dojo",
