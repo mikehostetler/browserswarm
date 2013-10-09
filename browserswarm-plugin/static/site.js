@@ -24,7 +24,7 @@ $(function(){
 
 		//get the top offset of the target anchor
 		var target_offset = $("#"+trgt).offset();
-		var target_top = target_offset.top - 75;
+		var target_top = target_offset ? target_offset.top - 75 : 0;
 
 		//goto that anchor by setting the body scroll top to anchor top
 		$('html, body').animate({scrollTop:target_top}, 'slow');
