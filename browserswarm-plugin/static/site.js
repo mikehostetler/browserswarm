@@ -10,24 +10,23 @@ $(function(){
 
 	$(".scroll").click(function(event){
 
-		
+		// Find element matching anchors hash
+		var hash = $(this).prop("hash")
+		  , trgt = $(hash);
 
-		//prevent the default action for the click event
-		event.preventDefault();
+		// If an element has been found
+		if ( trgt.length ) {
 
-		//get the full url - like mysitecom/index.htm#home
-		var full_url = this.href;
+			// Prevent the click from redirecting us
+			event.preventDefault();
 
-		//split the url by # and get the anchor target name - home in mysitecom/index.htm#home
-		var parts = full_url.split("#");
-		var trgt = parts[1];
+			// Instead, scroll that element into view
+			$("html, body").animate({
+				scrollTop: trgt.offset().top - 75
+			}, "slow");
 
-		//get the top offset of the target anchor
-		var target_offset = $("#"+trgt).offset();
-		var target_top = target_offset ? target_offset.top - 75 : 0;
+		}
 
-		//goto that anchor by setting the body scroll top to anchor top
-		$('html, body').animate({scrollTop:target_top}, 'slow');
 	});
 
 });
