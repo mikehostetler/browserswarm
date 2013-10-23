@@ -15,3 +15,11 @@ var app = strider(includePath, {}, function(){
 
 /// Ugly hack
 app.stack.unshift({ route: '', handle: require('./cors') });
+
+
+/// New Routes
+
+var session = require('./session');
+
+app.get ('/api/session', session.get);
+app.post('/api/session', session.create);
