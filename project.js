@@ -6,7 +6,7 @@ function getProject(req, res, next) {
   var project = req.project;
   if (project) {
     project = extend({}, project._doc);
-    if (project.access_level)
+    if (!project.access_level)
       project.access_level = req.accessLevel;
   }
 
