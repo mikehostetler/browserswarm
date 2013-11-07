@@ -1,5 +1,6 @@
 var strider = require('strider')
 var striderMiddleware = require('strider/lib/middleware');
+var jobs = require('strider/routes/jobs');
 
 // var testWorker = false;
 // var includePath = [];
@@ -10,27 +11,20 @@ var striderMiddleware = require('strider/lib/middleware');
 var includePath = [".", "node_modules", "node_modules/strider/node_modules"];
 // }
 
-var app = strider(includePath, {}, function(){
+var config = {
+  cors: 'http://localhost:1337'
+};
+
+var app = strider(includePath, config, function(){
   console.log("BrowserSwarm is running");
 });
 
-/// Ugly hack, monkey punching the cors middleware into the beginnig
-/// of the middleware stack.
-app.stack.unshift({ route: '', handle: require('./cors') });
 
+// Patch routes
 
+app.get('/api/:org/:repo', forceJSON, striderMiddleware.project, jobs.html);
 
-/// --- New Routes
-
-
-/// session
-
-var session = require('./session');
-app.get ('/api/session', session.get);
-app.post('/api/session', session.create);
-
-
-/// project
-
-var project = require('./project');
-app.get('/api/project/:org/:repo', striderMiddleware.project, project.get);
+function forceJSON(req, res, next) {
+  req.headers['accept'] = 'application/json';
+  next();
+}
