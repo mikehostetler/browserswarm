@@ -1,6 +1,8 @@
-var strider = require('strider')
+var strider           = require('strider')
 var striderMiddleware = require('strider/lib/middleware');
-var jobs = require('strider/routes/jobs');
+var routes            = require('strider/routes');
+var jobs              = require('strider/routes/jobs');
+var auth              = require('strider/lib/auth');
 
 // var testWorker = false;
 // var includePath = [];
@@ -50,6 +52,7 @@ var app = strider(includePath, config, function(){
 // Patch routes
 
 app.get('/api/:org/:repo', forceJSON, striderMiddleware.project, jobs.html);
+app.get('/api/:org/:repo/config', forceJSON, auth.requireUser, striderMiddleware.project, auth.requireProjectAdmin, routes.config);
 
 function forceJSON(req, res, next) {
   req.headers['accept'] = 'application/json';
