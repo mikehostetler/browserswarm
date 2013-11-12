@@ -29,6 +29,7 @@ app.get('/api/:org/:repo/job/:job_id', forceJSON, striderMiddleware.project, job
 app.get('/api/:org/:repo/config', forceJSON, auth.requireUser, striderMiddleware.project, auth.requireProjectAdmin, routes.config);
 app.get('/statusblocks', require('./status_blocks'));
 app.get('/dashboard', require('./dashboard'));
+app.get('/api/projects', forceJSON, auth.requireUser, routes.get_projects);
 
 function forceJSON(req, res, next) {
   req.headers['accept'] = 'application/json';
