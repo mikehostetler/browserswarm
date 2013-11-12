@@ -5,3 +5,4 @@ config.sh
 .tmp/
 *.orig
 bswarm-jquery-test
+sauce_connect.log
