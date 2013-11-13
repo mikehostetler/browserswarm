@@ -30,6 +30,7 @@ app.get('/api/:org/:repo/config', forceJSON, auth.requireUser, striderMiddleware
 app.get('/statusblocks', require('./status_blocks'));
 app.get('/dashboard', require('./dashboard'));
 app.get('/api/projects', forceJSON, auth.requireUser, routes.get_projects);
+app.get('/api/account', forceJSON, auth.requireUser, routes.account);
 
 function forceJSON(req, res, next) {
   req.headers['accept'] = 'application/json';
