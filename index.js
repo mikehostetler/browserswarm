@@ -19,6 +19,8 @@ var config = {
 
 var app = strider(includePath, config, function(){
   console.log("BrowserSwarm is running");
+
+  require('./github_callback_patch')(app);
 });
 
 
@@ -31,6 +33,10 @@ app.get('/statusblocks', require('./status_blocks'));
 app.get('/dashboard', require('./dashboard'));
 app.get('/api/projects', forceJSON, auth.requireUser, routes.get_projects);
 app.get('/api/account', forceJSON, auth.requireUser, routes.account);
+
+// console.log('ROUTES:', app.routes.get.map(function(route) {
+//   return route.path;
+// }));
 
 function forceJSON(req, res, next) {
   req.headers['accept'] = 'application/json';
