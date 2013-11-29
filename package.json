@@ -12,7 +12,13 @@
     "url": "git://github.com/appendto/browserswarm.git"
   },
   "dependencies": {
-    "strider": "*"
+    "strider": "*",
+    "strider-git": "~0.1.0",
+    "strider-heroku": "~0.1.0",
+    "strider-github": "~0.1.0",
+    "strider-webhooks": "~0.1.0",
+    "strider-node": "~0.3.3",
+    "strider-queued-runner": "*"
   },
   "author": ""
 }

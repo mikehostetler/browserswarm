@@ -13,6 +13,8 @@ var auth              = require('strider/lib/auth');
 var includePath = [".", "node_modules", "node_modules/strider/node_modules"];
 // }
 
+var includePath = ["node_modules"];
+
 var config = {
   cors: require('./cors')
 };
