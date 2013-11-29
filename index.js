@@ -4,15 +4,6 @@ var routes            = require('strider/routes');
 var jobs              = require('strider/routes/jobs');
 var auth              = require('strider/lib/auth');
 
-// var testWorker = false;
-// var includePath = [];
-// if(testWorker) {
-//  includePath = ["node_modules", "node_modules/strider/node_modules"];
-// }
-// else {
-var includePath = [".", "node_modules", "node_modules/strider/node_modules"];
-// }
-
 var includePath = ["node_modules"];
 
 var config = {
