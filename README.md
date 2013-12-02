@@ -1,5 +1,7 @@
 ## Overview
 
+* [Architecture](docs/ARCHITECTURE.md)
+
 BrowserSwarm is a heavily customized version of [StriderCD](http://stridercd.com).
 The Strider core is BSD-licensed and is desigend to be highly customizable and
 extensible. Strider is written in JavaScript / Node.JS and uses MongoDB as a
@@ -10,7 +12,7 @@ library.
 
 All the customizations and special logic is contained in a number of Strider plugins:
 
-- [strider-qunit](https://github.com/Strider-CD/strider-qunit): QUnit test support for Strider (jQuery, jQuery-UI, jQuery-Mobile lal use QUnit). 
+- [strider-qunit](https://github.com/Strider-CD/strider-qunit): QUnit test support for Strider (jQuery, jQuery-UI, jQuery-Mobile lal use QUnit).
 - [strider-browserstack](https://github.com/Strider-CD/strider-browserstack): BrowserStack.com support for running front-end JavaScript tests in multiple Browser/OS combinations on the BrowserStack cloud. This plugin transparently works with strider-qunit. Note that [strider-sauce](https://github.com/Strider-CD/strider-sauce) may also be used if you wish to run the tests on Sauce Labs cloud instead of BrowserStack.
 - [strider-jelly](https://github.com/Strider-CD/strider-jelly): Strider Jelly-Proxy plugin.
 - [strider-custom](https://github.com/Strider-CD/strider-custom): Run custom shell commands for projects in each phase.
@@ -143,11 +145,11 @@ Again, this can take 10-15 minutes to complete. PHP, Java, Node.JS and all the N
 
 ## Details of dotCloud config
 
-Hopefully you won't need to change any of these details, but it may be helpful to be aware of how configuration works. 
+Hopefully you won't need to change any of these details, but it may be helpful to be aware of how configuration works.
 
 The dotCloud application is implemented as a `custom` service. This is because we require multiple languages in a single application container: Java, PHP and Node. Refer to the [dotCloud custom service documentation](http://docs.dotcloud.com/services/custom/) for the gorey details.
 
-The build script for the `custom` service is in [dotcloud-builder/builder](https://github.com/appendto/browserswarm/blob/master/dotcloud-builder/builder). The most likely reason to edit this script is to change the version of Node.JS used to run BrowserSwarm on production. 
+The build script for the `custom` service is in [dotcloud-builder/builder](https://github.com/appendto/browserswarm/blob/master/dotcloud-builder/builder). The most likely reason to edit this script is to change the version of Node.JS used to run BrowserSwarm on production.
 
 The rest of the configuration is stored in the [dotcloud.yml](https://github.com/appendto/browserswarm/blob/master/dotcloud.yml) file in the project root. This file specifies:
 
@@ -157,7 +159,7 @@ The rest of the configuration is stored in the [dotcloud.yml](https://github.com
 - The Github OAuth Application ID and Secret (`GITHUB_APP_ID` and `GITHUB_APP_SECRET` variables)
 - The SMTP server settings to send email (`SMTP_HOST`, `SMTP_USER`, `SMTP_PASS` variables) (currently using a free [Mailgun](http://mailgun.org) account)
 - The start command for the application server (`npm start`)
-    
+
 
 
 
@@ -301,7 +303,7 @@ JellyReporter.prototype.reportSpecResults = function(spec) {
         , url : window.location.pathname
       }
       this.errors = [];
-      post('/_jelly/progress', data, function(){}); 
+      post('/_jelly/progress', data, function(){});
     }
 }
 
@@ -430,7 +432,7 @@ if [ ! -d "../util" ]; then git clone --depth=1 git://github.com/dojo/util.git .
 Jelly Url: "http://localhost:8080/util/doh/runner.html?boot=../../dojo/dojo.js
 Port:9090
 
-Shim: 
+Shim:
 ```javascript
 <script>
 // JSON For IE6
