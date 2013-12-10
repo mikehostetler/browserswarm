@@ -6,3 +6,8 @@ config.sh
 *.orig
 bswarm-jquery-test
 sauce_connect.log*
+
+########################
+# Vagrant 
+########################
+.vagrant
