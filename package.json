@@ -18,7 +18,8 @@
     "strider-github": "~0.1.0",
     "strider-webhooks": "~0.1.0",
     "strider-node": "~0.3.3",
-    "strider-queued-runner": "*"
+    "strider-queued-runner": "*",
+    "strider-sauce": "~0.6.1"
   },
   "author": ""
 }
