@@ -12,14 +12,14 @@
     "url": "git://github.com/appendto/browserswarm.git"
   },
   "dependencies": {
-    "strider": "*",
+    "strider": "git+ssh://git@github.com:BrowserSwarm/strider.git",
     "strider-git": "~0.1.0",
     "strider-heroku": "~0.1.0",
     "strider-github": "~0.1.0",
     "strider-webhooks": "~0.1.0",
-    "strider-node": "~0.3.3",
-    "strider-queued-runner": "*",
-    "strider-sauce": "~0.6.1"
+    "strider-queued-runner": "git+ssh://git@github.com:BrowserSwarm/strider-queued-runner.git",
+    "strider-sauce": "~0.6.1",
+    "strider-node": "git+ssh://git@github.com:BrowserSwarm/strider-node.git",
   },
   "author": ""
 }

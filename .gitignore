@@ -6,3 +6,5 @@ config.sh
 *.orig
 bswarm-jquery-test
 sauce_connect.log*
+
+npm-debug.log
