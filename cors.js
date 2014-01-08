@@ -1,5 +1,5 @@
 module.exports = {
-  origin: 'http://localhost:1337',
+  origin: process.env.SERVER_CORS || 'http://localhost:1337',
   credentials: true,
   headers: [
     'DNT',
