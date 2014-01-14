@@ -19,7 +19,8 @@
     "strider-webhooks": "~0.1.0",
     "strider-queued-runner": "git+ssh://git@github.com:BrowserSwarm/strider-queued-runner.git",
     "strider-sauce": "git+ssh://git@github.com:Strider-CD/strider-sauce.git",
-    "strider-node": "git+ssh://git@github.com:BrowserSwarm/strider-node.git"
+    "strider-node": "git+ssh://git@github.com:BrowserSwarm/strider-node.git",
+    "strider-qunit": "git+ssh://git@github.com:BrowserSwarm/strider-node.git#strider-1.4"
   },
   "author": ""
 }
