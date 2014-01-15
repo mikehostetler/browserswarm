@@ -3,6 +3,7 @@ var striderMiddleware = require('strider/lib/middleware');
 var routes            = require('strider/routes');
 var jobs              = require('strider/routes/jobs');
 var auth              = require('strider/lib/auth');
+var handle_errors     = require('./handle_errors');
 
 var includePath = ["node_modules"];
 
@@ -16,8 +17,16 @@ var app = strider(includePath, config, function(){
   require('./github_callback_patch')(app);
 });
 
+/// handle errors
+
+handle_errors(app);
+
 
 // Patch routes
+
+app.get('/gimmerror', function(req, res, next) {
+  next(new Error('testing raygun, 123'));
+});
 
 app.get('/api/:org/:repo', forceJSON, striderMiddleware.project, jobs.html);
 app.get('/api/:org/:repo/job/:job_id', forceJSON, striderMiddleware.project, jobs.multijob);

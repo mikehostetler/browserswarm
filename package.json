@@ -20,7 +20,8 @@
     "strider-queued-runner": "git+ssh://git@github.com:BrowserSwarm/strider-queued-runner.git",
     "strider-sauce": "git+ssh://git@github.com:Strider-CD/strider-sauce.git",
     "strider-node": "git+ssh://git@github.com:BrowserSwarm/strider-node.git",
-    "strider-qunit": "git+ssh://git@github.com:BrowserSwarm/strider-qunit.git#strider-1.4"
+    "strider-qunit": "git+ssh://git@github.com:BrowserSwarm/strider-qunit.git#strider-1.4",
+    "raygun": "~0.4.1"
   },
   "author": ""
 }
